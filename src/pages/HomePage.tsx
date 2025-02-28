@@ -193,12 +193,12 @@ const HomePage = () => {
               {/* Red Note (Xiaohongshu) */}
               <div className="flex flex-col items-center">
                 <h3 className="font-poppins text-2xl font-medium mb-8">Red Note (小红书)</h3>
-                <div className="w-48 h-48 flex items-center justify-center">
-                  {/* Using the uploaded Xiaohongshu logo */}
+                <div className="w-40 h-40 flex items-center justify-center">
+                  {/* Using the uploaded Xiaohongshu logo with fixed size */}
                   <img 
                     src="/lovable-uploads/358f3709-49f9-4477-a553-8242e3b48ea7.png" 
                     alt="Xiaohongshu (Red Note) Logo" 
-                    className="w-full h-full object-contain"
+                    className="w-32 h-32 object-contain"
                   />
                 </div>
               </div>
@@ -206,12 +206,12 @@ const HomePage = () => {
               {/* WeChat */}
               <div className="flex flex-col items-center">
                 <h3 className="font-poppins text-2xl font-medium mb-8">WeChat (微信)</h3>
-                <div className="w-48 h-48 flex items-center justify-center">
-                  {/* Using the uploaded WeChat logo */}
+                <div className="w-40 h-40 flex items-center justify-center">
+                  {/* Using the uploaded WeChat logo with the same fixed size */}
                   <img 
                     src="/lovable-uploads/6ca657e3-95a8-4876-bfbc-b5979db3b277.png" 
                     alt="WeChat Logo" 
-                    className="w-full h-full object-contain"
+                    className="w-32 h-32 object-contain"
                   />
                 </div>
               </div>
