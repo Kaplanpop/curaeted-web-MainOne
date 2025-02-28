@@ -101,7 +101,7 @@ const HomePage = () => {
                 <div className="flex-shrink-0 w-14 h-14 bg-gray-700 rounded-md flex items-center justify-center text-xl font-bold mr-4">
                   1
                 </div>
-                <p className="text-lg text-white font-roboto leading-relaxed mt-1">
+                <p className="text-lg text-white font-roboto leading-relaxed mt-1 font-light">
                   A new young purveyor of the very finest <span className="underline decoration-2 underline-offset-2">Iberico</span> products to China
                 </p>
               </div>
@@ -121,7 +121,7 @@ const HomePage = () => {
                 <div className="flex-shrink-0 w-14 h-14 bg-gray-700 rounded-md flex items-center justify-center text-xl font-bold mr-4">
                   2
                 </div>
-                <p className="text-lg text-white font-roboto leading-relaxed mt-1">
+                <p className="text-lg text-white font-roboto leading-relaxed mt-1 font-light">
                   We only work with the very finest: <span className="underline decoration-2 underline-offset-2">Iberico</span> pork 100% acorn fed and organic, artisan-made extra virgin olive oil
                 </p>
               </div>
