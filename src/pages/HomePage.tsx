@@ -93,24 +93,26 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen pt-20">
-      {/* Home Section */}
+      {/* Home Section - Updated with black background and new design */}
       <section 
         id="home"
         ref={homeRef}
-        className="min-h-[80vh] flex items-center justify-center relative overflow-hidden opacity-0"
+        className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden opacity-0 bg-black text-white"
       >
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-white"></div>
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1472396961693-142e6e269027?ixlib=rb-4.0.3')] bg-cover bg-center opacity-20"></div>
-        </div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="font-poppins text-4xl md:text-6xl font-bold mb-6 text-black">
-              {t('sections.home.title')}
-            </h1>
-            <p className="text-lg md:text-xl text-gray-700 mb-8 font-roboto">
-              {t('sections.home.subtitle')}
+        <div className="container mx-auto px-4 relative z-10 flex flex-col items-center justify-center">
+          <h1 className="font-poppins text-5xl md:text-7xl font-bold mb-16 tracking-wide">
+            HOME
+          </h1>
+          
+          <div className="flex flex-col items-center">
+            <img 
+              src="/lovable-uploads/5d02e8d4-28f1-405d-9732-61ea1bd8acbd.png" 
+              alt="Curaeted Logo" 
+              className="w-full max-w-xl mb-8"
+            />
+            
+            <p className="text-xl md:text-2xl text-white mb-8 font-roboto">
+              Bringing the finest <span className="underline decoration-2 underline-offset-4">Iberico</span> products to China
             </p>
           </div>
         </div>
