@@ -139,15 +139,15 @@ const HomePage = () => {
             
             {/* Focus statement */}
             <div className="bg-gray-700 rounded-md p-4 mt-10 mb-5">
-              <p className="text-lg text-white font-roboto text-center">
-                We focus on <span className="underline decoration-2 underline-offset-2">Iberico</span> Pork (cold cuts and fresh meat) and Extra Virgin Olive Oil
+              <p className="text-lg text-white font-roboto text-center font-light">
+                We focus on <span className="">Iberico</span> Pork (cold cuts and fresh meat) and Extra Virgin Olive Oil
               </p>
             </div>
             
             {/* Traceability statement */}
             <div className="bg-white rounded-md p-5">
-              <p className="text-lg text-black font-roboto text-center">
-                We offer full <span className="underline decoration-2 underline-offset-2">traceability</span> for each and every product, so you know where it comes from, how it is raised or produced and how it reaches your table
+              <p className="text-lg text-black font-roboto text-center font-light">
+                We offer full <span className="">traceability</span> for each and every product, so you know where it comes from, how it is raised or produced and how it reaches your table
               </p>
             </div>
           </div>
