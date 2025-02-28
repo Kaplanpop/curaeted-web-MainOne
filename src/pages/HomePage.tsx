@@ -1,11 +1,12 @@
+
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { toast } from '@/components/ui/use-toast';
-const HomePage = () => {
-  const {
-    t
-  } = useTranslation();
+import { supabase } from '@/integrations/supabase/client';
 
+const HomePage = () => {
+  const { t } = useTranslation();
+  
   // Refs for each section
   const homeRef = useRef<HTMLDivElement>(null);
   const whatWeDoRef = useRef<HTMLDivElement>(null);
@@ -19,72 +20,130 @@ const HomePage = () => {
   const [formData, setFormData] = useState({
     name: '',
     contact: '',
-    message: ''
+    message: '',
   });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const {
-      name,
-      value
-    } = e.target;
-    setFormData(prev => ({
+    const { name, value } = e.target;
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
-  const handleSubmit = (e: React.FormEvent) => {
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    setTimeout(() => {
-      setFormSubmitted(true);
+    setIsSubmitting(true);
+    
+    try {
+      // Submit data to Supabase
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert([
+          {
+            name: formData.name,
+            contact: formData.contact,
+            message: formData.message
+          }
+        ]);
+      
+      if (error) {
+        console.error('Error submitting form:', error);
+        toast({
+          title: "Error",
+          description: "There was a problem submitting your message. Please try again.",
+          variant: "destructive",
+        });
+      } else {
+        setFormSubmitted(true);
+        toast({
+          title: "Success",
+          description: t('sections.contact.thankyou'),
+        });
+        
+        // Reset form after successful submission
+        setFormData({
+          name: '',
+          contact: '',
+          message: '',
+        });
+        
+        // Reset submission status after 3 seconds
+        setTimeout(() => {
+          setFormSubmitted(false);
+        }, 3000);
+      }
+    } catch (error) {
+      console.error('Exception submitting form:', error);
       toast({
-        title: "Success",
-        description: t('sections.contact.thankyou')
+        title: "Error",
+        description: "There was a problem submitting your message. Please try again.",
+        variant: "destructive",
       });
-
-      // Reset form after successful submission
-      setFormData({
-        name: '',
-        contact: '',
-        message: ''
-      });
-
-      // Reset submission status after 3 seconds
-      setTimeout(() => {
-        setFormSubmitted(false);
-      }, 3000);
-    }, 500);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+
   useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-fadeIn');
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
-    const elements = [homeRef.current, whatWeDoRef.current, whereToFindUsRef.current, onlyTheFinestRef.current, whyIbericoRef.current, aboutRef.current, contactRef.current];
-    elements.forEach(el => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fadeIn');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = [
+      homeRef.current,
+      whatWeDoRef.current,
+      whereToFindUsRef.current,
+      onlyTheFinestRef.current,
+      whyIbericoRef.current,
+      aboutRef.current,
+      contactRef.current,
+    ];
+
+    elements.forEach((el) => {
       if (el) observer.observe(el);
     });
+
     return () => {
-      elements.forEach(el => {
+      elements.forEach((el) => {
         if (el) observer.unobserve(el);
       });
     };
   }, []);
-  return <div className="min-h-screen pt-20">
+
+  return (
+    <div className="min-h-screen pt-20">
       {/* Home Section - Updated with new background image */}
-      <section id="home" ref={homeRef} className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden opacity-0">
-        <img src="/lovable-uploads/7fb544ec-1ca6-4d76-bb22-4a900c6f5400.png" alt="Iberico pigs in field" className="absolute inset-0 w-full h-full object-cover z-0" />
+      <section 
+        id="home"
+        ref={homeRef}
+        className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden opacity-0"
+      >
+        <img 
+          src="/lovable-uploads/7fb544ec-1ca6-4d76-bb22-4a900c6f5400.png" 
+          alt="Iberico pigs in field" 
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        />
         
         {/* No additional content needed as the image already has the text overlay */}
       </section>
 
       {/* What We Do Section - Updated with new black background design and numbered points */}
-      <section id="whatWeDo" ref={whatWeDoRef} className="py-20 bg-black text-white opacity-0">
+      <section 
+        id="whatWeDo"
+        ref={whatWeDoRef}
+        className="py-20 bg-black text-white opacity-0"
+      >
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="font-poppins text-5xl mb-16 text-white font-light md:text-5xl text-center">
@@ -151,7 +210,11 @@ const HomePage = () => {
       </section>
 
       {/* Where To Find Us Section - Updated with Red Note and WeChat logos */}
-      <section id="whereToFindUs" ref={whereToFindUsRef} className="py-20 bg-white opacity-0">
+      <section 
+        id="whereToFindUs"
+        ref={whereToFindUsRef}
+        className="py-20 bg-white opacity-0"
+      >
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="font-poppins text-5xl mb-16 text-black font-light md:text-5xl text-center">
@@ -164,7 +227,11 @@ const HomePage = () => {
                 <h3 className="font-poppins text-2xl font-medium mb-8">Red Note (小红书)</h3>
                 <div className="w-40 h-40 flex items-center justify-center">
                   {/* Using the uploaded Xiaohongshu logo */}
-                  <img src="/lovable-uploads/171db970-3a20-4178-bf65-09e4e36e3a1f.png" alt="Xiaohongshu (Red Note) Logo" className="w-32 h-32 object-contain" />
+                  <img 
+                    src="/lovable-uploads/171db970-3a20-4178-bf65-09e4e36e3a1f.png" 
+                    alt="Xiaohongshu (Red Note) Logo" 
+                    className="w-32 h-32 object-contain"
+                  />
                 </div>
               </div>
               
@@ -173,7 +240,11 @@ const HomePage = () => {
                 <h3 className="font-poppins text-2xl font-medium mb-8">WeChat (微信)</h3>
                 <div className="w-40 h-40 flex items-center justify-center">
                   {/* Using the uploaded WeChat logo */}
-                  <img src="/lovable-uploads/efd9fd8c-759f-4bac-b403-ebee03fe86b8.png" alt="WeChat Logo" className="w-32 h-32 object-contain" />
+                  <img 
+                    src="/lovable-uploads/efd9fd8c-759f-4bac-b403-ebee03fe86b8.png" 
+                    alt="WeChat Logo" 
+                    className="w-32 h-32 object-contain"
+                  />
                 </div>
               </div>
             </div>
@@ -182,7 +253,11 @@ const HomePage = () => {
       </section>
 
       {/* Only The Finest Section - Updated with black background */}
-      <section id="onlyTheFinest" ref={onlyTheFinestRef} className="py-20 bg-black text-white opacity-0">
+      <section 
+        id="onlyTheFinest"
+        ref={onlyTheFinestRef}
+        className="py-20 bg-black text-white opacity-0"
+      >
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="font-poppins text-5xl mb-16 text-white font-light md:text-5xl text-center">
@@ -199,37 +274,54 @@ const HomePage = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Image 1 */}
               <div className="aspect-square overflow-hidden bg-gray-800 rounded-md">
-                <img src="/lovable-uploads/b06d1d04-0305-40e1-a47e-47d2d4697357.png" alt="Iberico Product 1" className="w-full h-full object-cover opacity-0" onLoad={e => {
-                const target = e.target as HTMLImageElement;
-                target.classList.remove('opacity-0');
-                target.classList.add('opacity-100', 'transition-opacity', 'duration-500');
-              }} />
+                <img 
+                  src="/lovable-uploads/b06d1d04-0305-40e1-a47e-47d2d4697357.png" 
+                  alt="Iberico Product 1" 
+                  className="w-full h-full object-cover opacity-0"
+                  onLoad={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.classList.remove('opacity-0');
+                    target.classList.add('opacity-100', 'transition-opacity', 'duration-500');
+                  }}
+                />
               </div>
               
               {/* Image 2 */}
               <div className="aspect-square overflow-hidden bg-gray-800 rounded-md">
-                <img src="https://images.unsplash.com/photo-1602481182506-603f23ad3907?ixlib=rb-4.0.3" alt="Iberico Product 2" className="w-full h-full object-cover opacity-0" onLoad={e => {
-                const target = e.target as HTMLImageElement;
-                target.classList.remove('opacity-0');
-                target.classList.add('opacity-100', 'transition-opacity', 'duration-500');
-              }} onError={e => {
-                const target = e.target as HTMLImageElement;
-                target.src = "/placeholder.svg";
-                target.alt = "Iberico Placeholder";
-              }} />
+                <img 
+                  src="https://images.unsplash.com/photo-1602481182506-603f23ad3907?ixlib=rb-4.0.3"
+                  alt="Iberico Product 2" 
+                  className="w-full h-full object-cover opacity-0"
+                  onLoad={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.classList.remove('opacity-0');
+                    target.classList.add('opacity-100', 'transition-opacity', 'duration-500');
+                  }}
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "/placeholder.svg";
+                    target.alt = "Iberico Placeholder";
+                  }}
+                />
               </div>
               
               {/* Image 3 */}
               <div className="aspect-square overflow-hidden bg-gray-800 rounded-md">
-                <img src="https://images.unsplash.com/photo-1629209060013-7ffdd49052d4?ixlib=rb-4.0.3" alt="Olive Oil Product" className="w-full h-full object-cover opacity-0" onLoad={e => {
-                const target = e.target as HTMLImageElement;
-                target.classList.remove('opacity-0');
-                target.classList.add('opacity-100', 'transition-opacity', 'duration-500');
-              }} onError={e => {
-                const target = e.target as HTMLImageElement;
-                target.src = "/placeholder.svg";
-                target.alt = "Olive Oil Placeholder";
-              }} />
+                <img 
+                  src="https://images.unsplash.com/photo-1629209060013-7ffdd49052d4?ixlib=rb-4.0.3" 
+                  alt="Olive Oil Product" 
+                  className="w-full h-full object-cover opacity-0"
+                  onLoad={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.classList.remove('opacity-0');
+                    target.classList.add('opacity-100', 'transition-opacity', 'duration-500');
+                  }}
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "/placeholder.svg";
+                    target.alt = "Olive Oil Placeholder";
+                  }}
+                />
               </div>
             </div>
           </div>
@@ -237,7 +329,11 @@ const HomePage = () => {
       </section>
 
       {/* Why Iberico Section - Updated with new text and no images */}
-      <section id="whyIberico" ref={whyIbericoRef} className="py-20 bg-gray-50 opacity-0">
+      <section 
+        id="whyIberico"
+        ref={whyIbericoRef}
+        className="py-20 bg-gray-50 opacity-0"
+      >
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="font-poppins text-5xl mb-16 text-black font-light md:text-5xl text-center">
@@ -253,14 +349,22 @@ const HomePage = () => {
                 For our Chinese audiences, we understand that a deep respect for tradition and quality is at the heart of every culinary experience. Our products not only offer superior taste but also align with a holistic approach to wellness and cultural heritage. By blending centuries-old techniques with modern sustainability, Curæted delivers ingredients that enhance both time-honored recipes and contemporary dining, inviting you to savor a luxurious journey that honors your rich gastronomic legacy.
               </p>
               
-              <img src="/lovable-uploads/817a0c88-f65c-49f3-8f52-f694a58d04b7.png" alt="Why Iberico text image" className="w-full my-8" />
+              <img 
+                src="/lovable-uploads/817a0c88-f65c-49f3-8f52-f694a58d04b7.png" 
+                alt="Why Iberico text image" 
+                className="w-full my-8"
+              />
             </div>
           </div>
         </div>
       </section>
 
       {/* About Section - Updated with new text and bullet points */}
-      <section id="about" ref={aboutRef} className="py-20 bg-black text-white opacity-0">
+      <section 
+        id="about"
+        ref={aboutRef}
+        className="py-20 bg-black text-white opacity-0"
+      >
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="font-poppins text-5xl mb-12 text-white font-light md:text-5xl text-center">
@@ -313,15 +417,27 @@ const HomePage = () => {
 
             {/* Images for About section */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-              <img src="/lovable-uploads/e8bf9af7-c6e0-422c-8cd9-e2cad6f125bb.png" alt="About Curæted 1" className="w-full h-auto rounded-lg object-cover" />
-              <img src="/lovable-uploads/ac5ed58f-8223-4b03-a99b-e153a4fe6ab5.png" alt="About Curæted 2" className="w-full h-auto rounded-lg object-cover" />
+              <img 
+                src="/lovable-uploads/e8bf9af7-c6e0-422c-8cd9-e2cad6f125bb.png" 
+                alt="About Curæted 1" 
+                className="w-full h-auto rounded-lg object-cover"
+              />
+              <img 
+                src="/lovable-uploads/ac5ed58f-8223-4b03-a99b-e153a4fe6ab5.png" 
+                alt="About Curæted 2" 
+                className="w-full h-auto rounded-lg object-cover"
+              />
             </div>
           </div>
         </div>
       </section>
 
       {/* Contact Section - Updated with new simplified design */}
-      <section id="contact" ref={contactRef} className="py-20 bg-white opacity-0">
+      <section 
+        id="contact"
+        ref={contactRef}
+        className="py-20 bg-white opacity-0"
+      >
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <h2 className="font-poppins text-5xl mb-16 text-black font-light md:text-5xl text-center">
@@ -337,32 +453,64 @@ const HomePage = () => {
                 <label htmlFor="name" className="block font-roboto text-lg mb-3 text-gray-900 font-light">
                   Your name
                 </label>
-                <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required className="w-full border border-gray-300 px-4 py-3 text-lg font-roboto" />
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-gray-300 px-4 py-3 text-lg font-roboto"
+                />
               </div>
               
               <div>
                 <label htmlFor="contact" className="block font-roboto text-lg mb-3 text-gray-900 font-light">
                   Email address/WeChat ID
                 </label>
-                <input type="text" id="contact" name="contact" value={formData.contact} onChange={handleChange} required className="w-full border border-gray-300 px-4 py-3 text-lg font-roboto" />
+                <input
+                  type="text"
+                  id="contact"
+                  name="contact"
+                  value={formData.contact}
+                  onChange={handleChange}
+                  required
+                  className="w-full border border-gray-300 px-4 py-3 text-lg font-roboto"
+                />
               </div>
               
               <div>
                 <label htmlFor="message" className="block font-roboto text-lg mb-3 text-gray-900 font-light">
                   Message
                 </label>
-                <input type="text" id="message" name="message" value={formData.message} onChange={handleChange} required className="w-full border border-gray-300 px-4 py-3 text-lg font-roboto" />
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={4}
+                  className="w-full border border-gray-300 px-4 py-3 text-lg font-roboto"
+                ></textarea>
               </div>
               
               <div>
-                <button type="submit" disabled={formSubmitted} className="w-full py-3 bg-black text-white font-roboto font-medium hover:bg-gray-800 transition-colors text-lg">
-                  {formSubmitted ? <span className="flex items-center justify-center">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full py-3 bg-black text-white font-roboto font-medium hover:bg-gray-800 transition-colors text-lg disabled:bg-gray-500"
+                >
+                  {isSubmitting ? (
+                    <span className="flex items-center justify-center">
                       <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                       </svg>
-                      Processing...
-                    </span> : "Submit"}
+                      Submitting...
+                    </span>
+                  ) : (
+                    "Submit"
+                  )}
                 </button>
               </div>
             </form>
@@ -374,16 +522,40 @@ const HomePage = () => {
       <section className="py-16 bg-black text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto flex flex-col items-center">
-            <img src="/lovable-uploads/32a591da-11d7-4261-9f86-14c23dc0bb12.png" alt="Curaeted Logo" className="w-full max-w-3xl mb-8" />
+            <img 
+              src="/lovable-uploads/32a591da-11d7-4261-9f86-14c23dc0bb12.png" 
+              alt="Curaeted Logo" 
+              className="w-full max-w-3xl mb-8" 
+            />
             
+            <p className="text-xl text-white mb-10 text-center font-roboto font-light">
+              Bringing the finest Iberico products to China
+            </p>
             
+            <div className="space-y-2 text-center mb-10">
+              <p className="text-gray-300 font-roboto font-light">
+                Room 214 Level 2, Building 1, 155 Fengxiang Rd, Baoshan, Shanghai, PRC
+              </p>
+              <p className="text-gray-300 font-roboto font-light">
+                Email: <a href="mailto:jose.campon@curaetedchina.com" className="hover:text-white transition-colors">jose.campon@curaetedchina.com</a>
+              </p>
+            </div>
             
-            
-            
-            
+            <div className="flex flex-col items-center space-y-2 mb-10">
+              <p className="text-gray-300 font-roboto font-light">WeChat:</p>
+              <div className="bg-white p-1">
+                <img 
+                  src="/lovable-uploads/32a591da-11d7-4261-9f86-14c23dc0bb12.png" 
+                  alt="WeChat QR Code" 
+                  className="w-72 h-72" 
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
-    </div>;
+    </div>
+  );
 };
+
 export default HomePage;
