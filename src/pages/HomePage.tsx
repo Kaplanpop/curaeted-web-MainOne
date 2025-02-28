@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { toast } from '@/components/ui/use-toast';
@@ -91,17 +90,13 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen pt-20">
-      {/* Home Section - Updated with black background and new design */}
+      {/* Home Section - Updated with black background and new design - Headings removed */}
       <section 
         id="home"
         ref={homeRef}
         className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden opacity-0 bg-black text-white"
       >
         <div className="container mx-auto px-4 relative z-10 flex flex-col items-center justify-center">
-          <h1 className="font-poppins text-5xl md:text-7xl font-bold mb-16 tracking-wide">
-            HOME
-          </h1>
-          
           <div className="flex flex-col items-center">
             <img 
               src="/lovable-uploads/5d02e8d4-28f1-405d-9732-61ea1bd8acbd.png" 
