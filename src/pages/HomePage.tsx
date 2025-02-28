@@ -111,7 +111,7 @@ const HomePage = () => {
                 <div className="flex-shrink-0 w-14 h-14 bg-gray-700 rounded-md flex items-center justify-center text-xl font-bold mr-4">
                   3
                 </div>
-                <p className="text-lg text-white font-roboto leading-relaxed mt-1">
+                <p className="text-lg text-white font-roboto leading-relaxed mt-1 font-light">
                   We work only with authorized exporters to China and only import the top products: 100% Iberico, 100% acorn fed
                 </p>
               </div>
@@ -131,7 +131,7 @@ const HomePage = () => {
                 <div className="flex-shrink-0 w-14 h-14 bg-gray-700 rounded-md flex items-center justify-center text-xl font-bold mr-4">
                   4
                 </div>
-                <p className="text-lg text-white font-roboto leading-relaxed mt-1">
+                <p className="text-lg text-white font-roboto leading-relaxed mt-1 font-light">
                   We serve direct farm-to-table, via Red Note & WeChat, to discerning Chinese. We deliver fresh products, refrigerated and not frozen, via airfreight, in less than 2 weeks, ensuring freshness and maximum quality, while ensuring best pricing delivering directly from producers
                 </p>
               </div>
