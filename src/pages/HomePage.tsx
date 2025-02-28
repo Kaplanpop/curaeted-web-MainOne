@@ -240,30 +240,76 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Only The Finest Section */}
+      {/* Only The Finest Section - Updated with black background */}
       <section 
         id="onlyTheFinest"
         ref={onlyTheFinestRef}
-        className="py-20 bg-white opacity-0"
+        className="py-20 bg-black text-white opacity-0"
       >
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="font-poppins text-3xl md:text-4xl font-bold mb-12 text-center text-black">
-              {t('sections.onlyTheFinest.title')}
+            <h2 className="font-poppins text-5xl md:text-6xl font-bold mb-16 text-white">
+              Only the finest
             </h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-              <div className="img-wrapper overflow-hidden rounded-lg aspect-square">
+            <div className="mb-16">
+              <p className="text-xl text-white font-roboto leading-relaxed">
+                Stock photos of finest <span className="underline decoration-2 underline-offset-2">iberico</span> pork products and best organic extra virgin olive oil (all unbranded)
+              </p>
+            </div>
+            
+            {/* Image Grid for Product Photos */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Image 1 */}
+              <div className="aspect-square overflow-hidden bg-gray-800 rounded-md">
                 <img 
-                  src="https://images.unsplash.com/photo-1501286353178-1ec881214838?ixlib=rb-4.0.3" 
-                  alt="Premium Iberico" 
-                  className="w-full h-full object-cover"
+                  src="/lovable-uploads/b06d1d04-0305-40e1-a47e-47d2d4697357.png" 
+                  alt="Iberico Product 1" 
+                  className="w-full h-full object-cover opacity-0"
+                  onLoad={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.classList.remove('opacity-0');
+                    target.classList.add('opacity-100', 'transition-opacity', 'duration-500');
+                  }}
                 />
               </div>
-              <div>
-                <p className="text-lg text-gray-700 font-roboto mb-8 leading-relaxed">
-                  {t('sections.onlyTheFinest.content')}
-                </p>
+              
+              {/* Image 2 */}
+              <div className="aspect-square overflow-hidden bg-gray-800 rounded-md">
+                <img 
+                  src="https://images.unsplash.com/photo-1602481182506-603f23ad3907?ixlib=rb-4.0.3"
+                  alt="Iberico Product 2" 
+                  className="w-full h-full object-cover opacity-0"
+                  onLoad={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.classList.remove('opacity-0');
+                    target.classList.add('opacity-100', 'transition-opacity', 'duration-500');
+                  }}
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "/placeholder.svg";
+                    target.alt = "Iberico Placeholder";
+                  }}
+                />
+              </div>
+              
+              {/* Image 3 */}
+              <div className="aspect-square overflow-hidden bg-gray-800 rounded-md">
+                <img 
+                  src="https://images.unsplash.com/photo-1629209060013-7ffdd49052d4?ixlib=rb-4.0.3" 
+                  alt="Olive Oil Product" 
+                  className="w-full h-full object-cover opacity-0"
+                  onLoad={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.classList.remove('opacity-0');
+                    target.classList.add('opacity-100', 'transition-opacity', 'duration-500');
+                  }}
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "/placeholder.svg";
+                    target.alt = "Olive Oil Placeholder";
+                  }}
+                />
               </div>
             </div>
           </div>
