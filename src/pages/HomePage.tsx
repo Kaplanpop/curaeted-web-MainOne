@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { toast } from '@/components/ui/use-toast';
+import { XiaohongshuIcon, WechatIcon } from 'lucide-react';
 
 const HomePage = () => {
   const { t } = useTranslation();
@@ -190,37 +191,19 @@ const HomePage = () => {
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-              {/* Red Note */}
-              <div className="flex flex-col">
-                <h3 className="font-poppins text-2xl font-medium mb-8">Red Note</h3>
-                <div className="aspect-square bg-gray-100 flex items-center justify-center">
-                  <img 
-                    src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3" 
-                    alt="Red Note App" 
-                    className="max-h-full object-contain"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = "/placeholder.svg";
-                      target.alt = "Red Note Placeholder";
-                    }}
-                  />
+              {/* Red Note (Xiaohongshu) */}
+              <div className="flex flex-col items-center">
+                <h3 className="font-poppins text-2xl font-medium mb-8">Red Note (小红书)</h3>
+                <div className="aspect-square w-48 h-48 bg-red-50 rounded-xl flex items-center justify-center">
+                  <XiaohongshuIcon size={100} className="text-red-500" />
                 </div>
               </div>
               
               {/* WeChat */}
-              <div className="flex flex-col">
-                <h3 className="font-poppins text-2xl font-medium mb-8">WeChat</h3>
-                <div className="aspect-square bg-gray-100 flex items-center justify-center">
-                  <img 
-                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3" 
-                    alt="WeChat App" 
-                    className="max-h-full object-contain"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = "/placeholder.svg";
-                      target.alt = "WeChat Placeholder";
-                    }}
-                  />
+              <div className="flex flex-col items-center">
+                <h3 className="font-poppins text-2xl font-medium mb-8">WeChat (微信)</h3>
+                <div className="aspect-square w-48 h-48 bg-green-50 rounded-xl flex items-center justify-center">
+                  <WechatIcon size={100} className="text-green-500" />
                 </div>
               </div>
             </div>
