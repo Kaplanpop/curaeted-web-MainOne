@@ -102,7 +102,7 @@ const HomePage = () => {
                   1
                 </div>
                 <p className="text-lg text-white font-roboto leading-relaxed mt-1 font-light">
-                  A new young purveyor of the very finest <span className="underline decoration-2 underline-offset-2">Iberico</span> products to China
+                  A new young purveyor of the very finest <span className="">Iberico</span> products to China
                 </p>
               </div>
               
