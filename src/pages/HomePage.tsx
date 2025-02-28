@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { toast } from '@/components/ui/use-toast';
@@ -397,7 +398,7 @@ const HomePage = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full border border-gray-300 px-4 py-3 text-lg"
+                  className="w-full border border-gray-300 px-4 py-3 text-lg font-roboto"
                 />
               </div>
               
@@ -412,7 +413,7 @@ const HomePage = () => {
                   value={formData.contact}
                   onChange={handleChange}
                   required
-                  className="w-full border border-gray-300 px-4 py-3 text-lg"
+                  className="w-full border border-gray-300 px-4 py-3 text-lg font-roboto"
                 />
               </div>
               
@@ -427,7 +428,7 @@ const HomePage = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="w-full border border-gray-300 px-4 py-3 text-lg"
+                  className="w-full border border-gray-300 px-4 py-3 text-lg font-roboto"
                 />
               </div>
               
@@ -435,7 +436,7 @@ const HomePage = () => {
                 <button
                   type="submit"
                   disabled={formSubmitted}
-                  className="w-full py-3 bg-black text-white font-medium hover:bg-gray-800 transition-colors text-lg"
+                  className="w-full py-3 bg-black text-white font-roboto font-medium hover:bg-gray-800 transition-colors text-lg"
                 >
                   {formSubmitted ? (
                     <span className="flex items-center justify-center">
@@ -465,21 +466,21 @@ const HomePage = () => {
               className="w-full max-w-xs mb-8"
             />
             
-            <p className="text-xl text-white mb-10 text-center">
+            <p className="text-xl text-white mb-10 text-center font-roboto">
               Bringing the finest Iberico products to China
             </p>
             
             <div className="space-y-2 text-center mb-10">
-              <p className="text-gray-300">
+              <p className="text-gray-300 font-roboto">
                 Room 214 Level 2, Building 1, 155 Fengxiang Rd, Baoshan, Shanghai, PRC
               </p>
-              <p className="text-gray-300">
+              <p className="text-gray-300 font-roboto">
                 Email: <a href="mailto:jose.campon@curaetedchina.com" className="hover:text-white transition-colors">jose.campon@curaetedchina.com</a>
               </p>
             </div>
             
             <div className="flex flex-col items-center space-y-2 mb-10">
-              <p className="text-gray-300">WeChat:</p>
+              <p className="text-gray-300 font-roboto">WeChat:</p>
               <div className="bg-white p-1">
                 <img 
                   src="/lovable-uploads/32a591da-11d7-4261-9f86-14c23dc0bb12.png" 
