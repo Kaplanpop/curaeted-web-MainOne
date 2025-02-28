@@ -459,6 +459,43 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
+      {/* Company Info Section */}
+      <section className="py-16 bg-black text-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto flex flex-col items-center">
+            <img 
+              src="/lovable-uploads/32a591da-11d7-4261-9f86-14c23dc0bb12.png" 
+              alt="Curaeted Logo" 
+              className="w-full max-w-xs mb-8"
+            />
+            
+            <p className="text-xl text-white mb-10 text-center">
+              Bringing the finest Iberico products to China
+            </p>
+            
+            <div className="space-y-2 text-center mb-10">
+              <p className="text-gray-300">
+                Room 214 Level 2, Building 1, 155 Fengxiang Rd, Baoshan, Shanghai, PRC
+              </p>
+              <p className="text-gray-300">
+                Email: <a href="mailto:jose.campon@curaetedchina.com" className="hover:text-white transition-colors">jose.campon@curaetedchina.com</a>
+              </p>
+            </div>
+            
+            <div className="flex flex-col items-center space-y-2 mb-10">
+              <p className="text-gray-300">WeChat:</p>
+              <div className="bg-white p-1">
+                <img 
+                  src="/lovable-uploads/32a591da-11d7-4261-9f86-14c23dc0bb12.png" 
+                  alt="WeChat QR Code" 
+                  className="w-24 h-24"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
