@@ -118,31 +118,72 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* What We Do Section */}
+      {/* What We Do Section - Updated with new black background design and numbered points */}
       <section 
         id="whatWeDo"
         ref={whatWeDoRef}
-        className="py-20 bg-white opacity-0"
+        className="py-20 bg-black text-white opacity-0"
       >
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="font-poppins text-3xl md:text-4xl font-bold mb-12 text-center text-black">
-              {t('sections.whatWeDo.title')}
+            <h2 className="font-poppins text-5xl md:text-6xl font-bold mb-16 text-white">
+              What we do
             </h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-              <div className="img-wrapper overflow-hidden rounded-lg aspect-square">
-                <img 
-                  src="https://images.unsplash.com/photo-1465379944081-7f47de8d74ac?ixlib=rb-4.0.3" 
-                  alt="Iberico in countryside" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div>
-                <p className="text-lg text-gray-700 font-roboto mb-8 leading-relaxed">
-                  {t('sections.whatWeDo.content')}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10">
+              {/* Point 1 */}
+              <div className="flex items-start">
+                <div className="flex-shrink-0 w-14 h-14 bg-gray-700 rounded-md flex items-center justify-center text-xl font-bold mr-4">
+                  1
+                </div>
+                <p className="text-lg text-white font-roboto leading-relaxed mt-1">
+                  A new young purveyor of the very finest <span className="underline decoration-2 underline-offset-2">Iberico</span> products to China
                 </p>
               </div>
+              
+              {/* Point 3 */}
+              <div className="flex items-start">
+                <div className="flex-shrink-0 w-14 h-14 bg-gray-700 rounded-md flex items-center justify-center text-xl font-bold mr-4">
+                  3
+                </div>
+                <p className="text-lg text-white font-roboto leading-relaxed mt-1">
+                  We work only with authorized exporters to China and only import the top products: 100% Iberico, 100% acorn fed
+                </p>
+              </div>
+              
+              {/* Point 2 */}
+              <div className="flex items-start">
+                <div className="flex-shrink-0 w-14 h-14 bg-gray-700 rounded-md flex items-center justify-center text-xl font-bold mr-4">
+                  2
+                </div>
+                <p className="text-lg text-white font-roboto leading-relaxed mt-1">
+                  We only work with the very finest: <span className="underline decoration-2 underline-offset-2">Iberico</span> pork 100% acorn fed and organic, artisan-made extra virgin olive oil
+                </p>
+              </div>
+              
+              {/* Point 4 */}
+              <div className="flex items-start">
+                <div className="flex-shrink-0 w-14 h-14 bg-gray-700 rounded-md flex items-center justify-center text-xl font-bold mr-4">
+                  4
+                </div>
+                <p className="text-lg text-white font-roboto leading-relaxed mt-1">
+                  We serve direct farm-to-table, via Red Note & WeChat, to discerning Chinese. We deliver fresh products, refrigerated and not frozen, via airfreight, in less than 2 weeks, ensuring freshness and maximum quality, while ensuring best pricing delivering directly from producers
+                </p>
+              </div>
+            </div>
+            
+            {/* Focus statement */}
+            <div className="bg-gray-700 rounded-md p-4 mt-10 mb-5">
+              <p className="text-lg text-white font-roboto text-center">
+                We focus on <span className="underline decoration-2 underline-offset-2">Iberico</span> Pork (cold cuts and fresh meat) and Extra Virgin Olive Oil
+              </p>
+            </div>
+            
+            {/* Traceability statement */}
+            <div className="bg-white rounded-md p-5">
+              <p className="text-lg text-black font-roboto text-center">
+                We offer full <span className="underline decoration-2 underline-offset-2">traceability</span> for each and every product, so you know where it comes from, how it is raised or produced and how it reaches your table
+              </p>
             </div>
           </div>
         </div>
