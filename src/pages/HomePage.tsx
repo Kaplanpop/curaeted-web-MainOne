@@ -122,7 +122,7 @@ const HomePage = () => {
                   2
                 </div>
                 <p className="text-lg text-white font-roboto leading-relaxed mt-1 font-light">
-                  We only work with the very finest: <span className="underline decoration-2 underline-offset-2">Iberico</span> pork 100% acorn fed and organic, artisan-made extra virgin olive oil
+                  We only work with the very finest: <span className="">Iberico</span> pork 100% acorn fed and organic, artisan-made extra virgin olive oil
                 </p>
               </div>
               
