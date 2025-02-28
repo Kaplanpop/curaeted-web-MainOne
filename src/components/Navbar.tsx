@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { Menu, X, Globe } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
@@ -8,6 +8,8 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
+  const [menuHovered, setMenuHovered] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const { t, i18n } = useTranslation();
 
@@ -39,12 +41,26 @@ const Navbar = () => {
     closeMenu();
   }, [location.pathname]);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setMenuHovered(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
     }
     closeMenu();
+    setMenuHovered(false);
   };
 
   return (
@@ -59,61 +75,76 @@ const Navbar = () => {
           to="/" 
           className="text-xl font-poppins font-semibold tracking-tight flex items-center"
         >
-          {/* Placeholder pig logo */}
-          <svg className="w-8 h-8 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19 8C20.6569 8 22 6.65685 22 5C22 3.34315 20.6569 2 19 2C17.3431 2 16 3.34315 16 5C16 6.65685 17.3431 8 19 8Z" fill="black"/>
-            <path d="M21 10H18.87C17.5 10 16.27 9.22 15.76 8C15.59 7.57 15.22 7 14.6 7H9.4C8.78 7 8.41 7.57 8.24 8C7.73 9.22 6.5 10 5.13 10H3C2.18 10 1.41 10.2 0.84 10.58C0.3 10.94 0 11.44 0 12V14C0 14.55 0.45 15 1 15H2V20C2 21.1 2.9 22 4 22H18C19.1 22 20 21.1 20 20V15H21C21.55 15 22 14.55 22 14V12C22 11.44 21.7 10.94 21.16 10.58C20.59 10.2 19.82 10 19 10H21Z" fill="black"/>
-            <circle cx="7" cy="15" r="1.5" fill="white"/>
-            <circle cx="15" cy="15" r="1.5" fill="white"/>
-          </svg>
-          <span>Iberico Finest</span>
+          {/* New logo */}
+          <img 
+            src="/lovable-uploads/b52c32c0-29a6-40cc-9e20-14b9f336b4a3.png" 
+            alt="Curæted Logo" 
+            className="w-10 h-10 mr-2"
+          />
+          <span className="font-poppins">Curæted</span>
         </NavLink>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
-          <button 
-            onClick={() => scrollToSection('home')}
-            className="text-sm font-medium tracking-wide transition-colors duration-200 text-black hover:text-gray-600"
+        {/* Desktop Navigation - Now a hover menu */}
+        <div className="hidden md:flex items-center space-x-8 relative" ref={menuRef}>
+          <button
+            className="text-sm font-medium tracking-wide transition-colors duration-200 text-black hover:text-gray-600 flex items-center"
+            onMouseEnter={() => setMenuHovered(true)}
+            onClick={() => setMenuHovered(!menuHovered)}
+            aria-label="Menu"
           >
-            {t('menu.home')}
+            <Menu size={24} />
           </button>
-          <button 
-            onClick={() => scrollToSection('whatWeDo')}
-            className="text-sm font-medium tracking-wide transition-colors duration-200 text-black hover:text-gray-600"
-          >
-            {t('menu.whatWeDo')}
-          </button>
-          <button 
-            onClick={() => scrollToSection('whereToFindUs')}
-            className="text-sm font-medium tracking-wide transition-colors duration-200 text-black hover:text-gray-600"
-          >
-            {t('menu.whereToFindUs')}
-          </button>
-          <button 
-            onClick={() => scrollToSection('onlyTheFinest')}
-            className="text-sm font-medium tracking-wide transition-colors duration-200 text-black hover:text-gray-600"
-          >
-            {t('menu.onlyTheFinest')}
-          </button>
-          <button 
-            onClick={() => scrollToSection('whyIberico')}
-            className="text-sm font-medium tracking-wide transition-colors duration-200 text-black hover:text-gray-600"
-          >
-            {t('menu.whyIberico')}
-          </button>
-          <button 
-            onClick={() => scrollToSection('about')}
-            className="text-sm font-medium tracking-wide transition-colors duration-200 text-black hover:text-gray-600"
-          >
-            {t('menu.about')}
-          </button>
-          <button 
-            onClick={() => scrollToSection('contact')}
-            className="text-sm font-medium tracking-wide transition-colors duration-200 text-black hover:text-gray-600"
-          >
-            {t('menu.contact')}
-          </button>
-        </nav>
+          
+          {menuHovered && (
+            <div 
+              className="absolute top-full right-0 mt-2 py-3 w-56 bg-white shadow-lg rounded-md z-50"
+              onMouseLeave={() => setMenuHovered(false)}
+            >
+              <button 
+                onClick={() => scrollToSection('home')}
+                className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors"
+              >
+                {t('menu.home')}
+              </button>
+              <button 
+                onClick={() => scrollToSection('whatWeDo')}
+                className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors"
+              >
+                {t('menu.whatWeDo')}
+              </button>
+              <button 
+                onClick={() => scrollToSection('whereToFindUs')}
+                className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors"
+              >
+                {t('menu.whereToFindUs')}
+              </button>
+              <button 
+                onClick={() => scrollToSection('onlyTheFinest')}
+                className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors"
+              >
+                {t('menu.onlyTheFinest')}
+              </button>
+              <button 
+                onClick={() => scrollToSection('whyIberico')}
+                className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors"
+              >
+                {t('menu.whyIberico')}
+              </button>
+              <button 
+                onClick={() => scrollToSection('about')}
+                className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors"
+              >
+                {t('menu.about')}
+              </button>
+              <button 
+                onClick={() => scrollToSection('contact')}
+                className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors"
+              >
+                {t('menu.contact')}
+              </button>
+            </div>
+          )}
+        </div>
 
         {/* Language selector */}
         <div className="relative">
