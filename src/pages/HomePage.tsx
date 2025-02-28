@@ -2,7 +2,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { toast } from '@/components/ui/use-toast';
-import { MessageSquare, Share2 } from 'lucide-react';
 
 const HomePage = () => {
   const { t } = useTranslation();
@@ -178,7 +177,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Where To Find Us Section - Updated with Red Note and WeChat */}
+      {/* Where To Find Us Section - Updated with Red Note and WeChat logos */}
       <section 
         id="whereToFindUs"
         ref={whereToFindUsRef}
@@ -194,18 +193,26 @@ const HomePage = () => {
               {/* Red Note (Xiaohongshu) */}
               <div className="flex flex-col items-center">
                 <h3 className="font-poppins text-2xl font-medium mb-8">Red Note (小红书)</h3>
-                <div className="aspect-square w-48 h-48 bg-red-50 rounded-xl flex items-center justify-center">
-                  {/* Using Share2 icon as an alternative to XiaohongshuIcon */}
-                  <Share2 size={80} className="text-red-500" />
+                <div className="w-48 h-48 flex items-center justify-center">
+                  {/* Using the uploaded Xiaohongshu logo */}
+                  <img 
+                    src="/lovable-uploads/358f3709-49f9-4477-a553-8242e3b48ea7.png" 
+                    alt="Xiaohongshu (Red Note) Logo" 
+                    className="w-full h-full object-contain"
+                  />
                 </div>
               </div>
               
               {/* WeChat */}
               <div className="flex flex-col items-center">
                 <h3 className="font-poppins text-2xl font-medium mb-8">WeChat (微信)</h3>
-                <div className="aspect-square w-48 h-48 bg-green-50 rounded-xl flex items-center justify-center">
-                  {/* Using MessageSquare icon as an alternative to WechatIcon */}
-                  <MessageSquare size={80} className="text-green-500" />
+                <div className="w-48 h-48 flex items-center justify-center">
+                  {/* Using the uploaded WeChat logo */}
+                  <img 
+                    src="/lovable-uploads/6ca657e3-95a8-4876-bfbc-b5979db3b277.png" 
+                    alt="WeChat Logo" 
+                    className="w-full h-full object-contain"
+                  />
                 </div>
               </div>
             </div>
