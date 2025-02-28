@@ -36,10 +36,10 @@
     },
     "contact": {
       "title": "联系我们",
-      "name": "姓名",
-      "email": "电子邮件",
-      "purpose": "联系目的",
-      "message": "消息",
+      "subtitle": "想与我们联系或合作？在下面的表格中联系我们",
+      "name": "您的姓名",
+      "email": "电子邮件/微信ID",
+      "message": "留言",
       "submit": "提交",
       "thankyou": "感谢您的留言。我们将很快与您联系。"
     }

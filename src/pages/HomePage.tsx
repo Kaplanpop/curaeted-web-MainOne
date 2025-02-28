@@ -18,14 +18,13 @@ const HomePage = () => {
   // Contact form state
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
-    purpose: '',
+    contact: '',
     message: '',
   });
   
   const [formSubmitted, setFormSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -46,8 +45,7 @@ const HomePage = () => {
       // Reset form after successful submission
       setFormData({
         name: '',
-        email: '',
-        purpose: '',
+        contact: '',
         message: '',
       });
       
@@ -376,22 +374,26 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Contact Section - Updated with new simplified design */}
       <section 
         id="contact"
         ref={contactRef}
-        className="py-20 bg-gray-50 opacity-0"
+        className="py-20 bg-white opacity-0"
       >
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <h2 className="font-poppins text-3xl md:text-4xl font-bold mb-12 text-center text-black">
-              {t('sections.contact.title')}
+            <h2 className="font-poppins text-5xl md:text-6xl font-bold mb-6 text-black">
+              Contact
             </h2>
             
-            <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-sm">
-              <div className="mb-6">
-                <label htmlFor="name" className="block font-roboto font-medium mb-2 text-gray-900">
-                  {t('sections.contact.name')}
+            <p className="text-xl text-gray-700 font-roboto mb-12">
+              Want to get in touch or partner with us? Contact us in the form below
+            </p>
+            
+            <form onSubmit={handleSubmit} className="space-y-8">
+              <div>
+                <label htmlFor="name" className="block font-roboto text-lg mb-3 text-gray-900">
+                  Your name
                 </label>
                 <input
                   type="text"
@@ -400,57 +402,37 @@ const HomePage = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-black focus:border-black transition-colors"
+                  className="w-full border border-gray-300 px-4 py-3 text-lg"
                 />
               </div>
               
-              <div className="mb-6">
-                <label htmlFor="email" className="block font-roboto font-medium mb-2 text-gray-900">
-                  {t('sections.contact.email')}
+              <div>
+                <label htmlFor="contact" className="block font-roboto text-lg mb-3 text-gray-900">
+                  Email address/WeChat ID
                 </label>
                 <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
+                  type="text"
+                  id="contact"
+                  name="contact"
+                  value={formData.contact}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-black focus:border-black transition-colors"
+                  className="w-full border border-gray-300 px-4 py-3 text-lg"
                 />
               </div>
               
-              <div className="mb-6">
-                <label htmlFor="purpose" className="block font-roboto font-medium mb-2 text-gray-900">
-                  {t('sections.contact.purpose')}
+              <div>
+                <label htmlFor="message" className="block font-roboto text-lg mb-3 text-gray-900">
+                  Message
                 </label>
-                <select
-                  id="purpose"
-                  name="purpose"
-                  value={formData.purpose}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-black focus:border-black transition-colors"
-                >
-                  <option value="" disabled>Select purpose</option>
-                  <option value="general">General Inquiry</option>
-                  <option value="wholesale">Wholesale</option>
-                  <option value="retail">Retail Purchase</option>
-                  <option value="collaboration">Business Collaboration</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-              
-              <div className="mb-6">
-                <label htmlFor="message" className="block font-roboto font-medium mb-2 text-gray-900">
-                  {t('sections.contact.message')}
-                </label>
-                <textarea
+                <input
+                  type="text"
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-black focus:border-black transition-colors resize-none"
+                  required
+                  className="w-full border border-gray-300 px-4 py-3 text-lg"
                 />
               </div>
               
@@ -458,7 +440,7 @@ const HomePage = () => {
                 <button
                   type="submit"
                   disabled={formSubmitted}
-                  className="w-full py-3 bg-black text-white font-medium rounded-md hover:bg-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black"
+                  className="w-full py-3 bg-black text-white font-medium hover:bg-gray-800 transition-colors text-lg"
                 >
                   {formSubmitted ? (
                     <span className="flex items-center justify-center">
@@ -469,7 +451,7 @@ const HomePage = () => {
                       Processing...
                     </span>
                   ) : (
-                    t('sections.contact.submit')
+                    "Submit"
                   )}
                 </button>
               </div>

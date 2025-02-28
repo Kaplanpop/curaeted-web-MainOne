@@ -35,10 +35,10 @@
       "content": "We are a team of passionate food enthusiasts dedicated to bringing the authentic taste of Spain to discerning customers. Our journey began with a simple mission: to share the extraordinary flavors of premium Iberico products with the world."
     },
     "contact": {
-      "title": "Contact Us",
-      "name": "Name",
-      "email": "Email",
-      "purpose": "Purpose of Contact",
+      "title": "Contact",
+      "subtitle": "Want to get in touch or partner with us? Contact us in the form below",
+      "name": "Your name",
+      "email": "Email address/WeChat ID",
       "message": "Message",
       "submit": "Submit",
       "thankyou": "Thank you for your message. We will contact you soon."

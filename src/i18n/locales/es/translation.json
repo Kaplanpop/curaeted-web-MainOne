@@ -35,10 +35,10 @@
       "content": "Somos un equipo de apasionados por la comida dedicados a llevar el auténtico sabor de España a clientes exigentes. Nuestro viaje comenzó con una misión simple: compartir los extraordinarios sabores de los productos ibéricos premium con el mundo."
     },
     "contact": {
-      "title": "Contáctanos",
-      "name": "Nombre",
-      "email": "Correo Electrónico",
-      "purpose": "Motivo de Contacto",
+      "title": "Contacto",
+      "subtitle": "¿Quieres ponerte en contacto o asociarte con nosotros? Contáctanos en el formulario a continuación",
+      "name": "Tu nombre",
+      "email": "Correo electrónico/ID de WeChat",
       "message": "Mensaje",
       "submit": "Enviar",
       "thankyou": "Gracias por tu mensaje. Nos pondremos en contacto contigo pronto."
