@@ -91,21 +91,24 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen pt-20">
-      {/* Home Section - Updated with black background and new design - Headings removed */}
+      {/* Home Section - Updated with new background image */}
       <section 
         id="home"
         ref={homeRef}
         className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden opacity-0 bg-black text-white"
+        style={{
+          backgroundImage: `url('/lovable-uploads/d290b2e4-948d-4798-8956-f20768dd53a1.png')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
       >
         <div className="container mx-auto px-4 relative z-10 flex flex-col items-center justify-center">
-          <div className="flex flex-col items-center">
-            <img 
-              src="/lovable-uploads/5d02e8d4-28f1-405d-9732-61ea1bd8acbd.png" 
-              alt="Curaeted Logo" 
-              className="w-full max-w-xl mb-8"
-            />
+          <div className="flex flex-col items-center bg-black bg-opacity-50 p-8 rounded-lg">
+            <h1 className="text-6xl md:text-7xl font-poppins text-white mb-4 font-light text-center">
+              Curæted
+            </h1>
             
-            <p className="text-xl md:text-2xl text-white mb-8 font-roboto">
+            <p className="text-xl md:text-2xl text-white mb-8 font-roboto text-center">
               Bringing the finest <span className="underline decoration-2 underline-offset-4">Iberico</span> products to China
             </p>
           </div>
