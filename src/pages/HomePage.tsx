@@ -189,30 +189,51 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Where To Find Us Section */}
+      {/* Where To Find Us Section - Updated with Red Note and WeChat */}
       <section 
         id="whereToFindUs"
         ref={whereToFindUsRef}
-        className="py-20 bg-gray-50 opacity-0"
+        className="py-20 bg-white opacity-0"
       >
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="font-poppins text-3xl md:text-4xl font-bold mb-12 text-center text-black">
-              {t('sections.whereToFindUs.title')}
+            <h2 className="font-poppins text-5xl md:text-6xl font-bold mb-16 text-black">
+              Where to find us
             </h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-              <div className="order-2 md:order-1">
-                <p className="text-lg text-gray-700 font-roboto mb-8 leading-relaxed">
-                  {t('sections.whereToFindUs.content')}
-                </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+              {/* Red Note */}
+              <div className="flex flex-col">
+                <h3 className="font-poppins text-2xl font-medium mb-8">Red Note</h3>
+                <div className="aspect-square bg-gray-100 flex items-center justify-center">
+                  <img 
+                    src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3" 
+                    alt="Red Note App" 
+                    className="max-h-full object-contain"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = "/placeholder.svg";
+                      target.alt = "Red Note Placeholder";
+                    }}
+                  />
+                </div>
               </div>
-              <div className="img-wrapper overflow-hidden rounded-lg aspect-square order-1 md:order-2">
-                <img 
-                  src="https://images.unsplash.com/photo-1438565434616-3ef039228b15?ixlib=rb-4.0.3" 
-                  alt="Quality Iberico" 
-                  className="w-full h-full object-cover"
-                />
+              
+              {/* WeChat */}
+              <div className="flex flex-col">
+                <h3 className="font-poppins text-2xl font-medium mb-8">WeChat</h3>
+                <div className="aspect-square bg-gray-100 flex items-center justify-center">
+                  <img 
+                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3" 
+                    alt="WeChat App" 
+                    className="max-h-full object-contain"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = "/placeholder.svg";
+                      target.alt = "WeChat Placeholder";
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </div>
