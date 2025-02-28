@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { toast } from '@/components/ui/use-toast';
-import { XiaohongshuIcon, WechatIcon } from 'lucide-react';
+import { MessageSquare, Share2 } from 'lucide-react';
 
 const HomePage = () => {
   const { t } = useTranslation();
@@ -195,7 +195,8 @@ const HomePage = () => {
               <div className="flex flex-col items-center">
                 <h3 className="font-poppins text-2xl font-medium mb-8">Red Note (小红书)</h3>
                 <div className="aspect-square w-48 h-48 bg-red-50 rounded-xl flex items-center justify-center">
-                  <XiaohongshuIcon size={100} className="text-red-500" />
+                  {/* Using Share2 icon as an alternative to XiaohongshuIcon */}
+                  <Share2 size={80} className="text-red-500" />
                 </div>
               </div>
               
@@ -203,7 +204,8 @@ const HomePage = () => {
               <div className="flex flex-col items-center">
                 <h3 className="font-poppins text-2xl font-medium mb-8">WeChat (微信)</h3>
                 <div className="aspect-square w-48 h-48 bg-green-50 rounded-xl flex items-center justify-center">
-                  <WechatIcon size={100} className="text-green-500" />
+                  {/* Using MessageSquare icon as an alternative to WechatIcon */}
+                  <MessageSquare size={80} className="text-green-500" />
                 </div>
               </div>
             </div>
