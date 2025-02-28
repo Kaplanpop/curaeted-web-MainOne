@@ -292,7 +292,7 @@ const HomePage = () => {
             {/* Images for About section */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
               
-              <img src="/lovable-uploads/ac5ed58f-8223-4b03-a99b-e153a4fe6ab5.png" alt="About Curæted 2" className="w-full h-auto rounded-lg object-cover" />
+              
             </div>
           </div>
         </div>
