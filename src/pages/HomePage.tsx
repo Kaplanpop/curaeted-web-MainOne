@@ -95,24 +95,15 @@ const HomePage = () => {
       <section 
         id="home"
         ref={homeRef}
-        className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden opacity-0 bg-black text-white"
-        style={{
-          backgroundImage: `url('/lovable-uploads/d290b2e4-948d-4798-8956-f20768dd53a1.png')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }}
+        className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden opacity-0"
       >
-        <div className="container mx-auto px-4 relative z-10 flex flex-col items-center justify-center">
-          <div className="flex flex-col items-center bg-black bg-opacity-50 p-8 rounded-lg">
-            <h1 className="text-6xl md:text-7xl font-poppins text-white mb-4 font-light text-center">
-              Curæted
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-white mb-8 font-roboto text-center">
-              Bringing the finest <span className="underline decoration-2 underline-offset-4">Iberico</span> products to China
-            </p>
-          </div>
-        </div>
+        <img 
+          src="/lovable-uploads/7fb544ec-1ca6-4d76-bb22-4a900c6f5400.png" 
+          alt="Iberico pigs in field" 
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        />
+        
+        {/* No additional content needed as the image already has the text overlay */}
       </section>
 
       {/* What We Do Section - Updated with new black background design and numbered points */}
