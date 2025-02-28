@@ -1,0 +1,50 @@
+
+{
+  "menu": {
+    "home": "Inicio",
+    "whatWeDo": "Qué Hacemos",
+    "whereToFindUs": "Dónde Encontrarnos",
+    "onlyTheFinest": "Solo lo Mejor",
+    "whyIberico": "Por Qué Ibérico",
+    "about": "Sobre Nosotros",
+    "contact": "Contacto"
+  },
+  "sections": {
+    "home": {
+      "title": "El Mejor Ibérico",
+      "subtitle": "Calidad premium de España a tu mesa"
+    },
+    "whatWeDo": {
+      "title": "Qué Hacemos",
+      "content": "Nos dedicamos a traerte los mejores productos ibéricos, cuidadosamente seleccionados e importados directamente de España. Nuestra pasión por la calidad y la tradición nos impulsa a ofrecerte una experiencia culinaria excepcional."
+    },
+    "whereToFindUs": {
+      "title": "Dónde Encontrarnos",
+      "content": "Nuestros productos están disponibles en tiendas gourmet y restaurantes selectos. Contáctanos para obtener información sobre dónde comprar nuestras selecciones premium de Ibérico."
+    },
+    "onlyTheFinest": {
+      "title": "Solo lo Mejor",
+      "content": "Seleccionamos solo productos ibéricos de la más alta calidad de granjas de confianza en España. Cada producto es cuidadosamente inspeccionado para garantizar que cumpla con nuestros estrictos estándares."
+    },
+    "whyIberico": {
+      "title": "Por Qué Ibérico",
+      "content": "El cerdo ibérico es conocido en todo el mundo por su excepcional calidad, sabor y veteado. La dieta única de bellotas y hierbas naturales le da al ibérico su sabor distintivo y beneficios nutricionales."
+    },
+    "about": {
+      "title": "Sobre Nosotros",
+      "content": "Somos un equipo de apasionados por la comida dedicados a llevar el auténtico sabor de España a clientes exigentes. Nuestro viaje comenzó con una misión simple: compartir los extraordinarios sabores de los productos ibéricos premium con el mundo."
+    },
+    "contact": {
+      "title": "Contáctanos",
+      "name": "Nombre",
+      "email": "Correo Electrónico",
+      "purpose": "Motivo de Contacto",
+      "message": "Mensaje",
+      "submit": "Enviar",
+      "thankyou": "Gracias por tu mensaje. Nos pondremos en contacto contigo pronto."
+    }
+  },
+  "language": {
+    "select": "Seleccionar Idioma"
+  }
+}

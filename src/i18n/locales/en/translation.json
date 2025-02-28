@@ -1,0 +1,50 @@
+
+{
+  "menu": {
+    "home": "Home",
+    "whatWeDo": "What We Do",
+    "whereToFindUs": "Where To Find Us",
+    "onlyTheFinest": "Only The Finest",
+    "whyIberico": "Why Iberico",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "sections": {
+    "home": {
+      "title": "The Finest Iberico",
+      "subtitle": "Premium quality from Spain to your table"
+    },
+    "whatWeDo": {
+      "title": "What We Do",
+      "content": "We are dedicated to bringing you the finest Iberico products, carefully selected and imported directly from Spain. Our passion for quality and tradition drives us to provide you with an exceptional culinary experience."
+    },
+    "whereToFindUs": {
+      "title": "Where To Find Us",
+      "content": "Our products are available in select gourmet shops and restaurants. Contact us for information on where to purchase our premium Iberico selections."
+    },
+    "onlyTheFinest": {
+      "title": "Only The Finest",
+      "content": "We select only the highest quality Iberico products from trusted farms in Spain. Each product is carefully inspected to ensure it meets our strict standards."
+    },
+    "whyIberico": {
+      "title": "Why Iberico",
+      "content": "Iberico pork is known worldwide for its exceptional quality, flavor, and marbling. The unique diet of acorns and natural herbs gives Iberico its distinctive taste and nutritional benefits."
+    },
+    "about": {
+      "title": "About Us",
+      "content": "We are a team of passionate food enthusiasts dedicated to bringing the authentic taste of Spain to discerning customers. Our journey began with a simple mission: to share the extraordinary flavors of premium Iberico products with the world."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "name": "Name",
+      "email": "Email",
+      "purpose": "Purpose of Contact",
+      "message": "Message",
+      "submit": "Submit",
+      "thankyou": "Thank you for your message. We will contact you soon."
+    }
+  },
+  "language": {
+    "select": "Select Language"
+  }
+}
