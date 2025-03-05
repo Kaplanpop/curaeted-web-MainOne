@@ -43,7 +43,7 @@ const AboutSection = () => {
       </div>
       
       {/* Content section */}
-      <div className="bg-white pt-8 pb-20 px-4 md:px-8 lg:px-16">
+      <div className="bg-white pt-8 pb-20 px-4 md:px-8 lg:px-16 text-center">
         <div className="max-w-6xl mx-auto">
           <p className="text-xl text-gray-800 font-roboto font-light text-center mb-16 mx-auto max-w-5xl">
             {t('sections.about.content')}
