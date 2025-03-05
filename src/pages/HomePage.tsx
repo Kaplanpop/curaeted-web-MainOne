@@ -185,7 +185,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Where To Find Us Section - Fixed overlays and positioning */}
+      {/* Where To Find Us Section - Updated with centered logos and no backgrounds */}
       <section id="whereToFindUs" ref={whereToFindUsRef} className="py-20 opacity-0 relative">
         <div className="absolute inset-0 w-full h-full z-0">
           <img src="/lovable-uploads/f6d54519-c7a2-444e-b953-798eb1ef0a19.png" alt="Delicious Iberico dish" className="w-full h-full object-cover object-center" />
@@ -201,14 +201,14 @@ const HomePage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 place-items-center">
               <div className="flex flex-col items-center">
                 <h3 className="font-poppins text-2xl font-medium mb-8 text-white">Red Note (小红书)</h3>
-                <div className="w-40 h-40 bg-red-600 rounded-lg flex items-center justify-center">
+                <div className="w-40 h-40 flex items-center justify-center">
                   <img src="/lovable-uploads/171db970-3a20-4178-bf65-09e4e36e3a1f.png" alt="Xiaohongshu (Red Note) Logo" className="w-28 h-28 object-contain" />
                 </div>
               </div>
               
               <div className="flex flex-col items-center">
                 <h3 className="font-poppins text-2xl font-medium mb-8 text-white">WeChat (微信)</h3>
-                <div className="w-40 h-40 bg-green-600 rounded-lg flex items-center justify-center">
+                <div className="w-40 h-40 flex items-center justify-center">
                   <img src="/lovable-uploads/efd9fd8c-759f-4bac-b403-ebee03fe86b8.png" alt="WeChat Logo" className="w-28 h-28 object-contain" />
                 </div>
               </div>
