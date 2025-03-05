@@ -109,11 +109,26 @@ const HomePage = () => {
   }, []);
 
   return <div className="min-h-screen pt-20">
-      {/* Home Section - Updated with new background image */}
+      {/* Home Section - Updated with video background instead of image */}
       <section id="home" ref={homeRef} className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden opacity-0">
-        <img src="/lovable-uploads/7fb544ec-1ca6-4d76-bb22-4a900c6f5400.png" alt="Iberico pigs in field" className="absolute inset-0 w-full h-full object-cover z-0" />
+        <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
+          {/* Using iframe to embed Google Drive video */}
+          <iframe 
+            src="https://drive.google.com/file/d/1nIziSy6V6cLaFp7ytUFY9lcZLbCzMfNH/preview" 
+            className="w-full h-full object-cover"
+            allow="autoplay; fullscreen"
+            allowFullScreen
+            title="Iberico pigs video"
+          ></iframe>
+        </div>
         
-        {/* No additional content needed as the image already has the text overlay */}
+        {/* Optional overlay to improve text readability if needed */}
+        <div className="absolute inset-0 bg-black/30 z-1"></div>
+        
+        {/* Content can be placed here if you want text over the video */}
+        <div className="relative z-10 text-white text-center px-4">
+          {/* Add any text content you want to overlay on the video here */}
+        </div>
       </section>
 
       {/* What We Do Section - Updated with new black background design and numbered points */}
