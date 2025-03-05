@@ -6,7 +6,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <div className="text-gray-400 text-sm text-center">
+    <div className="text-white text-sm text-center font-sans">
       © {currentYear} Curæted. All rights reserved.
     </div>
   );
