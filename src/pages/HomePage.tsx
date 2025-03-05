@@ -112,7 +112,6 @@ const HomePage = () => {
       {/* Home Section - Updated with auto-playing video and text overlay */}
       <section id="home" ref={homeRef} className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden opacity-0">
         <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
-          {/* Using iframe to embed Google Drive video with autoplay parameter */}
           <iframe 
             src="https://drive.google.com/file/d/1nIziSy6V6cLaFp7ytUFY9lcZLbCzMfNH/preview?autoplay=1&mute=1&loop=1" 
             className="w-full h-full object-cover"
@@ -122,49 +121,47 @@ const HomePage = () => {
           ></iframe>
         </div>
         
-        {/* Darker overlay for better text readability */}
         <div className="absolute inset-0 bg-black/50 z-1"></div>
         
-        {/* Content overlay with text */}
         <div className="relative z-10 text-white text-center px-4 max-w-4xl">
           <h1 className="font-poppins text-7xl mb-4 font-light">Curæted</h1>
           <p className="text-2xl font-light mb-8">Bringing the finest Iberico products to China</p>
         </div>
       </section>
 
-      {/* What We Do Section - Updated with new background image */}
+      {/* What We Do Section - Updated with new layout based on reference image */}
       <section id="whatWeDo" ref={whatWeDoRef} className="py-20 opacity-0 relative">
-        {/* Background Image */}
         <div className="absolute inset-0 w-full h-full z-0">
           <img 
             src="/lovable-uploads/55497852-ecf4-4ed5-8cd7-51aa1336d079.png" 
             alt="Iberico meat inspection" 
             className="w-full h-full object-cover object-center"
           />
-          {/* Dark overlay for better text readability */}
           <div className="absolute inset-0 bg-black/70 z-1"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-5xl mx-auto">
-            <h2 className="font-poppins text-5xl mb-16 text-white font-light md:text-5xl text-center">
+            <h2 className="font-poppins text-5xl mb-8 text-white font-light md:text-5xl text-center">
               What we do
             </h2>
             
+            <p className="text-xl text-white font-roboto text-center font-light mb-16">
+              We focus on <span className="underline">Iberico</span> Pork (cold cuts and fresh meat) and Extra Virgin Olive Oil
+            </p>
+            
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10">
-              {/* Point 1 */}
               <div className="flex items-start">
-                <div className="flex-shrink-0 w-14 h-14 bg-gray-700 rounded-md flex items-center justify-center text-xl font-bold mr-4">
+                <div className="flex-shrink-0 text-4xl font-bold mr-4 text-white">
                   1
                 </div>
                 <p className="text-lg text-white font-roboto leading-relaxed mt-1 font-light">
-                  A new young purveyor of the very finest <span className="">Iberico</span> products to China
+                  A new young purveyor of the very finest <span className="underline">Iberico</span> products to China
                 </p>
               </div>
               
-              {/* Point 3 */}
               <div className="flex items-start">
-                <div className="flex-shrink-0 w-14 h-14 bg-gray-700 rounded-md flex items-center justify-center text-xl font-bold mr-4">
+                <div className="flex-shrink-0 text-4xl font-bold mr-4 text-white">
                   3
                 </div>
                 <p className="text-lg text-white font-roboto leading-relaxed mt-1 font-light">
@@ -172,19 +169,17 @@ const HomePage = () => {
                 </p>
               </div>
               
-              {/* Point 2 */}
               <div className="flex items-start">
-                <div className="flex-shrink-0 w-14 h-14 bg-gray-700 rounded-md flex items-center justify-center text-xl font-bold mr-4">
+                <div className="flex-shrink-0 text-4xl font-bold mr-4 text-white">
                   2
                 </div>
                 <p className="text-lg text-white font-roboto leading-relaxed mt-1 font-light">
-                  We only work with the very finest: <span className="">Iberico</span> pork 100% acorn fed and organic, artisan-made extra virgin olive oil
+                  We only work with the very finest: <span className="underline">Iberico</span> pork 100% acorn fed and organic, artisan-made extra virgin olive oil
                 </p>
               </div>
               
-              {/* Point 4 */}
               <div className="flex items-start">
-                <div className="flex-shrink-0 w-14 h-14 bg-gray-700 rounded-md flex items-center justify-center text-xl font-bold mr-4">
+                <div className="flex-shrink-0 text-4xl font-bold mr-4 text-white">
                   4
                 </div>
                 <p className="text-lg text-white font-roboto leading-relaxed mt-1 font-light">
@@ -193,19 +188,9 @@ const HomePage = () => {
               </div>
             </div>
             
-            {/* Focus statement */}
-            <div className="bg-gray-700/80 rounded-md p-4 mt-10 mb-5 backdrop-blur-sm">
-              <p className="text-lg text-white font-roboto text-center font-light">
-                We focus on <span className="">Iberico</span> Pork (cold cuts and fresh meat) and Extra Virgin Olive Oil
-              </p>
-            </div>
-            
-            {/* Traceability statement */}
-            <div className="bg-white/90 rounded-md p-5 backdrop-blur-sm">
-              <p className="text-lg text-black font-roboto text-center font-light">
-                We offer full <span className="">traceability</span> for each and every product, so you know where it comes from, how it is raised or produced and how it reaches your table
-              </p>
-            </div>
+            <p className="text-xl text-white font-roboto text-center font-light mt-16">
+              We offer full <span className="underline">traceability</span> for each and every product, so you know where it comes from, how it is raised or produced and how it reaches your table
+            </p>
           </div>
         </div>
       </section>
@@ -219,20 +204,16 @@ const HomePage = () => {
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-              {/* Red Note (Xiaohongshu) */}
               <div className="flex flex-col items-center">
                 <h3 className="font-poppins text-2xl font-medium mb-8">Red Note (小红书)</h3>
                 <div className="w-40 h-40 flex items-center justify-center">
-                  {/* Using the uploaded Xiaohongshu logo */}
                   <img src="/lovable-uploads/171db970-3a20-4178-bf65-09e4e36e3a1f.png" alt="Xiaohongshu (Red Note) Logo" className="w-32 h-32 object-contain" />
                 </div>
               </div>
               
-              {/* WeChat */}
               <div className="flex flex-col items-center">
                 <h3 className="font-poppins text-2xl font-medium mb-8">WeChat (微信)</h3>
                 <div className="w-40 h-40 flex items-center justify-center">
-                  {/* Using the uploaded WeChat logo */}
                   <img src="/lovable-uploads/efd9fd8c-759f-4bac-b403-ebee03fe86b8.png" alt="WeChat Logo" className="w-32 h-32 object-contain" />
                 </div>
               </div>
@@ -250,7 +231,6 @@ const HomePage = () => {
             </h2>
             
             <div className="mb-16">
-              {/* YouTube Video Embed */}
               <div className="aspect-w-16 aspect-h-9 mb-16">
                 <iframe 
                   className="w-full h-full rounded-lg shadow-lg"
@@ -262,7 +242,6 @@ const HomePage = () => {
                 ></iframe>
               </div>
               
-              {/* Direct Video File Example */}
               <div className="mt-16">
                 <h3 className="font-poppins text-3xl mb-8 text-white font-light text-center">
                   Our Process
@@ -272,22 +251,13 @@ const HomePage = () => {
                   controls
                   poster="/lovable-uploads/7fb544ec-1ca6-4d76-bb22-4a900c6f5400.png"
                 >
-                  {/* Replace this with your actual video file path */}
                   <source src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
             </div>
             
-            {/* Image Grid for Product Photos */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Image 1 */}
-              
-              
-              {/* Image 2 */}
-              
-              
-              {/* Image 3 */}
               
             </div>
           </div>
@@ -310,8 +280,6 @@ const HomePage = () => {
               <p className="text-lg text-gray-700 font-roboto leading-relaxed font-light">
                 For our Chinese audiences, we understand that a deep respect for tradition and quality is at the heart of every culinary experience. Our products not only offer superior taste but also align with a holistic approach to wellness and cultural heritage. By blending centuries-old techniques with modern sustainability, Curæted delivers ingredients that enhance both time-honored recipes and contemporary dining, inviting you to savor a luxurious journey that honors your rich gastronomic legacy.
               </p>
-              
-              
             </div>
           </div>
         </div>
@@ -330,9 +298,7 @@ const HomePage = () => {
                 Curæted aims to reconnect people with the best farming, and help artisanal farmers to thrive. With roots in Extremadura, a traditional faming region of Spain, with some of the finest Spanish agricultural products, from Iberico pigs, extra virgin olive oil, cherries or honey, Curæted thought that these farmers could actually thrive if only it was easier for them to access markets and spread the word of their excellence. This was the perfect match for the growing craving of safer, better, healthier, organic and premium food for Chinese ever more sophisticated consumers, who want and won't settle if not for the best.
               </p>
               
-              {/* Bullet Points styled as in the reference image */}
               <div className="space-y-12 mt-16">
-                {/* Bullet Point 1 */}
                 <div className="flex">
                   <div className="mr-6">
                     <div className="w-1 h-16 bg-gray-600 rounded-full"></div>
@@ -343,7 +309,6 @@ const HomePage = () => {
                   </div>
                 </div>
                 
-                {/* Bullet Point 2 */}
                 <div className="flex">
                   <div className="mr-6">
                     <div className="w-1 h-16 bg-gray-600 rounded-full"></div>
@@ -354,7 +319,6 @@ const HomePage = () => {
                   </div>
                 </div>
                 
-                {/* Bullet Point 3 */}
                 <div className="flex">
                   <div className="mr-6">
                     <div className="w-1 h-24 bg-gray-600 rounded-full"></div>
@@ -369,9 +333,7 @@ const HomePage = () => {
               </div>
             </div>
 
-            {/* Images for About section */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-              
               
             </div>
           </div>
