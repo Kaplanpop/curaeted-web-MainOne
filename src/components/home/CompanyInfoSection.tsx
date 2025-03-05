@@ -1,4 +1,3 @@
-
 const CompanyInfoSection = () => {
   return (
     <section className="py-16 bg-black text-white">
@@ -7,13 +6,11 @@ const CompanyInfoSection = () => {
           <img src="/lovable-uploads/32a591da-11d7-4261-9f86-14c23dc0bb12.png" alt="Curaeted Logo" className="w-full max-w-3xl mb-8" />
           
           <div className="space-y-2 text-center mb-10">
-            <p className="text-lg">Extremadura, Spain</p>
-            <p className="text-lg">info@curaeted.com</p>
+            {/* Company info content */}
           </div>
           
           <div className="flex flex-col items-center space-y-2 mb-10">
-            <p className="text-sm text-gray-400">© 2024 Curæted. All rights reserved.</p>
-            <p className="text-sm text-gray-400">Follow us on social media for updates and special offers</p>
+            {/* Additional company info */}
           </div>
         </div>
       </div>
