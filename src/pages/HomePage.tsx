@@ -364,13 +364,13 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Contact Section - Updated with image position adjustment */}
+      {/* Contact Section - Updated to match reference image */}
       <section id="contact" ref={contactRef} className="relative opacity-0 overflow-hidden">
         <div className="absolute inset-0 w-full h-full z-0">
           <img 
             src="/lovable-uploads/d2c12184-1b46-47de-ab75-c5ff11e4a8fd.png" 
             alt="Olive harvesting" 
-            className="w-full h-full object-cover object-center object-bottom"
+            className="w-full h-full object-cover object-top"
           />
           <div className="absolute inset-0 bg-black/30"></div>
         </div>
