@@ -6,7 +6,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <div className="py-6 text-gray-400 text-sm text-center">
+    <div className="text-gray-400 text-sm text-center">
       © {currentYear} Curæted. All rights reserved.
     </div>
   );
