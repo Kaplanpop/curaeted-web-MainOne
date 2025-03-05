@@ -1,13 +1,9 @@
-
 import { useRef } from 'react';
 import { useIntersectionObserver } from '@/utils/intersectionObserver';
-
 const WhereToFindUsSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   useIntersectionObserver(sectionRef);
-
-  return (
-    <section id="whereToFindUs" ref={sectionRef} className="py-20 opacity-0 relative h-screen min-h-[600px]">
+  return <section id="whereToFindUs" ref={sectionRef} className="py-20 opacity-0 relative h-screen min-h-[600px]">
       <div className="absolute inset-0 w-full h-full z-0">
         <img src="/lovable-uploads/f6d54519-c7a2-444e-b953-798eb1ef0a19.png" alt="Delicious Iberico dish" className="w-full h-full object-cover object-center" />
         <div className="absolute inset-0 bg-black/70 z-1"></div>
@@ -19,9 +15,7 @@ const WhereToFindUsSection = () => {
             Where to find us
           </h2>
           
-          <p className="font-roboto text-lg md:text-xl text-white max-w-2xl text-center mx-auto mb-16">
-            Find us on these platforms
-          </p>
+          
           
           <div className="flex flex-col md:flex-row justify-center items-center gap-16 mx-auto max-w-2xl">
             <div className="flex flex-col items-center">
@@ -40,8 +34,6 @@ const WhereToFindUsSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default WhereToFindUsSection;
