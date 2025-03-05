@@ -1,3 +1,6 @@
+
+import Footer from "../Footer";
+
 const CompanyInfoSection = () => {
   return <section className="py-16 bg-black text-white">
       <div className="container mx-auto px-4">
@@ -15,6 +18,8 @@ const CompanyInfoSection = () => {
           <div className="flex flex-col items-center space-y-2 mb-10">
             {/* Additional company info */}
           </div>
+
+          <Footer />
         </div>
       </div>
     </section>;
