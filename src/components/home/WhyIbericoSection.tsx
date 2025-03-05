@@ -38,9 +38,13 @@ const WhyIbericoSection = () => {
       </div>
       
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-center px-4">
-        <h2 className="font-poppins text-6xl mb-10 text-white font-light md:text-7xl">
+        <h2 className="font-poppins text-5xl md:text-6xl text-white font-light mb-4">
           Why Iberico
         </h2>
+        
+        <p className="font-roboto text-lg md:text-xl text-white max-w-2xl text-center mx-auto mb-8">
+          Excellence in every bite
+        </p>
         
         <div className="max-w-5xl mx-auto px-8">
           <p className="text-lg text-white font-roboto leading-relaxed font-light mb-8">

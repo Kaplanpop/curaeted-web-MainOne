@@ -1,4 +1,3 @@
-
 import { useRef } from 'react';
 import { useIntersectionObserver } from '@/utils/intersectionObserver';
 
@@ -38,15 +37,13 @@ const OnlyTheFinestSection = () => {
       </div>
       
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-center px-4">
-        <h2 className="font-poppins text-6xl mb-6 text-white font-light md:text-7xl">
+        <h2 className="font-poppins text-5xl md:text-6xl text-white font-light mb-4">
           Only the finest
         </h2>
-        <div className="max-w-2xl text-center">
-          <p className="text-xl text-white font-roboto text-center font-light mt-2">
-            100% Iberico, 100% acorn fed<br />
-            Ecologically produced extra virgin olive oil
-          </p>
-        </div>
+        <p className="font-roboto text-lg md:text-xl text-white max-w-2xl text-center mx-auto">
+          100% Iberico, 100% acorn fed<br />
+          Ecologically produced extra virgin olive oil
+        </p>
       </div>
     </section>
   );

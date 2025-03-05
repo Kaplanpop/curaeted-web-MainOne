@@ -21,10 +21,10 @@ const AboutSection = () => {
           
           {/* Title overlay */}
           <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <h2 className="font-poppins text-4xl md:text-6xl text-white font-light z-10 mb-2">
+            <h2 className="font-poppins text-5xl md:text-6xl text-white font-light mb-4">
               {t('sections.about.title')}
             </h2>
-            <p className="font-roboto text-lg md:text-xl text-white z-10 max-w-2xl text-center px-4">
+            <p className="font-roboto text-lg md:text-xl text-white max-w-2xl text-center mx-auto">
               {t('sections.about.subtitle')}
             </p>
           </div>

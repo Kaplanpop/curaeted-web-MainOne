@@ -14,12 +14,12 @@ const WhatWeDoSection = () => {
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="font-poppins text-5xl mb-8 text-white font-light md:text-5xl text-center">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="font-poppins text-5xl md:text-6xl text-white font-light mb-4">
             What we do
           </h2>
           
-          <p className="text-xl text-white font-roboto text-center font-light mb-16">
+          <p className="font-roboto text-lg md:text-xl text-white max-w-2xl text-center mx-auto mb-16">
             We focus on <span className="underline">Iberico</span> Pork (cold cuts and fresh meat) and Extra Virgin Olive Oil
           </p>
           

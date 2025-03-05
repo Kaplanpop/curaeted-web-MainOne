@@ -15,9 +15,13 @@ const WhereToFindUsSection = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-poppins text-5xl mb-16 text-white font-light md:text-5xl text-center">
+          <h2 className="font-poppins text-5xl md:text-6xl text-white font-light mb-4">
             Where to find us
           </h2>
+          
+          <p className="font-roboto text-lg md:text-xl text-white max-w-2xl text-center mx-auto mb-16">
+            Find us on these platforms
+          </p>
           
           <div className="flex flex-col md:flex-row justify-center items-center gap-16 mx-auto max-w-2xl">
             <div className="flex flex-col items-center">

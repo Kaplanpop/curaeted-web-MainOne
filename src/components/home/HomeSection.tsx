@@ -15,8 +15,10 @@ const HomeSection = () => {
       <div className="absolute inset-0 bg-black/50 z-1"></div>
       
       <div className="relative z-10 text-white text-center px-4 max-w-4xl">
-        <h1 className="font-poppins text-7xl mb-4 font-light">Curæted</h1>
-        <p className="text-2xl font-light mb-8">Bringing the finest Iberico products to China</p>
+        <h2 className="font-poppins text-5xl md:text-6xl text-white font-light mb-4">Curæted</h2>
+        <p className="font-roboto text-lg md:text-xl text-white max-w-2xl text-center mx-auto">
+          Bringing the finest Iberico products to China
+        </p>
       </div>
     </section>
   );
