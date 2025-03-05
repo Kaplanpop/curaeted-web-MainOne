@@ -109,25 +109,26 @@ const HomePage = () => {
   }, []);
 
   return <div className="min-h-screen pt-20">
-      {/* Home Section - Updated with video background instead of image */}
+      {/* Home Section - Updated with auto-playing video and text overlay */}
       <section id="home" ref={homeRef} className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden opacity-0">
         <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
-          {/* Using iframe to embed Google Drive video */}
+          {/* Using iframe to embed Google Drive video with autoplay parameter */}
           <iframe 
-            src="https://drive.google.com/file/d/1nIziSy6V6cLaFp7ytUFY9lcZLbCzMfNH/preview" 
+            src="https://drive.google.com/file/d/1nIziSy6V6cLaFp7ytUFY9lcZLbCzMfNH/preview?autoplay=1&mute=1&loop=1" 
             className="w-full h-full object-cover"
-            allow="autoplay; fullscreen"
+            allow="autoplay; fullscreen; loop"
             allowFullScreen
             title="Iberico pigs video"
           ></iframe>
         </div>
         
-        {/* Optional overlay to improve text readability if needed */}
-        <div className="absolute inset-0 bg-black/30 z-1"></div>
+        {/* Darker overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/50 z-1"></div>
         
-        {/* Content can be placed here if you want text over the video */}
-        <div className="relative z-10 text-white text-center px-4">
-          {/* Add any text content you want to overlay on the video here */}
+        {/* Content overlay with text */}
+        <div className="relative z-10 text-white text-center px-4 max-w-4xl">
+          <h1 className="font-poppins text-7xl mb-4 font-light">Curæted</h1>
+          <p className="text-2xl font-light mb-8">Bringing the finest Iberico products to China</p>
         </div>
       </section>
 
