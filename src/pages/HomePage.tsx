@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { toast } from '@/components/ui/use-toast';
 import { supabase } from '@/integrations/supabase/client';
+
 const HomePage = () => {
   const {
     t
@@ -24,6 +25,7 @@ const HomePage = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const {
       name,
@@ -34,6 +36,7 @@ const HomePage = () => {
       [name]: value
     }));
   };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -83,6 +86,7 @@ const HomePage = () => {
       setIsSubmitting(false);
     }
   };
+
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -103,6 +107,7 @@ const HomePage = () => {
       });
     };
   }, []);
+
   return <div className="min-h-screen pt-20">
       {/* Home Section - Updated with new background image */}
       <section id="home" ref={homeRef} className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden opacity-0">
@@ -209,7 +214,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Only The Finest Section - Updated with black background */}
+      {/* Only The Finest Section - Updated with video support */}
       <section id="onlyTheFinest" ref={onlyTheFinestRef} className="py-20 bg-black text-white opacity-0">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
@@ -218,7 +223,33 @@ const HomePage = () => {
             </h2>
             
             <div className="mb-16">
+              {/* YouTube Video Embed */}
+              <div className="aspect-w-16 aspect-h-9 mb-16">
+                <iframe 
+                  className="w-full h-full rounded-lg shadow-lg"
+                  src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                  title="Iberico Product Video"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
               
+              {/* Direct Video File Example */}
+              <div className="mt-16">
+                <h3 className="font-poppins text-3xl mb-8 text-white font-light text-center">
+                  Our Process
+                </h3>
+                <video 
+                  className="w-full rounded-lg shadow-lg" 
+                  controls
+                  poster="/lovable-uploads/7fb544ec-1ca6-4d76-bb22-4a900c6f5400.png"
+                >
+                  {/* Replace this with your actual video file path */}
+                  <source src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
             </div>
             
             {/* Image Grid for Product Photos */}
@@ -392,4 +423,5 @@ const HomePage = () => {
       </section>
     </div>;
 };
+
 export default HomePage;
