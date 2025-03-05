@@ -83,7 +83,7 @@ const ContactSection = () => {
           src="/lovable-uploads/d2c12184-1b46-47de-ab75-c5ff11e4a8fd.png" 
           alt="Olive harvesting" 
           className="w-full h-full object-cover" 
-          style={{ objectPosition: '0 85%' }} 
+          style={{ objectPosition: '0 75%' }} 
         />
         <div className="absolute inset-0 bg-black/30"></div>
       </div>

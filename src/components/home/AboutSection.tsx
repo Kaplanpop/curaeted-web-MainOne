@@ -12,7 +12,8 @@ const AboutSection = () => {
         <img 
           src="/lovable-uploads/d3af88a4-5ccc-4216-908f-7b24fa94e749.png" 
           alt="Iberico pigs in cork oak forest" 
-          className="w-full h-full object-cover object-center" 
+          className="w-full h-full object-cover" 
+          style={{ objectPosition: '0 70%' }}  
         />
       </div>
       
