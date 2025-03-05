@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { toast } from '@/components/ui/use-toast';
@@ -80,10 +79,9 @@ const ContactSection = () => {
     <section id="contact" ref={sectionRef} className="relative opacity-0 overflow-hidden">
       <div className="absolute inset-0 w-full h-full z-0">
         <img 
-          src="/lovable-uploads/d2c12184-1b46-47de-ab75-c5ff11e4a8fd.png" 
+          src="/lovable-uploads/db67131f-fe38-463d-bb25-fe337dd806a9.png" 
           alt="Olive harvesting" 
           className="w-full h-full object-cover" 
-          style={{ objectPosition: 'center bottom' }} 
         />
         <div className="absolute inset-0 bg-black/30"></div>
       </div>
