@@ -6,10 +6,12 @@ const CompanyInfoSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto flex flex-col items-center">
           
-          
-          <img src="/lovable-uploads/32a591da-11d7-4261-9f86-14c23dc0bb12.png" alt="Curaeted Logo" className="w-full max-w-3xl mb-8" />
-          
-          
+          <div className="relative w-full">
+            <img src="/lovable-uploads/32a591da-11d7-4261-9f86-14c23dc0bb12.png" alt="Curaeted Logo" className="w-full max-w-3xl mb-8" />
+            <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50">
+              <Footer />
+            </div>
+          </div>
           
           <div className="space-y-2 text-center mb-10">
             {/* Company info content */}
@@ -18,8 +20,6 @@ const CompanyInfoSection = () => {
           <div className="flex flex-col items-center space-y-2 mb-10">
             {/* Additional company info */}
           </div>
-
-          <Footer />
         </div>
       </div>
     </section>;
