@@ -1,61 +1,64 @@
 
 import { useRef } from 'react';
 import { useIntersectionObserver } from '@/utils/intersectionObserver';
+import { useTranslation } from 'react-i18next';
 
 const AboutSection = () => {
+  const { t } = useTranslation();
   const sectionRef = useRef<HTMLDivElement>(null);
   useIntersectionObserver(sectionRef);
 
   return (
     <section id="about" ref={sectionRef} className="relative opacity-0 overflow-hidden">
-      <div className="absolute inset-0 w-full h-full z-0">
-        <img 
-          src="/lovable-uploads/d3af88a4-5ccc-4216-908f-7b24fa94e749.png" 
-          alt="Iberico pigs in cork oak forest" 
-          className="w-full h-full object-cover" 
-          style={{ objectPosition: '0 70%' }}  
-        />
-      </div>
-      
-      <div className="relative z-10 pt-32 pb-10 md:pt-40 md:pb-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="font-poppins text-6xl mb-2 text-white font-light text-center">
-            About
-          </h2>
-          
-          <p className="text-xl text-white font-roboto font-light text-center mb-16 mx-auto max-w-5xl">
-            Curæted aims to reconnect people with the best farming, and help artisanal farmers to thrive.
-          </p>
+      {/* Hero image with wave overlay */}
+      <div className="relative w-full">
+        <div className="w-full h-[400px] md:h-[500px] overflow-hidden">
+          <img 
+            src="/lovable-uploads/5f4ac115-5846-45e0-8c2f-712e1948718b.png" 
+            alt="Iberico pigs in cork oak forest" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        
+        {/* White wave overlay */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" className="w-full">
+            <path 
+              fill="#ffffff" 
+              fillOpacity="1" 
+              d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
+            ></path>
+          </svg>
         </div>
       </div>
       
-      {/* White curved section */}
-      <div className="relative z-10">
-        <div className="h-16 bg-white rounded-t-[50%] -mt-1"></div>
-        
-        <div className="bg-white pt-8 pb-20 px-4 md:px-8 lg:px-16">
-          <div className="max-w-6xl mx-auto">
-            <p className="text-lg text-gray-800 font-roboto leading-relaxed mb-12">
-              With roots in Extremadura, a traditional faming region of Spain, with some of the finest Spanish agricultural products, from Iberico pigs, extra virgin olive oil, cherries or honey, Curæted thought that these farmers could actually thrive if only it was easier for them to access markets and spread the word of their excellence. This was the perfect match for the growing craving of safer, better, healthier, organic and premium food for Chinese ever more sophisticated consumers, who want and won't settle if not for the best.
-            </p>
+      {/* Content section */}
+      <div className="bg-white pt-8 pb-20 px-4 md:px-8 lg:px-16">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-poppins text-4xl md:text-6xl mb-6 text-black font-light text-center">
+            {t('sections.about.title')}
+          </h2>
+          
+          <p className="text-xl text-gray-800 font-roboto font-light text-center mb-16 mx-auto max-w-5xl">
+            {t('sections.about.content')}
+          </p>
             
-            <div className="space-y-10">
-              <div>
-                <h3 className="text-2xl font-medium mb-2 uppercase">FULLY TRACEABLE PRODUCTS</h3>
-                <p className="text-lg text-gray-700 font-light">From breeding, through farming and to table.</p>
-              </div>
-              
-              <div>
-                <h3 className="text-2xl font-medium mb-2 uppercase">PERSONALISED & EXCLUSIVE</h3>
-                <p className="text-lg text-gray-700 font-light">Airfreight Door-to-Door in less than 15 days</p>
-              </div>
-              
-              <div>
-                <h3 className="text-2xl font-medium mb-2 uppercase">MORE VALUE. MORE SUSTAINABLE</h3>
-                <p className="text-lg text-gray-700 font-light leading-relaxed">
-                  We aim to offer the best and finest products at competitive pricing by delivering directly from producers, while enabling farmers to earn more value and continue producing the best, in the best, traditional way.
-                </p>
-              </div>
+          <div className="space-y-10">
+            <div>
+              <h3 className="text-2xl font-medium mb-2 uppercase">FULLY TRACEABLE PRODUCTS</h3>
+              <p className="text-lg text-gray-700 font-light">From breeding, through farming and to table.</p>
+            </div>
+            
+            <div>
+              <h3 className="text-2xl font-medium mb-2 uppercase">PERSONALISED & EXCLUSIVE</h3>
+              <p className="text-lg text-gray-700 font-light">Airfreight Door-to-Door in less than 15 days</p>
+            </div>
+            
+            <div>
+              <h3 className="text-2xl font-medium mb-2 uppercase">MORE VALUE. MORE SUSTAINABLE</h3>
+              <p className="text-lg text-gray-700 font-light leading-relaxed">
+                We aim to offer the best and finest products at competitive pricing by delivering directly from producers, while enabling farmers to earn more value and continue producing the best, in the best, traditional way.
+              </p>
             </div>
           </div>
         </div>
