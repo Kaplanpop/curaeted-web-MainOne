@@ -326,7 +326,7 @@ const HomePage = () => {
             </h2>
             
             <p className="text-xl text-white font-roboto font-light text-center mb-16 mx-auto max-w-5xl">
-              Curæted aims to reconnect people with the <span className="underline">best farming</span>, and help artisanal farmers to thrive.
+              Curæted aims to reconnect people with the best farming, and help artisanal farmers to thrive.
             </p>
           </div>
         </div>
