@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { toast } from '@/components/ui/use-toast';
 import { supabase } from '@/integrations/supabase/client';
+
 const HomePage = () => {
   const {
     t
@@ -24,6 +25,7 @@ const HomePage = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const {
       name,
@@ -34,6 +36,7 @@ const HomePage = () => {
       [name]: value
     }));
   };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -83,6 +86,7 @@ const HomePage = () => {
       setIsSubmitting(false);
     }
   };
+
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -103,6 +107,7 @@ const HomePage = () => {
       });
     };
   }, []);
+
   return <div className="min-h-screen pt-20">
       {/* Home Section - Updated with auto-playing video and text overlay */}
       <section id="home" ref={homeRef} className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden opacity-0">
@@ -118,7 +123,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* What We Do Section - Updated with new layout based on reference image */}
+      {/* What We Do Section */}
       <section id="whatWeDo" ref={whatWeDoRef} className="py-20 opacity-0 relative">
         <div className="absolute inset-0 w-full h-full z-0">
           <img src="/lovable-uploads/55497852-ecf4-4ed5-8cd7-51aa1336d079.png" alt="Iberico meat inspection" className="w-full h-full object-cover object-center" />
@@ -180,7 +185,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Where To Find Us Section - Updated with background image */}
+      {/* Where To Find Us Section - Fixed overlays and positioning */}
       <section id="whereToFindUs" ref={whereToFindUsRef} className="py-20 opacity-0 relative">
         <div className="absolute inset-0 w-full h-full z-0">
           <img src="/lovable-uploads/f6d54519-c7a2-444e-b953-798eb1ef0a19.png" alt="Delicious Iberico dish" className="w-full h-full object-cover object-center" />
@@ -193,18 +198,18 @@ const HomePage = () => {
               Where to find us
             </h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 place-items-center">
               <div className="flex flex-col items-center">
                 <h3 className="font-poppins text-2xl font-medium mb-8 text-white">Red Note (小红书)</h3>
-                <div className="w-40 h-40 flex items-center justify-center bg-white/10 p-4 rounded-lg backdrop-blur-sm">
-                  <img src="/lovable-uploads/171db970-3a20-4178-bf65-09e4e36e3a1f.png" alt="Xiaohongshu (Red Note) Logo" className="w-32 h-32 object-contain" />
+                <div className="w-40 h-40 bg-red-600 rounded-lg flex items-center justify-center">
+                  <img src="/lovable-uploads/171db970-3a20-4178-bf65-09e4e36e3a1f.png" alt="Xiaohongshu (Red Note) Logo" className="w-28 h-28 object-contain" />
                 </div>
               </div>
               
               <div className="flex flex-col items-center">
                 <h3 className="font-poppins text-2xl font-medium mb-8 text-white">WeChat (微信)</h3>
-                <div className="w-40 h-40 flex items-center justify-center bg-white/10 p-4 rounded-lg backdrop-blur-sm">
-                  <img src="/lovable-uploads/efd9fd8c-759f-4bac-b403-ebee03fe86b8.png" alt="WeChat Logo" className="w-32 h-32 object-contain" />
+                <div className="w-40 h-40 bg-green-600 rounded-lg flex items-center justify-center">
+                  <img src="/lovable-uploads/efd9fd8c-759f-4bac-b403-ebee03fe86b8.png" alt="WeChat Logo" className="w-28 h-28 object-contain" />
                 </div>
               </div>
             </div>
@@ -212,7 +217,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Only The Finest Section - Updated with video support */}
+      {/* Only The Finest Section */}
       <section id="onlyTheFinest" ref={onlyTheFinestRef} className="py-20 bg-black text-white opacity-0">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
@@ -229,7 +234,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Why Iberico Section - Updated with new text and no images */}
+      {/* Why Iberico Section */}
       <section id="whyIberico" ref={whyIbericoRef} className="py-20 bg-gray-50 opacity-0">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
@@ -250,7 +255,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* About Section - Updated with new text and bullet points */}
+      {/* About Section */}
       <section id="about" ref={aboutRef} className="py-20 bg-black text-white opacity-0">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
@@ -305,7 +310,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Contact Section - Updated with new simplified design */}
+      {/* Contact Section */}
       <section id="contact" ref={contactRef} className="py-20 bg-white opacity-0">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
@@ -377,4 +382,5 @@ const HomePage = () => {
       </section>
     </div>;
 };
+
 export default HomePage;
