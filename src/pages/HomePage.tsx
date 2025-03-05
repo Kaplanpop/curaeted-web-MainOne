@@ -444,18 +444,21 @@ const HomePage = () => {
           </div>
         </div>
         
-        {/* Image section with ondulation - moved to bottom */}
+        {/* Image section with curved top - moved to bottom */}
         <div className="relative">
           {/* Curved edge at the top of the image */}
           <div className="h-16 bg-white rounded-b-[50%] relative z-10"></div>
           
+          {/* Image container with curved top using border radius */}
           <div className="relative h-[400px] md:h-[500px]">
-            <img 
-              src="/lovable-uploads/d2c12184-1b46-47de-ab75-c5ff11e4a8fd.png" 
-              alt="Olive harvesting" 
-              className="w-full h-full object-cover object-center"
-            />
-            <div className="absolute inset-0 bg-black/30"></div>
+            <div className="absolute inset-0 rounded-t-[50px] overflow-hidden">
+              <img 
+                src="/lovable-uploads/d2c12184-1b46-47de-ab75-c5ff11e4a8fd.png" 
+                alt="Olive harvesting" 
+                className="w-full h-full object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-black/30"></div>
+            </div>
           </div>
         </div>
       </section>
