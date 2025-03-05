@@ -10,7 +10,7 @@ const AboutSection = () => {
 
   return (
     <section id="about" ref={sectionRef} className="relative opacity-0 overflow-hidden">
-      {/* Hero image with wave overlay and text */}
+      {/* Hero image with wave overlay */}
       <div className="relative w-full">
         <div className="w-full h-[400px] md:h-[500px] overflow-hidden">
           <img 
@@ -18,19 +18,6 @@ const AboutSection = () => {
             alt="Iberico pigs in cork oak forest" 
             className="w-full h-full object-cover"
           />
-          
-          {/* Text overlay */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-8 z-10">
-            <h2 className="font-poppins text-4xl md:text-6xl mb-4 font-light text-center drop-shadow-md">
-              {t('sections.about.title')}
-            </h2>
-            <p className="text-lg md:text-xl font-roboto font-light text-center max-w-3xl drop-shadow-md">
-              {t('sections.about.content')}
-            </p>
-          </div>
-          
-          {/* Dark overlay for better text readability */}
-          <div className="absolute inset-0 bg-black opacity-30"></div>
         </div>
         
         {/* White wave overlay */}
@@ -48,6 +35,14 @@ const AboutSection = () => {
       {/* Content section */}
       <div className="bg-white pt-8 pb-20 px-4 md:px-8 lg:px-16">
         <div className="max-w-6xl mx-auto">
+          <h2 className="font-poppins text-4xl md:text-6xl mb-6 text-black font-light text-center">
+            {t('sections.about.title')}
+          </h2>
+          
+          <p className="text-xl text-gray-800 font-roboto font-light text-center mb-16 mx-auto max-w-5xl">
+            {t('sections.about.content')}
+          </p>
+            
           <div className="space-y-10">
             <div>
               <h3 className="text-2xl font-medium mb-2 uppercase">FULLY TRACEABLE PRODUCTS</h3>
