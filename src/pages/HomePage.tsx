@@ -132,9 +132,20 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* What We Do Section - Updated with new black background design and numbered points */}
-      <section id="whatWeDo" ref={whatWeDoRef} className="py-20 bg-black text-white opacity-0">
-        <div className="container mx-auto px-4">
+      {/* What We Do Section - Updated with new background image */}
+      <section id="whatWeDo" ref={whatWeDoRef} className="py-20 opacity-0 relative">
+        {/* Background Image */}
+        <div className="absolute inset-0 w-full h-full z-0">
+          <img 
+            src="/lovable-uploads/55497852-ecf4-4ed5-8cd7-51aa1336d079.png" 
+            alt="Iberico meat inspection" 
+            className="w-full h-full object-cover object-center"
+          />
+          {/* Dark overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/70 z-1"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-5xl mx-auto">
             <h2 className="font-poppins text-5xl mb-16 text-white font-light md:text-5xl text-center">
               What we do
@@ -183,14 +194,14 @@ const HomePage = () => {
             </div>
             
             {/* Focus statement */}
-            <div className="bg-gray-700 rounded-md p-4 mt-10 mb-5">
+            <div className="bg-gray-700/80 rounded-md p-4 mt-10 mb-5 backdrop-blur-sm">
               <p className="text-lg text-white font-roboto text-center font-light">
                 We focus on <span className="">Iberico</span> Pork (cold cuts and fresh meat) and Extra Virgin Olive Oil
               </p>
             </div>
             
             {/* Traceability statement */}
-            <div className="bg-white rounded-md p-5">
+            <div className="bg-white/90 rounded-md p-5 backdrop-blur-sm">
               <p className="text-lg text-black font-roboto text-center font-light">
                 We offer full <span className="">traceability</span> for each and every product, so you know where it comes from, how it is raised or produced and how it reaches your table
               </p>
