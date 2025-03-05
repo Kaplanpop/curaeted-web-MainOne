@@ -85,6 +85,16 @@ const ContactSection = () => {
             alt="Olive harvesting" 
             className="w-full h-full object-cover"
           />
+          
+          {/* Title overlay */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <h2 className="font-poppins text-4xl md:text-6xl text-white font-light z-10 mb-2">
+              {t('sections.contact.title')}
+            </h2>
+            <p className="font-roboto text-lg md:text-xl text-white z-10 max-w-2xl text-center px-4">
+              {t('sections.contact.subtitle')}
+            </p>
+          </div>
         </div>
         
         {/* White wave overlay */}
@@ -105,21 +115,21 @@ const ContactSection = () => {
           <form onSubmit={handleSubmit} className="space-y-8">
             <div>
               <label htmlFor="name" className="block font-roboto text-lg mb-3 text-gray-900 font-light">
-                Your name
+                {t('sections.contact.name')}
               </label>
               <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required className="w-full border border-gray-300 px-4 py-3 text-lg font-roboto" />
             </div>
             
             <div>
               <label htmlFor="contact" className="block font-roboto text-lg mb-3 text-gray-900 font-light">
-                Email address/WeChat ID
+                {t('sections.contact.email')}
               </label>
               <input type="text" id="contact" name="contact" value={formData.contact} onChange={handleChange} required className="w-full border border-gray-300 px-4 py-3 text-lg font-roboto" />
             </div>
             
             <div>
               <label htmlFor="message" className="block font-roboto text-lg mb-3 text-gray-900 font-light">
-                Message
+                {t('sections.contact.message')}
               </label>
               <textarea id="message" name="message" value={formData.message} onChange={handleChange} required rows={4} className="w-full border border-gray-300 px-4 py-3 text-lg font-roboto"></textarea>
             </div>
@@ -132,7 +142,7 @@ const ContactSection = () => {
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
                     Submitting...
-                  </span> : "Submit"}
+                  </span> : t('sections.contact.submit')}
               </button>
             </div>
           </form>
