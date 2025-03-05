@@ -1,3 +1,4 @@
+
 import Footer from "../Footer";
 const CompanyInfoSection = () => {
   return <section className="py-16 bg-black text-white">
@@ -5,7 +6,11 @@ const CompanyInfoSection = () => {
         <div className="max-w-4xl mx-auto flex flex-col items-center">
           
           <div className="relative w-full flex justify-center">
-            
+            <img 
+              src="/lovable-uploads/4f850fd3-ddef-479a-a5ac-9171210e93f5.png" 
+              alt="Curæted Logo" 
+              className="w-40 h-40 mb-8"
+            />
             <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50">
               <Footer />
             </div>
