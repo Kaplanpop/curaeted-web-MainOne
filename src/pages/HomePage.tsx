@@ -364,52 +364,98 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" ref={contactRef} className="py-20 bg-white opacity-0">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="font-poppins text-5xl mb-16 text-black font-light md:text-5xl text-center">
-              Contact
-            </h2>
-            
-            <p className="text-xl text-gray-700 font-roboto mb-12 font-light text-center">
-              Want to get in touch or partner with us? Contact us in the form below
-            </p>
-            
-            <form onSubmit={handleSubmit} className="space-y-8">
-              <div>
-                <label htmlFor="name" className="block font-roboto text-lg mb-3 text-gray-900 font-light">
-                  Your name
-                </label>
-                <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required className="w-full border border-gray-300 px-4 py-3 text-lg font-roboto" />
-              </div>
-              
-              <div>
-                <label htmlFor="contact" className="block font-roboto text-lg mb-3 text-gray-900 font-light">
-                  Email address/WeChat ID
-                </label>
-                <input type="text" id="contact" name="contact" value={formData.contact} onChange={handleChange} required className="w-full border border-gray-300 px-4 py-3 text-lg font-roboto" />
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block font-roboto text-lg mb-3 text-gray-900 font-light">
-                  Message
-                </label>
-                <textarea id="message" name="message" value={formData.message} onChange={handleChange} required rows={4} className="w-full border border-gray-300 px-4 py-3 text-lg font-roboto"></textarea>
-              </div>
-              
-              <div>
-                <button type="submit" disabled={isSubmitting} className="w-full py-3 bg-black text-white font-roboto font-medium hover:bg-gray-800 transition-colors text-lg disabled:bg-gray-500">
-                  {isSubmitting ? <span className="flex items-center justify-center">
-                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
-                      Submitting...
-                    </span> : "Submit"}
-                </button>
-              </div>
-            </form>
+      {/* Contact Section - Redesigned with the new image and curved design */}
+      <section id="contact" ref={contactRef} className="relative opacity-0 overflow-hidden">
+        <div className="absolute inset-0 w-full h-full z-0">
+          <img 
+            src="/lovable-uploads/d2c12184-1b46-47de-ab75-c5ff11e4a8fd.png" 
+            alt="Olive harvesting" 
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-black/30"></div>
+        </div>
+        
+        <div className="relative z-10 pt-32 pb-10 md:pt-40 md:pb-20 px-4 text-center">
+          <h2 className="font-poppins text-6xl mb-4 text-white font-light">
+            Contact
+          </h2>
+          
+          <p className="text-xl text-white font-roboto font-light text-center mb-10 mx-auto max-w-5xl">
+            Want to get in touch or partner with us? Contact us in the form below
+          </p>
+        </div>
+        
+        {/* White curved section */}
+        <div className="relative z-10">
+          <div className="h-16 bg-white rounded-t-[50%] -mt-1"></div>
+          
+          <div className="bg-white pt-8 pb-20 px-4 md:px-8 lg:px-16">
+            <div className="max-w-3xl mx-auto">              
+              <form onSubmit={handleSubmit} className="space-y-8">
+                <div>
+                  <label htmlFor="name" className="block font-roboto text-lg mb-3 text-gray-900 font-light">
+                    Your name
+                  </label>
+                  <input 
+                    type="text" 
+                    id="name" 
+                    name="name" 
+                    value={formData.name} 
+                    onChange={handleChange} 
+                    required 
+                    className="w-full border border-gray-300 px-4 py-3 text-lg font-roboto" 
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="contact" className="block font-roboto text-lg mb-3 text-gray-900 font-light">
+                    Email address/WeChat ID
+                  </label>
+                  <input 
+                    type="text" 
+                    id="contact" 
+                    name="contact" 
+                    value={formData.contact} 
+                    onChange={handleChange} 
+                    required 
+                    className="w-full border border-gray-300 px-4 py-3 text-lg font-roboto" 
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="message" className="block font-roboto text-lg mb-3 text-gray-900 font-light">
+                    Message
+                  </label>
+                  <textarea 
+                    id="message" 
+                    name="message" 
+                    value={formData.message} 
+                    onChange={handleChange} 
+                    required 
+                    rows={4} 
+                    className="w-full border border-gray-300 px-4 py-3 text-lg font-roboto"
+                  ></textarea>
+                </div>
+                
+                <div>
+                  <button 
+                    type="submit" 
+                    disabled={isSubmitting} 
+                    className="w-full py-3 bg-black text-white font-roboto font-medium hover:bg-gray-800 transition-colors text-lg disabled:bg-gray-500"
+                  >
+                    {isSubmitting ? (
+                      <span className="flex items-center justify-center">
+                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Submitting...
+                      </span>
+                    ) : "Submit"}
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </section>
