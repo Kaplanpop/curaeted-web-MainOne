@@ -1,9 +1,11 @@
+
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { toast } from '@/components/ui/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { useRef } from 'react';
 import { useIntersectionObserver } from '@/utils/intersectionObserver';
+
 const ContactSection = () => {
   const {
     t
@@ -19,6 +21,7 @@ const ContactSection = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const {
       name,
@@ -29,6 +32,7 @@ const ContactSection = () => {
       [name]: value
     }));
   };
+  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -78,7 +82,17 @@ const ContactSection = () => {
       setIsSubmitting(false);
     }
   };
+  
   return <section id="contact" ref={sectionRef} className="relative opacity-0 overflow-hidden">
+      {/* New image at the top of the contact section */}
+      <div className="w-full">
+        <img 
+          src="/lovable-uploads/c382e19c-f057-44d3-8734-dba6c14f4a93.png" 
+          alt="Olive harvesting" 
+          className="w-full object-cover h-[300px] md:h-[400px]" 
+        />
+      </div>
+      
       <div className="absolute inset-0 w-full h-full z-0">
         <div className="w-full h-full overflow-hidden">
           <img src="/lovable-uploads/db67131f-fe38-463d-bb25-fe337dd806a9.png" alt="Olive harvesting" className="w-full h-full object-contain md:object-cover" />
@@ -86,12 +100,8 @@ const ContactSection = () => {
         <div className="absolute inset-0 bg-black/50"></div>
       </div>
       
-      
-      
       {/* White curved section */}
       <div className="relative z-10">
-        
-        
         <div className="bg-white pt-8 pb-20 px-4 md:px-8 lg:px-16">
           <div className="max-w-3xl mx-auto">              
             <form onSubmit={handleSubmit} className="space-y-8">
