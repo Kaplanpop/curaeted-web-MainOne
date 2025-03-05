@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { toast } from '@/components/ui/use-toast';
 import { supabase } from '@/integrations/supabase/client';
+
 const HomePage = () => {
   const {
     t
@@ -24,6 +25,7 @@ const HomePage = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const {
       name,
@@ -34,6 +36,7 @@ const HomePage = () => {
       [name]: value
     }));
   };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -83,6 +86,7 @@ const HomePage = () => {
       setIsSubmitting(false);
     }
   };
+
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -103,6 +107,7 @@ const HomePage = () => {
       });
     };
   }, []);
+
   return <div className="min-h-screen pt-20">
       {/* Home Section - Updated with auto-playing video and text overlay */}
       <section id="home" ref={homeRef} className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden opacity-0">
@@ -195,14 +200,14 @@ const HomePage = () => {
             
             <div className="flex flex-col md:flex-row justify-center items-center gap-16 mx-auto max-w-2xl">
               <div className="flex flex-col items-center">
-                <h3 className="font-poppins font-medium mb-6 text-white text-lg">Red Note (小红书)</h3>
+                <h3 className="font-poppins font-medium mb-2 text-white text-lg">Red Note (小红书)</h3>
                 <div className="w-32 h-32 flex items-center justify-center">
                   <img src="/lovable-uploads/171db970-3a20-4178-bf65-09e4e36e3a1f.png" alt="Xiaohongshu (Red Note) Logo" className="w-24 h-24 object-contain" />
                 </div>
               </div>
               
               <div className="flex flex-col items-center">
-                <h3 className="font-poppins font-medium mb-6 text-white text-lg text-center">WeChat (微信)</h3>
+                <h3 className="font-poppins font-medium mb-2 text-white text-lg text-center">WeChat (微信)</h3>
                 <div className="w-32 h-32 flex items-center justify-center">
                   <img src="/lovable-uploads/efd9fd8c-759f-4bac-b403-ebee03fe86b8.png" alt="WeChat Logo" className="w-24 h-24 object-contain" />
                 </div>
@@ -377,4 +382,5 @@ const HomePage = () => {
       </section>
     </div>;
 };
+
 export default HomePage;
