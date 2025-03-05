@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { toast } from '@/components/ui/use-toast';
@@ -444,14 +445,14 @@ const HomePage = () => {
           </div>
         </div>
         
-        {/* Image section with curved top - moved to bottom */}
+        {/* Image section with concave curved top - moved to bottom */}
         <div className="relative">
-          {/* Curved edge at the top of the image */}
+          {/* Curved edge at the top of the image - concave curve */}
           <div className="h-16 bg-white rounded-b-[50%] relative z-10"></div>
           
-          {/* Image container with curved top using border radius */}
+          {/* Image container */}
           <div className="relative h-[400px] md:h-[500px]">
-            <div className="absolute inset-0 rounded-t-[50px] overflow-hidden">
+            <div className="absolute inset-0 overflow-hidden">
               <img 
                 src="/lovable-uploads/d2c12184-1b46-47de-ab75-c5ff11e4a8fd.png" 
                 alt="Olive harvesting" 
