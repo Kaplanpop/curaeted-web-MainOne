@@ -6,7 +6,7 @@ const CompanyInfoSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto flex flex-col items-center">
           
-          <div className="relative w-full">
+          <div className="relative w-full flex justify-center">
             <img src="/lovable-uploads/32a591da-11d7-4261-9f86-14c23dc0bb12.png" alt="Curaeted Logo" className="w-full max-w-3xl mb-8" />
             <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50">
               <Footer />
