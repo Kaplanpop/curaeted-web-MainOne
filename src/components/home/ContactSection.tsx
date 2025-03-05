@@ -1,4 +1,3 @@
-
 import { useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { toast } from '@/components/ui/use-toast';
@@ -77,23 +76,15 @@ const ContactSection = () => {
   
   return (
     <section id="contact" ref={sectionRef} className="relative opacity-0">
-      {/* Hero image with text overlay and wave transition */}
+      {/* Hero image with wave transition */}
       <div className="relative">
-        {/* Main hero image */}
+        {/* Main hero image - removed text overlay */}
         <div className="relative h-[450px] overflow-hidden">
           <img 
             src="/lovable-uploads/693ec263-2617-4215-9d03-a74c2206ce90.png" 
             alt="Olive harvesting" 
             className="w-full h-full object-cover brightness-[0.85]"
           />
-          
-          {/* Text overlay */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-            <h2 className="text-5xl font-light mb-6">Contact</h2>
-            <p className="text-xl font-light max-w-3xl text-center px-4">
-              {t('sections.contact.subtitle')}
-            </p>
-          </div>
           
           {/* Wave/curve transition to white section */}
           <div className="absolute -bottom-1 left-0 right-0">
