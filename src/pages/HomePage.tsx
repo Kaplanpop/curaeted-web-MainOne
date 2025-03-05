@@ -195,7 +195,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Where To Find Us Section - Updated with centered heading */}
+      {/* Where To Find Us Section - Updated with new layout and design */}
       <section id="whereToFindUs" ref={whereToFindUsRef} className="py-20 opacity-0 relative h-screen">
         <div className="absolute inset-0 w-full h-full z-0">
           <img 
@@ -207,8 +207,8 @@ const HomePage = () => {
         </div>
         
         <div className="container mx-auto px-4 relative z-10 h-full flex flex-col justify-between">
-          <div className="pt-16 text-center">
-            <h2 className="font-poppins text-7xl text-white font-light">
+          <div className="pt-16">
+            <h2 className="font-poppins text-7xl text-white font-light text-left">
               Where to find us
             </h2>
           </div>
