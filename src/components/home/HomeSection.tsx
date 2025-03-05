@@ -9,21 +9,13 @@ const HomeSection = () => {
   return (
     <section id="home" ref={sectionRef} className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden opacity-0">
       <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
+        <iframe
+          src="https://drive.google.com/file/d/1nIziSy6V6cLaFp7ytUFY9lcZLbCzMfNH/preview"
+          allow="autoplay; fullscreen"
           className="w-full h-full object-cover"
-        >
-          <source src="/lovable-uploads/pigs-video.mp4" type="video/mp4" />
-          {/* Fallback image in case video doesn't load */}
-          <img 
-            src="/lovable-uploads/f6d54519-c7a2-444e-b953-798eb1ef0a19.png" 
-            alt="Iberico pigs" 
-            className="w-full h-full object-cover" 
-          />
-        </video>
+          title="Curated video"
+          frameBorder="0"
+        ></iframe>
       </div>
       
       <div className="absolute inset-0 bg-black/50 z-1"></div>
