@@ -18,6 +18,13 @@ const AboutSection = () => {
             alt="Iberico pigs in cork oak forest" 
             className="w-full h-full object-cover"
           />
+          
+          {/* Title overlay */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <h2 className="font-poppins text-4xl md:text-6xl text-white font-light z-10">
+              {t('sections.about.title')}
+            </h2>
+          </div>
         </div>
         
         {/* White wave overlay */}
@@ -35,10 +42,6 @@ const AboutSection = () => {
       {/* Content section */}
       <div className="bg-white pt-8 pb-20 px-4 md:px-8 lg:px-16">
         <div className="max-w-6xl mx-auto">
-          <h2 className="font-poppins text-4xl md:text-6xl mb-6 text-black font-light text-center">
-            {t('sections.about.title')}
-          </h2>
-          
           <p className="text-xl text-gray-800 font-roboto font-light text-center mb-16 mx-auto max-w-5xl">
             {t('sections.about.content')}
           </p>
