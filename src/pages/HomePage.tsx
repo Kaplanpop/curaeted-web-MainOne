@@ -195,25 +195,34 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Where To Find Us Section - Updated with Red Note and WeChat logos */}
-      <section id="whereToFindUs" ref={whereToFindUsRef} className="py-20 bg-white opacity-0">
-        <div className="container mx-auto px-4">
+      {/* Where To Find Us Section - Updated with background image */}
+      <section id="whereToFindUs" ref={whereToFindUsRef} className="py-20 opacity-0 relative">
+        <div className="absolute inset-0 w-full h-full z-0">
+          <img 
+            src="/lovable-uploads/f6d54519-c7a2-444e-b953-798eb1ef0a19.png" 
+            alt="Delicious Iberico dish" 
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-black/60 z-1"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-5xl mx-auto">
-            <h2 className="font-poppins text-5xl mb-16 text-black font-light md:text-5xl text-center">
+            <h2 className="font-poppins text-5xl mb-16 text-white font-light md:text-5xl text-center">
               Where to find us
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
               <div className="flex flex-col items-center">
-                <h3 className="font-poppins text-2xl font-medium mb-8">Red Note (小红书)</h3>
-                <div className="w-40 h-40 flex items-center justify-center">
+                <h3 className="font-poppins text-2xl font-medium mb-8 text-white">Red Note (小红书)</h3>
+                <div className="w-40 h-40 flex items-center justify-center bg-white/10 p-4 rounded-lg backdrop-blur-sm">
                   <img src="/lovable-uploads/171db970-3a20-4178-bf65-09e4e36e3a1f.png" alt="Xiaohongshu (Red Note) Logo" className="w-32 h-32 object-contain" />
                 </div>
               </div>
               
               <div className="flex flex-col items-center">
-                <h3 className="font-poppins text-2xl font-medium mb-8">WeChat (微信)</h3>
-                <div className="w-40 h-40 flex items-center justify-center">
+                <h3 className="font-poppins text-2xl font-medium mb-8 text-white">WeChat (微信)</h3>
+                <div className="w-40 h-40 flex items-center justify-center bg-white/10 p-4 rounded-lg backdrop-blur-sm">
                   <img src="/lovable-uploads/efd9fd8c-759f-4bac-b403-ebee03fe86b8.png" alt="WeChat Logo" className="w-32 h-32 object-contain" />
                 </div>
               </div>
