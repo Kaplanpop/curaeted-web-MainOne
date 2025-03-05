@@ -10,7 +10,7 @@ const WhereToFindUsSection = () => {
     <section id="whereToFindUs" ref={sectionRef} className="py-20 opacity-0 relative">
       <div className="absolute inset-0 w-full h-full z-0">
         <img src="/lovable-uploads/f6d54519-c7a2-444e-b953-798eb1ef0a19.png" alt="Delicious Iberico dish" className="w-full h-full object-cover object-center" />
-        <div className="absolute inset-0 bg-black/70 z-1"></div>
+        <div className="absolute inset-0 bg-black/60 z-1"></div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
