@@ -14,16 +14,15 @@ const CompanyInfoSection = () => {
               className="w-40 h-40 mb-8"
             />
             
-            <div className="space-y-2 text-center mb-10">
-              {/* Company info content */}
-            </div>
-            
-            <div className="flex flex-col items-center space-y-2 mb-10">
-              {/* Additional company info */}
+            <div className="space-y-4 text-center mb-12">
+              <h2 className="text-3xl font-light">Curæted</h2>
+              <p className="text-gray-300">Bringing the finest Iberico products to China</p>
+              <p className="text-gray-400 text-sm">Room 214 Level 2, Building 1, 155 Fengxiang Rd, Baoshan, Shanghai, PRC</p>
+              <p className="text-gray-400 text-sm">Email: jose.campon@curaetedchina</p>
             </div>
           </div>
           
-          <div className="w-full mt-8">
+          <div className="w-full mt-12">
             <Footer />
           </div>
         </div>
