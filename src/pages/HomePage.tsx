@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { toast } from '@/components/ui/use-toast';
 import { supabase } from '@/integrations/supabase/client';
-
 const HomePage = () => {
   const {
     t
@@ -25,7 +24,6 @@ const HomePage = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const {
       name,
@@ -36,7 +34,6 @@ const HomePage = () => {
       [name]: value
     }));
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -86,7 +83,6 @@ const HomePage = () => {
       setIsSubmitting(false);
     }
   };
-
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -107,18 +103,11 @@ const HomePage = () => {
       });
     };
   }, []);
-
   return <div className="min-h-screen pt-20">
       {/* Home Section - Updated with auto-playing video and text overlay */}
       <section id="home" ref={homeRef} className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden opacity-0">
         <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
-          <iframe 
-            src="https://drive.google.com/file/d/1nIziSy6V6cLaFp7ytUFY9lcZLbCzMfNH/preview?autoplay=1&mute=1&loop=1" 
-            className="w-full h-full object-cover"
-            allow="autoplay; fullscreen; loop"
-            allowFullScreen
-            title="Iberico pigs video"
-          ></iframe>
+          <iframe src="https://drive.google.com/file/d/1nIziSy6V6cLaFp7ytUFY9lcZLbCzMfNH/preview?autoplay=1&mute=1&loop=1" className="w-full h-full object-cover" allow="autoplay; fullscreen; loop" allowFullScreen title="Iberico pigs video"></iframe>
         </div>
         
         <div className="absolute inset-0 bg-black/50 z-1"></div>
@@ -132,11 +121,7 @@ const HomePage = () => {
       {/* What We Do Section - Updated with new layout based on reference image */}
       <section id="whatWeDo" ref={whatWeDoRef} className="py-20 opacity-0 relative">
         <div className="absolute inset-0 w-full h-full z-0">
-          <img 
-            src="/lovable-uploads/55497852-ecf4-4ed5-8cd7-51aa1336d079.png" 
-            alt="Iberico meat inspection" 
-            className="w-full h-full object-cover object-center"
-          />
+          <img src="/lovable-uploads/55497852-ecf4-4ed5-8cd7-51aa1336d079.png" alt="Iberico meat inspection" className="w-full h-full object-cover object-center" />
           <div className="absolute inset-0 bg-black/70 z-1"></div>
         </div>
         
@@ -198,11 +183,7 @@ const HomePage = () => {
       {/* Where To Find Us Section - Updated with background image */}
       <section id="whereToFindUs" ref={whereToFindUsRef} className="py-20 opacity-0 relative">
         <div className="absolute inset-0 w-full h-full z-0">
-          <img 
-            src="/lovable-uploads/f6d54519-c7a2-444e-b953-798eb1ef0a19.png" 
-            alt="Delicious Iberico dish" 
-            className="w-full h-full object-cover object-center"
-          />
+          <img src="/lovable-uploads/f6d54519-c7a2-444e-b953-798eb1ef0a19.png" alt="Delicious Iberico dish" className="w-full h-full object-cover object-center" />
           <div className="absolute inset-0 bg-black/60 z-1"></div>
         </div>
         
@@ -239,32 +220,7 @@ const HomePage = () => {
               Only the finest
             </h2>
             
-            <div className="mb-16">
-              <div className="aspect-w-16 aspect-h-9 mb-16">
-                <iframe 
-                  className="w-full h-full rounded-lg shadow-lg"
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-                  title="Iberico Product Video"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-              
-              <div className="mt-16">
-                <h3 className="font-poppins text-3xl mb-8 text-white font-light text-center">
-                  Our Process
-                </h3>
-                <video 
-                  className="w-full rounded-lg shadow-lg" 
-                  controls
-                  poster="/lovable-uploads/7fb544ec-1ca6-4d76-bb22-4a900c6f5400.png"
-                >
-                  <source src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </div>
+            
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               
@@ -421,5 +377,4 @@ const HomePage = () => {
       </section>
     </div>;
 };
-
 export default HomePage;
