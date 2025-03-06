@@ -7,8 +7,8 @@ const HomeSection = () => {
   const [videoError, setVideoError] = useState(false);
   useIntersectionObserver(sectionRef);
 
-  const handleVideoError = () => {
-    console.error("Video failed to load");
+  const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
+    console.error("Video failed to load", e);
     setVideoError(true);
   };
 
@@ -24,12 +24,17 @@ const HomeSection = () => {
             playsInline
             className="w-full h-full object-cover"
             onError={handleVideoError}
+            poster="/lovable-uploads/58e31481-b17f-4367-a30e-828819e53d23.png"
           />
         ) : (
           <div 
-            className="w-full h-full bg-cover bg-center bg-gray-800 flex items-center justify-center"
+            className="w-full h-full bg-cover bg-center"
+            style={{ 
+              backgroundImage: 'url("/lovable-uploads/58e31481-b17f-4367-a30e-828819e53d23.png")',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}
           >
-            <p className="text-white text-lg">Video could not be loaded</p>
           </div>
         )}
       </div>
