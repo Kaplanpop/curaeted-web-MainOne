@@ -24,13 +24,13 @@ const HomeSection = () => {
             playsInline
             className="w-full h-full object-cover"
             onError={handleVideoError}
-            poster="/lovable-uploads/58e31481-b17f-4367-a30e-828819e53d23.png"
+            poster="/lovable-uploads/e44ecf05-2baa-4687-abdb-d2246b5aa64a.png"
           />
         ) : (
           <div 
             className="w-full h-full bg-cover bg-center"
             style={{ 
-              backgroundImage: 'url("/lovable-uploads/58e31481-b17f-4367-a30e-828819e53d23.png")',
+              backgroundImage: 'url("/lovable-uploads/e44ecf05-2baa-4687-abdb-d2246b5aa64a.png")',
               backgroundSize: 'cover',
               backgroundPosition: 'center'
             }}
