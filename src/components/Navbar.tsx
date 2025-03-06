@@ -10,18 +10,17 @@ const Navbar = () => {
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
   const [menuHovered, setMenuHovered] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const langMenuRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const { t, i18n } = useTranslation();
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
-  const toggleLanguageMenu = () => setLanguageMenuOpen(!languageMenuOpen);
-  const closeLanguageMenu = () => setLanguageMenuOpen(false);
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
     localStorage.setItem("language", lng);
-    closeLanguageMenu();
+    setLanguageMenuOpen(false);
   };
 
   useEffect(() => {
@@ -45,6 +44,9 @@ const Navbar = () => {
     const handleClickOutside = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
         setMenuHovered(false);
+      }
+      if (langMenuRef.current && !langMenuRef.current.contains(event.target as Node)) {
+        setLanguageMenuOpen(false);
       }
     };
 
@@ -87,9 +89,9 @@ const Navbar = () => {
         {/* Right side navigation items - menu and language */}
         <div className="flex items-center space-x-6">
           {/* Language selector */}
-          <div className="relative">
+          <div className="relative" ref={langMenuRef}>
             <button 
-              onClick={toggleLanguageMenu}
+              onMouseEnter={() => setLanguageMenuOpen(true)}
               className="flex items-center text-black hover:text-gray-600 transition-colors"
               aria-label="Select language"
             >
@@ -97,7 +99,10 @@ const Navbar = () => {
             </button>
             
             {languageMenuOpen && (
-              <div className="absolute right-0 mt-2 py-2 w-32 bg-white shadow-lg rounded-md z-50">
+              <div 
+                className="absolute right-0 mt-2 py-2 w-32 bg-white shadow-lg rounded-md z-50 transition-opacity duration-300 ease-in-out"
+                onMouseLeave={() => setLanguageMenuOpen(false)}
+              >
                 <button 
                   onClick={() => changeLanguage('en')}
                   className={`block px-4 py-2 text-sm w-full text-left hover:bg-gray-100 font-roboto ${i18n.language === 'en' ? 'font-bold' : ''}`}
@@ -125,7 +130,6 @@ const Navbar = () => {
             <button
               className="text-sm font-medium tracking-wide transition-colors duration-200 text-black hover:text-gray-600 flex items-center"
               onMouseEnter={() => setMenuHovered(true)}
-              onClick={() => setMenuHovered(!menuHovered)}
               aria-label="Menu"
             >
               <Menu size={24} />
@@ -133,7 +137,7 @@ const Navbar = () => {
             
             {menuHovered && (
               <div 
-                className="absolute top-full right-0 mt-2 py-3 w-56 bg-white shadow-lg rounded-md z-50"
+                className="absolute top-full right-0 mt-2 py-3 w-56 bg-white shadow-lg rounded-md z-50 transition-opacity duration-300 ease-in-out"
                 onMouseLeave={() => setMenuHovered(false)}
               >
                 <button 
@@ -270,3 +274,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
