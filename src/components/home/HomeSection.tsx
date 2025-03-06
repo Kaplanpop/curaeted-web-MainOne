@@ -17,7 +17,7 @@ const HomeSection = () => {
       <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
         {!videoError ? (
           <video
-            src="https://curaetedwebsite.oss-cn-hongkong.aliyuncs.com/herd-of-iberian-pigs-on-spanish-farmland-dehesa-2025-03-03-13-44-39-utc.mp4?OSSAccessKeyId=TMP.3KnBSz5hLD9sDBftxs1T2NVr3rs4vas2upDFDM8hMhMFChGHtQEjP894XqzMg2W5hwA2R8ddXJnpAqnxKkjtp7p3m6pbtK&Signature=uupzkQ0W2UFOi0lSpIPowRF9BnY%3D"
+            src="https://curaetedwebsite.oss-cn-hongkong.aliyuncs.com/herd-of-iberian-pigs-on-spanish-farmland-dehesa-2025-03-03-13-44-39-utc.mp4"
             autoPlay
             loop
             muted
