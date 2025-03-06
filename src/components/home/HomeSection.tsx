@@ -1,22 +1,37 @@
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { useIntersectionObserver } from '@/utils/intersectionObserver';
 
 const HomeSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [videoError, setVideoError] = useState(false);
   useIntersectionObserver(sectionRef);
+
+  const handleVideoError = () => {
+    console.error("Video failed to load");
+    setVideoError(true);
+  };
 
   return (
     <section id="home" ref={sectionRef} className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden opacity-0">
       <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
-        <video
-          src="https://curaetedwebsite.oss-cn-hongkong.aliyuncs.com/herd-of-iberian-pigs-on-spanish-farmland-dehesa-2025-03-03-13-44-39-utc.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        />
+        {!videoError ? (
+          <video
+            src="https://curaetedwebsite.oss-cn-hongkong.aliyuncs.com/herd-of-iberian-pigs-on-spanish-farmland-dehesa-2025-03-03-13-44-39-utc.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+            onError={handleVideoError}
+          />
+        ) : (
+          <div 
+            className="w-full h-full bg-cover bg-center bg-gray-800 flex items-center justify-center"
+          >
+            <p className="text-white text-lg">Video could not be loaded</p>
+          </div>
+        )}
       </div>
       
       <div className="absolute inset-0 bg-black/50 z-1"></div>
