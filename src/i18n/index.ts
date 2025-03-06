@@ -19,11 +19,14 @@ const resources = {
   }
 };
 
+// Get the saved language from localStorage or default to 'en'
+const savedLanguage = localStorage.getItem('language') || 'en';
+
 i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: 'en',
+    lng: savedLanguage,
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false // react already safes from xss

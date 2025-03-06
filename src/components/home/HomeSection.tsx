@@ -1,8 +1,10 @@
 
 import { useRef, useState } from 'react';
 import { useIntersectionObserver } from '@/utils/intersectionObserver';
+import { useTranslation } from 'react-i18next';
 
 const HomeSection = () => {
+  const { t } = useTranslation();
   const sectionRef = useRef<HTMLDivElement>(null);
   const [videoError, setVideoError] = useState(false);
   useIntersectionObserver(sectionRef);
@@ -44,7 +46,7 @@ const HomeSection = () => {
       <div className="relative z-10 text-white text-center px-4 max-w-4xl">
         <h2 className="font-poppins text-5xl md:text-6xl text-white font-light mb-4">Curæted</h2>
         <p className="font-roboto text-lg md:text-xl text-white max-w-2xl text-center mx-auto">
-          Bringing the finest Iberico products to China
+          {t('sections.home.subtitle')}
         </p>
       </div>
     </section>
