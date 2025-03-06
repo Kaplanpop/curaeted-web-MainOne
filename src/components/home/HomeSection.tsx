@@ -9,13 +9,14 @@ const HomeSection = () => {
   return (
     <section id="home" ref={sectionRef} className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden opacity-0">
       <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
-        {/* Replace with a background image until we have a direct video URL */}
-        <div 
-          className="w-full h-full bg-cover bg-center"
-          style={{ 
-            backgroundImage: "url('/lovable-uploads/4f850fd3-ddef-479a-a5ac-9171210e93f5.png')" 
-          }}
-        ></div>
+        <video
+          src="https://curaetedwebsite.oss-cn-hongkong.aliyuncs.com/herd-of-iberian-pigs-on-spanish-farmland-dehesa-2025-03-03-13-44-39-utc.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        />
       </div>
       
       <div className="absolute inset-0 bg-black/50 z-1"></div>
