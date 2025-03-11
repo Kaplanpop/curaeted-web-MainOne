@@ -1,10 +1,12 @@
 
 import { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useIntersectionObserver } from '@/utils/intersectionObserver';
 
 const OnlyTheFinestSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   useIntersectionObserver(sectionRef, { animationClass: 'animate-fadeIn' });
+  const { t } = useTranslation();
 
   return (
     <section id="onlyTheFinest" ref={sectionRef} className="relative h-screen min-h-[600px] opacity-0 overflow-hidden">
@@ -39,11 +41,10 @@ const OnlyTheFinestSection = () => {
       
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-center px-4">
         <h2 className="font-poppins text-5xl md:text-6xl text-white font-light mb-4 opacity-0 animate-scaleUp" style={{ animationDelay: '0.6s' }}>
-          Only the finest
+          {t('sections.onlyTheFinest.title')}
         </h2>
-        <p className="font-roboto text-lg md:text-xl text-white max-w-2xl text-center mx-auto opacity-0 animate-scaleUp" style={{ animationDelay: '0.8s' }}>
-          100% Iberico, 100% acorn fed<br />
-          Ecologically produced extra virgin olive oil
+        <p className="font-roboto text-lg md:text-xl text-white max-w-2xl text-center mx-auto opacity-0 animate-scaleUp" style={{ animationDelay: '0.8s' }}
+           dangerouslySetInnerHTML={{ __html: t('sections.onlyTheFinest.content') }}>
         </p>
       </div>
     </section>
