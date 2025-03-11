@@ -4,15 +4,11 @@ import { useIntersectionObserver } from '@/utils/intersectionObserver';
 
 const WhyIbericoSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  useIntersectionObserver(sectionRef, { 
-    animationClass: 'animate-fadeIn',
-    threshold: 0.2,
-    rootMargin: '-50px'
-  });
+  useIntersectionObserver(sectionRef, { animationClass: 'animate-zoomFadeIn' });
 
   return (
-    <section id="whyIberico" ref={sectionRef} className="opacity-0 fixed inset-0 w-full min-h-screen overflow-hidden">
-      <div className="grid grid-cols-3 h-full">
+    <section id="whyIberico" ref={sectionRef} className="opacity-0 relative">
+      <div className="grid grid-cols-3 h-screen min-h-[600px]">
         <div className="relative h-full opacity-0 animate-slideInLeft" style={{ animationDelay: '0.2s' }}>
           <img 
             src="/lovable-uploads/670d0ca3-569b-4c1a-9451-5b16bb7bd800.png" 

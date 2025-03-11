@@ -75,11 +75,6 @@
   body {
     @apply bg-background text-foreground font-sans;
     font-feature-settings: "rlig" 1, "calt" 1;
-    overflow-x: hidden; /* Prevent horizontal scroll */
-  }
-  
-  html {
-    scroll-behavior: smooth;
   }
 }
 
@@ -89,59 +84,11 @@
   }
 }
 
-/* Base state for animated elements */
+/* Animations */
 .opacity-0 {
   opacity: 0;
 }
 
-/* Section positioning for overlay effect */
-section {
-  transform: translateZ(0);
-  will-change: transform, opacity;
-}
-
-section[id="home"] {
-  z-index: 10;
-}
-
-section[id="whatWeDo"] {
-  z-index: 20;
-}
-
-section[id="whereToFindUs"] {
-  z-index: 30;
-}
-
-section[id="onlyTheFinest"] {
-  z-index: 40;
-}
-
-section[id="whyIberico"] {
-  z-index: 50;
-}
-
-section[id="about"] {
-  z-index: 60;
-}
-
-section[id="contact"] {
-  z-index: 70;
-  position: relative;
-}
-
-/* Fixed section config */
-.fixed-sections section {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  min-height: 100vh;
-  overflow: hidden;
-}
-
-/* Animations for scroll transitions */
 .animate-fadeIn {
   animation: fadeIn 1s ease-in-out forwards;
 }
@@ -180,7 +127,6 @@ section[id="contact"] {
   animation-delay: 0.4s;
 }
 
-/* Animation keyframes */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -209,6 +155,17 @@ section[id="contact"] {
 @keyframes zoomFadeIn {
   0% { opacity: 0; transform: scale(1.1); }
   100% { opacity: 1; transform: scale(1); }
+}
+
+/* Contact section image adjustments */
+#contact .overflow-hidden img {
+  max-height: 100%;
+  width: 100%;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
 }
 
 /* Custom section styles */

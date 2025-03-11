@@ -4,14 +4,10 @@ import { useIntersectionObserver } from '@/utils/intersectionObserver';
 
 const WhatWeDoSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  useIntersectionObserver(sectionRef, { 
-    animationClass: 'animate-fadeIn',
-    threshold: 0.2,
-    rootMargin: '-50px'
-  });
+  useIntersectionObserver(sectionRef, { animationClass: 'animate-fadeIn' });
 
   return (
-    <section id="whatWeDo" ref={sectionRef} className="py-20 opacity-0 fixed inset-0 w-full overflow-hidden">
+    <section id="whatWeDo" ref={sectionRef} className="py-20 opacity-0 relative">
       <div className="absolute inset-0 w-full h-full z-0">
         <img src="/lovable-uploads/55497852-ecf4-4ed5-8cd7-51aa1336d079.png" alt="Iberico meat inspection" className="w-full h-full object-cover object-center" />
         <div className="absolute inset-0 bg-black/70 z-1"></div>

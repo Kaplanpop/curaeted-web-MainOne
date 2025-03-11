@@ -1,53 +1,32 @@
 
 import { useEffect, RefObject } from 'react';
 
-interface IntersectionOptions {
+export const useIntersectionObserver = (ref: RefObject<HTMLElement>, options?: {
   threshold?: number;
   rootMargin?: string;
   animationClass?: string;
-  once?: boolean;
-}
-
-export const useIntersectionObserver = (
-  ref: RefObject<Element>,
-  options: IntersectionOptions = {}
-) => {
-  const { 
-    threshold = 0.1, 
-    rootMargin = '0px', 
-    animationClass = 'animate-fadeIn',
-    once = true
-  } = options;
-
+}) => {
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add(animationClass);
-            if (once) {
-              observer.unobserve(entry.target);
-            }
-          } else if (!once) {
-            entry.target.classList.remove(animationClass);
-          }
-        });
-      },
-      {
-        threshold,
-        rootMargin,
-      }
-    );
-
-    const currentRef = ref.current;
-    if (currentRef) {
-      observer.observe(currentRef);
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const animationClass = options?.animationClass || 'animate-fadeIn';
+          entry.target.classList.add(animationClass);
+        }
+      });
+    }, {
+      threshold: options?.threshold || 0.1,
+      rootMargin: options?.rootMargin || '0px'
+    });
+    
+    if (ref.current) {
+      observer.observe(ref.current);
     }
-
+    
     return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
+      if (ref.current) {
+        observer.unobserve(ref.current);
       }
     };
-  }, [ref, threshold, rootMargin, animationClass, once]);
+  }, [ref, options]);
 };
