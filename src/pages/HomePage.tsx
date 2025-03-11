@@ -9,15 +9,14 @@ import WhyIbericoSection from '@/components/home/WhyIbericoSection';
 import AboutSection from '@/components/home/AboutSection';
 import ContactSection from '@/components/home/ContactSection';
 import CompanyInfoSection from '@/components/home/CompanyInfoSection';
-import { useIntersectionObserver } from '@/utils/intersectionObserver';
 
 const HomePage = () => {
   const { t } = useTranslation();
-  const containerRef = useRef<HTMLDivElement>(null);
 
   return (
     <div className="min-h-screen">
-      <div className="section-container">
+      {/* Main content with sticky sections that overlap */}
+      <div className="relative">
         <HomeSection />
         <WhatWeDoSection />
         <WhereToFindUsSection />
@@ -26,7 +25,7 @@ const HomePage = () => {
         <AboutSection />
       </div>
       
-      {/* Contact and footer sections remain normally positioned */}
+      {/* These sections are outside the scroll effect */}
       <ContactSection />
       <CompanyInfoSection />
     </div>

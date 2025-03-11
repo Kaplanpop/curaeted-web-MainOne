@@ -33,4 +33,3 @@ export const useIntersectionObserver = (ref: RefObject<HTMLElement>, options?: {
     };
   }, [ref, options]);
 };
-
