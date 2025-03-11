@@ -4,7 +4,7 @@ import { useIntersectionObserver } from '@/utils/intersectionObserver';
 
 const WhatWeDoSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  useIntersectionObserver(sectionRef);
+  useIntersectionObserver(sectionRef, { animationClass: 'animate-fadeIn' });
 
   return (
     <section id="whatWeDo" ref={sectionRef} className="py-20 opacity-0 relative">
@@ -15,16 +15,16 @@ const WhatWeDoSection = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="font-poppins text-5xl md:text-6xl text-white font-light mb-4">
+          <h2 className="font-poppins text-5xl md:text-6xl text-white font-light mb-4 opacity-0 animate-slideUp" style={{ animationDelay: '0.2s' }}>
             What we do
           </h2>
           
-          <p className="font-roboto text-lg md:text-xl text-white max-w-2xl text-center mx-auto mb-16">
+          <p className="font-roboto text-lg md:text-xl text-white max-w-2xl text-center mx-auto mb-16 opacity-0 animate-slideUp" style={{ animationDelay: '0.4s' }}>
             We focus on <span className="underline">Iberico</span> Pork (cold cuts and fresh meat) and Extra Virgin Olive Oil
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10">
-            <div className="flex items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10 stagger-container">
+            <div className="flex items-start opacity-0 animate-slideInLeft stagger-item">
               <div className="flex-shrink-0 text-4xl font-bold mr-4 text-white">
                 1
               </div>
@@ -33,7 +33,7 @@ const WhatWeDoSection = () => {
               </p>
             </div>
             
-            <div className="flex items-start">
+            <div className="flex items-start opacity-0 animate-slideInRight stagger-item">
               <div className="flex-shrink-0 text-4xl font-bold mr-4 text-white">
                 3
               </div>
@@ -42,7 +42,7 @@ const WhatWeDoSection = () => {
               </p>
             </div>
             
-            <div className="flex items-start">
+            <div className="flex items-start opacity-0 animate-slideInLeft stagger-item">
               <div className="flex-shrink-0 text-4xl font-bold mr-4 text-white">
                 2
               </div>
@@ -51,7 +51,7 @@ const WhatWeDoSection = () => {
               </p>
             </div>
             
-            <div className="flex items-start">
+            <div className="flex items-start opacity-0 animate-slideInRight stagger-item">
               <div className="flex-shrink-0 text-4xl font-bold mr-4 text-white">
                 4
               </div>
@@ -61,7 +61,7 @@ const WhatWeDoSection = () => {
             </div>
           </div>
           
-          <p className="text-xl text-white font-roboto text-center font-light mt-16">
+          <p className="text-xl text-white font-roboto text-center font-light mt-16 opacity-0 animate-slideUp" style={{ animationDelay: '0.6s' }}>
             We offer full <span className="underline">traceability</span> for each and every product, so you know where it comes from, how it is raised or produced and how it reaches your table
           </p>
         </div>

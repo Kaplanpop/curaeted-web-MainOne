@@ -1,16 +1,22 @@
 
 import { useEffect, RefObject } from 'react';
 
-export const useIntersectionObserver = (ref: RefObject<HTMLElement>) => {
+export const useIntersectionObserver = (ref: RefObject<HTMLElement>, options?: {
+  threshold?: number;
+  rootMargin?: string;
+  animationClass?: string;
+}) => {
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('animate-fadeIn');
+          const animationClass = options?.animationClass || 'animate-fadeIn';
+          entry.target.classList.add(animationClass);
         }
       });
     }, {
-      threshold: 0.1
+      threshold: options?.threshold || 0.1,
+      rootMargin: options?.rootMargin || '0px'
     });
     
     if (ref.current) {
@@ -22,5 +28,5 @@ export const useIntersectionObserver = (ref: RefObject<HTMLElement>) => {
         observer.unobserve(ref.current);
       }
     };
-  }, [ref]);
+  }, [ref, options]);
 };

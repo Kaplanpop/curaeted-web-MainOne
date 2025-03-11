@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -92,9 +93,68 @@
   animation: fadeIn 1s ease-in-out forwards;
 }
 
+.animate-slideUp {
+  animation: slideUp 0.8s ease-in-out forwards;
+}
+
+.animate-zoomFadeIn {
+  animation: zoomFadeIn 1.2s ease-out forwards;
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.8s ease-in-out forwards;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.8s ease-in-out forwards;
+}
+
+.animate-scaleUp {
+  animation: scaleUp 0.8s ease-in-out forwards;
+}
+
+/* Staggered animations for children elements */
+.stagger-container .stagger-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.stagger-container .stagger-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.stagger-container .stagger-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.stagger-container .stagger-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes zoomFadeIn {
+  0% { opacity: 0; transform: scale(1.1); }
+  100% { opacity: 1; transform: scale(1); }
 }
 
 /* Contact section image adjustments */

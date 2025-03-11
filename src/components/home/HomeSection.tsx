@@ -7,7 +7,7 @@ const HomeSection = () => {
   const { t } = useTranslation();
   const sectionRef = useRef<HTMLDivElement>(null);
   const [videoError, setVideoError] = useState(false);
-  useIntersectionObserver(sectionRef);
+  useIntersectionObserver(sectionRef, { animationClass: 'animate-zoomFadeIn' });
 
   const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
     console.error("Video failed to load", e);
@@ -44,8 +44,8 @@ const HomeSection = () => {
       <div className="absolute inset-0 bg-black/50 z-1"></div>
       
       <div className="relative z-10 text-white text-center px-4 max-w-4xl">
-        <h2 className="font-poppins text-5xl md:text-6xl text-white font-light mb-4">Curæted</h2>
-        <p className="font-roboto text-lg md:text-xl text-white max-w-2xl text-center mx-auto">
+        <h2 className="font-poppins text-5xl md:text-6xl text-white font-light mb-4 opacity-0 animate-slideUp" style={{ animationDelay: '0.3s' }}>Curæted</h2>
+        <p className="font-roboto text-lg md:text-xl text-white max-w-2xl text-center mx-auto opacity-0 animate-slideUp" style={{ animationDelay: '0.5s' }}>
           {t('sections.home.subtitle')}
         </p>
       </div>

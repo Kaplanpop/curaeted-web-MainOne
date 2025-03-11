@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 const AboutSection = () => {
   const { t } = useTranslation();
   const sectionRef = useRef<HTMLDivElement>(null);
-  useIntersectionObserver(sectionRef);
+  useIntersectionObserver(sectionRef, { animationClass: 'animate-fadeIn' });
 
   return (
     <section id="about" ref={sectionRef} className="relative opacity-0 overflow-hidden">
@@ -16,15 +16,18 @@ const AboutSection = () => {
           <img 
             src="/lovable-uploads/5f4ac115-5846-45e0-8c2f-712e1948718b.png" 
             alt="Iberico pigs in cork oak forest" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-0 animate-zoomFadeIn"
+            style={{ animationDelay: '0.2s' }}
           />
           
           {/* Title overlay */}
           <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <h2 className="font-poppins text-5xl md:text-6xl text-white font-light mb-4">
+            <h2 className="font-poppins text-5xl md:text-6xl text-white font-light mb-4 opacity-0 animate-slideUp" 
+              style={{ animationDelay: '0.4s' }}>
               {t('sections.about.title')}
             </h2>
-            <p className="font-roboto text-lg md:text-xl text-white max-w-2xl text-center mx-auto">
+            <p className="font-roboto text-lg md:text-xl text-white max-w-2xl text-center mx-auto opacity-0 animate-slideUp"
+              style={{ animationDelay: '0.6s' }}>
               {t('sections.about.subtitle')}
             </p>
           </div>
@@ -45,22 +48,23 @@ const AboutSection = () => {
       {/* Content section */}
       <div className="bg-white pt-8 pb-20 px-4 md:px-8 lg:px-16 text-center">
         <div className="max-w-6xl mx-auto">
-          <p className="text-xl text-gray-800 font-roboto font-light text-center mb-16 mx-auto max-w-5xl">
+          <p className="text-xl text-gray-800 font-roboto font-light text-center mb-16 mx-auto max-w-5xl opacity-0 animate-slideUp"
+             style={{ animationDelay: '0.8s' }}>
             {t('sections.about.content')}
           </p>
             
-          <div className="space-y-10">
-            <div>
+          <div className="space-y-10 stagger-container">
+            <div className="opacity-0 animate-slideInLeft stagger-item">
               <h3 className="text-2xl font-medium mb-2 uppercase">FULLY TRACEABLE PRODUCTS</h3>
               <p className="text-lg text-gray-700 font-light">From breeding, through farming and to table.</p>
             </div>
             
-            <div>
+            <div className="opacity-0 animate-slideUp stagger-item">
               <h3 className="text-2xl font-medium mb-2 uppercase">PERSONALISED & EXCLUSIVE</h3>
               <p className="text-lg text-gray-700 font-light">Airfreight Door-to-Door in less than 15 days</p>
             </div>
             
-            <div>
+            <div className="opacity-0 animate-slideInRight stagger-item">
               <h3 className="text-2xl font-medium mb-2 uppercase">MORE VALUE. MORE SUSTAINABLE</h3>
               <p className="text-lg text-gray-700 font-light leading-relaxed">
                 We aim to offer the best and finest products at competitive pricing by delivering directly from producers, while enabling farmers to earn more value and continue producing the best, in the best, traditional way.
