@@ -52,7 +52,7 @@ const WhereToFindUsSection = () => {
               {/* Coming Soon label */}
               <div className="mt-4 w-32 h-32 flex items-center justify-center">
                 <div className="bg-gray-800/80 text-white font-medium py-3 px-4 rounded-lg border border-gray-500">
-                  Coming Soon
+                  {isChinese ? "快来了" : "Coming Soon"}
                 </div>
               </div>
             </div>
