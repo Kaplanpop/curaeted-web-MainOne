@@ -10,19 +10,25 @@ import HomePage from "./pages/HomePage";
 import XiaohongshuPage from "./pages/XiaohongshuPage";
 import NotFound from "./pages/NotFound";
 import "./i18n";
+import { useTranslation } from "react-i18next";
 
 const queryClient = new QueryClient();
 
 const App = () => {
-  // Load the saved language preference on app start
+  const { i18n } = useTranslation();
+  
+  // Save the language preference when it changes
   useEffect(() => {
-    const savedLanguage = localStorage.getItem("language");
-    if (savedLanguage) {
-      import("i18next").then((i18next) => {
-        i18next.default.changeLanguage(savedLanguage);
-      });
-    }
-  }, []);
+    const handleLanguageChange = () => {
+      localStorage.setItem("language", i18n.language);
+    };
+    
+    i18n.on('languageChanged', handleLanguageChange);
+    
+    return () => {
+      i18n.off('languageChanged', handleLanguageChange);
+    };
+  }, [i18n]);
 
   return (
     <QueryClientProvider client={queryClient}>
