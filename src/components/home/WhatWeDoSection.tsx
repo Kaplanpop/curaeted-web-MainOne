@@ -4,7 +4,11 @@ import { useIntersectionObserver } from '@/utils/intersectionObserver';
 
 const WhatWeDoSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  useIntersectionObserver(sectionRef, { animationClass: 'animate-fadeIn' });
+  useIntersectionObserver(sectionRef, { 
+    animationClass: 'animate-fadeIn',
+    threshold: 0.2,
+    rootMargin: '-50px'
+  });
 
   return (
     <section id="whatWeDo" ref={sectionRef} className="py-20 opacity-0 relative">

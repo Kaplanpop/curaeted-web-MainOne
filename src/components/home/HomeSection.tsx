@@ -7,7 +7,11 @@ const HomeSection = () => {
   const { t } = useTranslation();
   const sectionRef = useRef<HTMLDivElement>(null);
   const [videoError, setVideoError] = useState(false);
-  useIntersectionObserver(sectionRef, { animationClass: 'animate-zoomFadeIn' });
+  useIntersectionObserver(sectionRef, { 
+    animationClass: 'animate-zoomFadeIn',
+    threshold: 0.2,
+    rootMargin: '-50px'
+  });
 
   const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
     console.error("Video failed to load", e);

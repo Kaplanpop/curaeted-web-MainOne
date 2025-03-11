@@ -4,7 +4,11 @@ import { useIntersectionObserver } from '@/utils/intersectionObserver';
 
 const WhyIbericoSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  useIntersectionObserver(sectionRef, { animationClass: 'animate-zoomFadeIn' });
+  useIntersectionObserver(sectionRef, { 
+    animationClass: 'animate-zoomFadeIn',
+    threshold: 0.2,
+    rootMargin: '-50px'
+  });
 
   return (
     <section id="whyIberico" ref={sectionRef} className="opacity-0 relative">

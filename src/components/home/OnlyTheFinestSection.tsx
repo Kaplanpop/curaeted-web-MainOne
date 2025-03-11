@@ -4,7 +4,11 @@ import { useIntersectionObserver } from '@/utils/intersectionObserver';
 
 const OnlyTheFinestSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  useIntersectionObserver(sectionRef, { animationClass: 'animate-fadeIn' });
+  useIntersectionObserver(sectionRef, { 
+    animationClass: 'animate-fadeIn',
+    threshold: 0.2,
+    rootMargin: '-50px'
+  });
 
   return (
     <section id="onlyTheFinest" ref={sectionRef} className="relative h-screen min-h-[600px] opacity-0 overflow-hidden">

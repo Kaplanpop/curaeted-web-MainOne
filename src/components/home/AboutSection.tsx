@@ -6,7 +6,11 @@ import { useTranslation } from 'react-i18next';
 const AboutSection = () => {
   const { t } = useTranslation();
   const sectionRef = useRef<HTMLDivElement>(null);
-  useIntersectionObserver(sectionRef, { animationClass: 'animate-fadeIn' });
+  useIntersectionObserver(sectionRef, { 
+    animationClass: 'animate-fadeIn',
+    threshold: 0.2,
+    rootMargin: '-50px'
+  });
 
   return (
     <section id="about" ref={sectionRef} className="relative opacity-0 overflow-hidden">
