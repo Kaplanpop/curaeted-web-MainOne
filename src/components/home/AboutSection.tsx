@@ -13,10 +13,10 @@ const AboutSection = () => {
   });
 
   return (
-    <section id="about" ref={sectionRef} className="relative opacity-0 overflow-hidden">
+    <section id="about" ref={sectionRef} className="fixed inset-0 w-full min-h-screen opacity-0 overflow-hidden">
       {/* Hero image with wave overlay */}
-      <div className="relative w-full">
-        <div className="w-full h-[400px] md:h-[500px] overflow-hidden">
+      <div className="relative w-full h-full">
+        <div className="w-full h-full overflow-hidden">
           <img 
             src="/lovable-uploads/5f4ac115-5846-45e0-8c2f-712e1948718b.png" 
             alt="Iberico pigs in cork oak forest" 
@@ -50,7 +50,7 @@ const AboutSection = () => {
       </div>
       
       {/* Content section */}
-      <div className="bg-white pt-8 pb-20 px-4 md:px-8 lg:px-16 text-center">
+      <div className="bg-white absolute bottom-0 left-0 right-0 pt-8 pb-20 px-4 md:px-8 lg:px-16 text-center" style={{ height: '50%' }}>
         <div className="max-w-6xl mx-auto">
           <p className="text-xl text-gray-800 font-roboto font-light text-center mb-16 mx-auto max-w-5xl opacity-0 animate-slideUp"
              style={{ animationDelay: '0.8s' }}>

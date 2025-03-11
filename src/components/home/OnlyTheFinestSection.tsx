@@ -11,7 +11,7 @@ const OnlyTheFinestSection = () => {
   });
 
   return (
-    <section id="onlyTheFinest" ref={sectionRef} className="relative h-screen min-h-[600px] opacity-0 overflow-hidden">
+    <section id="onlyTheFinest" ref={sectionRef} className="fixed inset-0 w-full min-h-screen opacity-0 overflow-hidden">
       <div className="grid grid-cols-3 h-full">
         <div className="relative h-full opacity-0 animate-slideInLeft" style={{ animationDelay: '0.2s' }}>
           <img 

@@ -11,7 +11,7 @@ const WhatWeDoSection = () => {
   });
 
   return (
-    <section id="whatWeDo" ref={sectionRef} className="py-20 opacity-0 relative">
+    <section id="whatWeDo" ref={sectionRef} className="py-20 opacity-0 fixed inset-0 w-full overflow-hidden">
       <div className="absolute inset-0 w-full h-full z-0">
         <img src="/lovable-uploads/55497852-ecf4-4ed5-8cd7-51aa1336d079.png" alt="Iberico meat inspection" className="w-full h-full object-cover object-center" />
         <div className="absolute inset-0 bg-black/70 z-1"></div>

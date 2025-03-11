@@ -75,6 +75,14 @@
   body {
     @apply bg-background text-foreground font-sans;
     font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+  
+  /* Each section should take up 100vh for the overlay effect */
+  section {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
   }
 }
 
@@ -87,6 +95,41 @@
 /* Base state for animated elements */
 .opacity-0 {
   opacity: 0;
+}
+
+/* Section positioning for overlay effect */
+section {
+  transform: translateZ(0);
+  will-change: transform, opacity;
+}
+
+section[id="home"] {
+  z-index: 10;
+}
+
+section[id="whatWeDo"] {
+  z-index: 20;
+}
+
+section[id="whereToFindUs"] {
+  z-index: 30;
+}
+
+section[id="onlyTheFinest"] {
+  z-index: 40;
+}
+
+section[id="whyIberico"] {
+  z-index: 50;
+}
+
+section[id="about"] {
+  z-index: 60;
+}
+
+section[id="contact"] {
+  z-index: 70;
+  position: relative !important; /* Contact section doesn't need the effect */
 }
 
 /* Animations for scroll transitions */

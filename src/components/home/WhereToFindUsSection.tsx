@@ -5,13 +5,13 @@ import { useIntersectionObserver } from '@/utils/intersectionObserver';
 const WhereToFindUsSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   useIntersectionObserver(sectionRef, { 
-    animationClass: 'animate-zoomFadeIn',
+    animationClass: 'animate-fadeIn',
     threshold: 0.2,
     rootMargin: '-50px'
   });
   
   return (
-    <section id="whereToFindUs" ref={sectionRef} className="py-20 opacity-0 relative h-screen min-h-[600px]">
+    <section id="whereToFindUs" ref={sectionRef} className="py-20 opacity-0 fixed inset-0 w-full min-h-screen overflow-hidden">
       <div className="absolute inset-0 w-full h-full z-0">
         <img src="/lovable-uploads/f6d54519-c7a2-444e-b953-798eb1ef0a19.png" alt="Delicious Iberico dish" className="w-full h-full object-cover object-center" />
         <div className="absolute inset-0 bg-black/70 z-1"></div>
