@@ -1,48 +1,53 @@
 
-import { useEffect, RefObject, useState } from 'react';
+import { useEffect, RefObject } from 'react';
 
-export const useIntersectionObserver = (ref: RefObject<HTMLElement>, options?: {
+interface IntersectionOptions {
   threshold?: number;
   rootMargin?: string;
   animationClass?: string;
   once?: boolean;
-}) => {
-  const [isIntersecting, setIsIntersecting] = useState(false);
+}
+
+export const useIntersectionObserver = (
+  ref: RefObject<Element>,
+  options: IntersectionOptions = {}
+) => {
+  const { 
+    threshold = 0.1, 
+    rootMargin = '0px', 
+    animationClass = 'animate-fadeIn',
+    once = true
+  } = options;
 
   useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const animationClass = options?.animationClass || 'animate-fadeIn';
-          entry.target.classList.add(animationClass);
-          setIsIntersecting(true);
-          
-          // If once is true, unobserve after first intersection
-          if (options?.once !== false) {
-            observer.unobserve(entry.target);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(animationClass);
+            if (once) {
+              observer.unobserve(entry.target);
+            }
+          } else if (!once) {
+            entry.target.classList.remove(animationClass);
           }
-        } else if (!options?.once) {
-          // Remove animation class when element is not in viewport, unless 'once' is true
-          const animationClass = options?.animationClass || 'animate-fadeIn';
-          entry.target.classList.remove(animationClass);
-          setIsIntersecting(false);
-        }
-      });
-    }, {
-      threshold: options?.threshold || 0.1,
-      rootMargin: options?.rootMargin || '0px'
-    });
-    
-    if (ref.current) {
-      observer.observe(ref.current);
+        });
+      },
+      {
+        threshold,
+        rootMargin,
+      }
+    );
+
+    const currentRef = ref.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
-    
+
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
-  }, [ref, options]);
-
-  return isIntersecting;
+  }, [ref, threshold, rootMargin, animationClass, once]);
 };

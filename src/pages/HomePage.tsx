@@ -12,18 +12,26 @@ import ScrollSpacer from "@/components/home/ScrollSpacer";
 
 const HomePage = () => {
   return (
-    <main>
-      <HomeSection />
-      <WhatWeDoSection />
-      <WhereToFindUsSection />
-      <OnlyTheFinestSection />
-      <WhyIbericoSection />
-      <AboutSection />
-      <ContactSection />
-      <CompanyInfoSection />
-      <Footer />
-      {/* Add spacer to enable scrolling through fixed sections */}
+    <main className="relative">
+      {/* Fixed position sections with overlay effect */}
+      <div className="fixed-sections">
+        <HomeSection />
+        <WhatWeDoSection />
+        <WhereToFindUsSection />
+        <OnlyTheFinestSection />
+        <WhyIbericoSection />
+        <AboutSection />
+      </div>
+      
+      {/* Scrollable content starts after the fixed sections */}
       <ScrollSpacer />
+      
+      {/* Regular sections that follow normal document flow */}
+      <div className="relative z-80">
+        <ContactSection />
+        <CompanyInfoSection />
+        <Footer />
+      </div>
     </main>
   );
 };

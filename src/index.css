@@ -78,11 +78,8 @@
     overflow-x: hidden; /* Prevent horizontal scroll */
   }
   
-  /* Each section should take up 100vh for the overlay effect */
-  section {
-    min-height: 100vh;
-    width: 100%;
-    position: relative;
+  html {
+    scroll-behavior: smooth;
   }
 }
 
@@ -129,7 +126,19 @@ section[id="about"] {
 
 section[id="contact"] {
   z-index: 70;
-  position: relative !important; /* Contact section doesn't need the effect */
+  position: relative;
+}
+
+/* Fixed section config */
+.fixed-sections section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
 /* Animations for scroll transitions */
@@ -200,17 +209,6 @@ section[id="contact"] {
 @keyframes zoomFadeIn {
   0% { opacity: 0; transform: scale(1.1); }
   100% { opacity: 1; transform: scale(1); }
-}
-
-/* Contact section image adjustments */
-#contact .overflow-hidden img {
-  max-height: 100%;
-  width: 100%;
-}
-
-/* Smooth scroll behavior */
-html {
-  scroll-behavior: smooth;
 }
 
 /* Custom section styles */
