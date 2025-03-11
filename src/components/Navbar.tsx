@@ -14,6 +14,9 @@ const Navbar = () => {
   const location = useLocation();
   const { t, i18n } = useTranslation();
 
+  // Use the Chinese company name when viewing in Chinese, otherwise use "Curæted"
+  const companyName = i18n.language === 'cn' ? '醇雅特' : 'Curæted';
+
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
 
@@ -77,13 +80,13 @@ const Navbar = () => {
           to="/" 
           className="text-xl font-poppins font-semibold tracking-tight flex items-center"
         >
-          {/* New logo */}
+          {/* Logo */}
           <img 
             src="/lovable-uploads/b52c32c0-29a6-40cc-9e20-14b9f336b4a3.png" 
             alt="Curæted Logo" 
             className="w-10 h-10 mr-2"
           />
-          <span className="font-poppins">Curæted</span>
+          <span className="font-poppins">{companyName}</span>
         </NavLink>
 
         {/* Right side navigation items - menu and language */}
@@ -274,4 +277,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
