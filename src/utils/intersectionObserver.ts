@@ -5,11 +5,14 @@ export const useIntersectionObserver = (ref: RefObject<HTMLElement>, options?: {
   threshold?: number;
   rootMargin?: string;
   animationClass?: string;
+  onIntersection?: (isIntersecting: boolean) => void;
 }) => {
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
+        if (options?.onIntersection) {
+          options.onIntersection(entry.isIntersecting);
+        } else if (entry.isIntersecting) {
           const animationClass = options?.animationClass || 'animate-fadeIn';
           entry.target.classList.add(animationClass);
         }
@@ -30,3 +33,4 @@ export const useIntersectionObserver = (ref: RefObject<HTMLElement>, options?: {
     };
   }, [ref, options]);
 };
+

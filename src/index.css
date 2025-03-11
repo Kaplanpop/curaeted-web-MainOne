@@ -75,6 +75,7 @@
   body {
     @apply bg-background text-foreground font-sans;
     font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
   }
 }
 
@@ -82,6 +83,28 @@
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* Section container for overlapping sections */
+.section-container {
+  position: relative;
+  height: auto;
+  width: 100%;
+}
+
+.section-container > section {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Section transition effect */
+.section-container > section:not(:first-child) {
+  margin-top: -50vh;
+  padding-top: 50vh;
+  clip-path: inset(0 0 0 0);
 }
 
 /* Animations */
