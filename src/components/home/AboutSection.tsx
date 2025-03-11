@@ -1,24 +1,21 @@
-
 import { useRef } from 'react';
 import { useIntersectionObserver } from '@/utils/intersectionObserver';
 import { useTranslation } from 'react-i18next';
-
 const AboutSection = () => {
-  const { t } = useTranslation();
+  const {
+    t
+  } = useTranslation();
   const sectionRef = useRef<HTMLDivElement>(null);
-  useIntersectionObserver(sectionRef, { animationClass: 'animate-fadeIn' });
-
-  return (
-    <section id="about" ref={sectionRef} className="relative opacity-0 h-screen">
+  useIntersectionObserver(sectionRef, {
+    animationClass: 'animate-fadeIn'
+  });
+  return <section id="about" ref={sectionRef} className="relative opacity-0 h-screen">
       {/* Hero image with dark overlay */}
       <div className="absolute inset-0 w-full h-full">
         <div className="w-full h-full overflow-hidden">
-          <img 
-            src="/lovable-uploads/5f4ac115-5846-45e0-8c2f-712e1948718b.png" 
-            alt="Iberico pigs in cork oak forest" 
-            className="w-full h-full object-cover opacity-0 animate-zoomFadeIn"
-            style={{ animationDelay: '0.2s' }}
-          />
+          <img src="/lovable-uploads/5f4ac115-5846-45e0-8c2f-712e1948718b.png" alt="Iberico pigs in cork oak forest" className="w-full h-full object-cover opacity-0 animate-zoomFadeIn" style={{
+          animationDelay: '0.2s'
+        }} />
           
           {/* Dark overlay */}
           <div className="absolute inset-0 bg-black/40"></div>
@@ -27,12 +24,14 @@ const AboutSection = () => {
       
       {/* Title overlay - positioned at the top portion of the screen */}
       <div className="absolute inset-0 flex flex-col items-center pt-20 md:pt-32">
-        <h2 className="font-poppins text-5xl md:text-6xl text-white font-light mb-4 opacity-0 animate-slideUp" 
-          style={{ animationDelay: '0.4s' }}>
+        <h2 className="font-poppins text-5xl md:text-6xl text-white font-light mb-4 opacity-0 animate-slideUp" style={{
+        animationDelay: '0.4s'
+      }}>
           {t('sections.about.title')}
         </h2>
-        <p className="font-roboto text-lg md:text-xl text-white max-w-2xl text-center mx-auto opacity-0 animate-slideUp"
-          style={{ animationDelay: '0.6s' }}>
+        <p className="font-roboto text-lg md:text-xl text-white max-w-2xl text-center mx-auto opacity-0 animate-slideUp" style={{
+        animationDelay: '0.6s'
+      }}>
           {t('sections.about.subtitle')}
         </p>
       </div>
@@ -42,8 +41,9 @@ const AboutSection = () => {
         <div className="w-full max-w-6xl mx-auto">
           {/* Content section with white semi-transparent background */}
           <div className="bg-white/95 text-black p-8 md:p-12 rounded-lg backdrop-blur-sm shadow-lg">
-            <p className="text-base md:text-lg font-roboto font-light text-center mb-16 mx-auto max-w-5xl opacity-0 animate-slideUp"
-               style={{ animationDelay: '0.8s' }}>
+            <p className="text-base md:text-lg font-roboto font-light text-center mb-16 mx-auto max-w-5xl opacity-0 animate-slideUp" style={{
+            animationDelay: '0.8s'
+          }}>
               {t('sections.about.content')}
             </p>
               
@@ -69,16 +69,11 @@ const AboutSection = () => {
             
             {/* Conclusion paragraph */}
             <div className="mt-8">
-              <p className="text-base md:text-lg font-roboto font-medium opacity-0 animate-slideUp"
-                 style={{ animationDelay: '1s' }}>
-                {t('sections.about.conclusion')}
-              </p>
+              
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AboutSection;
