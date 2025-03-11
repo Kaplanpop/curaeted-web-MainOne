@@ -26,8 +26,10 @@ const HomePage = () => {
       </div>
       
       {/* These sections are outside the scroll effect */}
-      <ContactSection />
-      <CompanyInfoSection />
+      <div className="mt-16">
+        <ContactSection />
+        <CompanyInfoSection />
+      </div>
     </div>
   );
 };

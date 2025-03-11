@@ -46,27 +46,27 @@ const AboutSection = () => {
       </div>
       
       {/* Content section */}
-      <div className="bg-white pt-8 pb-20 px-4 md:px-8 lg:px-16 text-center">
+      <div className="bg-white pt-8 pb-32 px-4 md:px-8 lg:px-16 text-center">
         <div className="max-w-6xl mx-auto">
-          <p className="text-xl text-gray-800 font-roboto font-light text-center mb-16 mx-auto max-w-5xl opacity-0 animate-slideUp"
+          <p className="text-base md:text-lg text-gray-800 font-roboto font-light text-center mb-16 mx-auto max-w-5xl opacity-0 animate-slideUp"
              style={{ animationDelay: '0.8s' }}>
             {t('sections.about.content')}
           </p>
             
-          <div className="space-y-10 stagger-container">
+          <div className="space-y-8 stagger-container">
             <div className="opacity-0 animate-slideInLeft stagger-item">
-              <h3 className="text-2xl font-medium mb-2 uppercase">FULLY TRACEABLE PRODUCTS</h3>
-              <p className="text-lg text-gray-700 font-light">From breeding, through farming and to table.</p>
+              <h3 className="text-xl md:text-2xl font-medium mb-2 uppercase">FULLY TRACEABLE PRODUCTS</h3>
+              <p className="text-base md:text-lg text-gray-700 font-light">From breeding, through farming and to table.</p>
             </div>
             
             <div className="opacity-0 animate-slideUp stagger-item">
-              <h3 className="text-2xl font-medium mb-2 uppercase">PERSONALISED & EXCLUSIVE</h3>
-              <p className="text-lg text-gray-700 font-light">Airfreight Door-to-Door in less than 15 days</p>
+              <h3 className="text-xl md:text-2xl font-medium mb-2 uppercase">PERSONALISED & EXCLUSIVE</h3>
+              <p className="text-base md:text-lg text-gray-700 font-light">Airfreight Door-to-Door in less than 15 days</p>
             </div>
             
             <div className="opacity-0 animate-slideInRight stagger-item">
-              <h3 className="text-2xl font-medium mb-2 uppercase">MORE VALUE. MORE SUSTAINABLE</h3>
-              <p className="text-lg text-gray-700 font-light leading-relaxed">
+              <h3 className="text-xl md:text-2xl font-medium mb-2 uppercase">MORE VALUE. MORE SUSTAINABLE</h3>
+              <p className="text-base md:text-lg text-gray-700 font-light leading-relaxed">
                 We aim to offer the best and finest products at competitive pricing by delivering directly from producers, while enabling farmers to earn more value and continue producing the best, in the best, traditional way.
               </p>
             </div>
