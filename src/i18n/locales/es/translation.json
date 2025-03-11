@@ -16,7 +16,13 @@
     },
     "whatWeDo": {
       "title": "Qué Hacemos",
-      "content": "Nos dedicamos a traerte los mejores productos ibéricos, cuidadosamente seleccionados e importados directamente de España. Nuestra pasión por la calidad y la tradición nos impulsa a ofrecerte una experiencia culinaria excepcional."
+      "content": "Nos dedicamos a traerte los mejores productos ibéricos, cuidadosamente seleccionados e importados directamente de España. Nuestra pasión por la calidad y la tradición nos impulsa a ofrecerte una experiencia culinaria excepcional.",
+      "focusText": "Nos enfocamos en Cerdo <span class=\"underline\">Ibérico</span> (embutidos y carne fresca) y Aceite de Oliva Virgen Extra",
+      "point1": "Un nuevo y joven proveedor de los mejores productos <span class=\"underline\">Ibéricos</span> para China",
+      "point2": "Solo trabajamos con lo mejor: cerdo <span class=\"underline\">Ibérico</span> 100% alimentado con bellotas y orgánico, aceite de oliva virgen extra elaborado de forma artesanal",
+      "point3": "Trabajamos únicamente con exportadores autorizados a China e importamos solo los mejores productos: 100% Ibérico, 100% alimentado con bellotas",
+      "point4": "Servimos directamente del productor al consumidor, a través de Red Note y WeChat, a chinos exigentes. Entregamos productos frescos, refrigerados y no congelados, por transporte aéreo, en menos de 2 semanas, garantizando frescura y máxima calidad, a la vez que aseguramos el mejor precio al entregar directamente de los productores",
+      "traceability": "Ofrecemos <span class=\"underline\">trazabilidad</span> completa para cada uno de nuestros productos, para que sepas de dónde viene, cómo se cría o produce y cómo llega a tu mesa"
     },
     "whereToFindUs": {
       "title": "Dónde encontrarnos",
@@ -24,11 +30,13 @@
     },
     "onlyTheFinest": {
       "title": "Solo lo Mejor",
-      "content": "Fotos de stock de los mejores productos de cerdo ibérico y el mejor aceite de oliva virgen extra orgánico (todos sin marca)"
+      "content": "100% Ibérico, 100% alimentado con bellotas<br />Aceite de oliva virgen extra producido ecológicamente"
     },
     "whyIberico": {
       "title": "Por Qué Ibérico",
-      "content": "En Curæted, el sabor excepcional es más que una promesa: es un patrimonio. Nuestras ofertas de Ibérico celebran siglos de arte culinario, desde nuestro cerdo curado meticulosamente que encarna la pasión y la tradición, hasta nuestro aceite de oliva virgen extra orgánico que eleva cada plato con su sabor vibrante y natural. Cada producto es un testimonio de la artesanía artesanal, las prácticas sostenibles y una búsqueda incansable de la excelencia. Descubre la historia del Ibérico: donde la calidad ancestral se encuentra con el espíritu innovador, y cada bocado cuenta una historia de autenticidad y refinamiento."
+      "subtitle": "Excelencia en cada bocado",
+      "content1": "En Curæted, el sabor excepcional es más que una promesa: es un patrimonio. Nuestras ofertas de Ibérico celebran siglos de arte culinario, desde nuestro cerdo curado meticulosamente que encarna la pasión y la tradición, hasta nuestro aceite de oliva virgen extra orgánico que eleva cada plato con su sabor vibrante y natural. Cada producto es un testimonio de la artesanía artesanal, las prácticas sostenibles y una búsqueda incansable de la excelencia. Descubre la historia del Ibérico: donde la calidad ancestral se encuentra con el espíritu innovador, y cada bocado cuenta una historia de autenticidad y refinamiento.",
+      "content2": "Para nuestro público chino, entendemos que un profundo respeto por la tradición y la calidad está en el corazón de cada experiencia culinaria. Nuestros productos no solo ofrecen un sabor superior, sino que también se alinean con un enfoque holístico del bienestar y el patrimonio cultural. Al combinar técnicas centenarias con sostenibilidad moderna, Curæted ofrece ingredientes que realzan tanto recetas tradicionales como cocina contemporánea, invitándote a saborear un viaje lujoso que honra tu rico legado gastronómico."
     },
     "about": {
       "title": "Sobre Nosotros",
@@ -47,5 +55,8 @@
   },
   "language": {
     "select": "Seleccionar Idioma"
+  },
+  "company": {
+    "name": "Curæted"
   }
 }
