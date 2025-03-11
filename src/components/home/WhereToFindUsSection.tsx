@@ -4,9 +4,12 @@ import { useIntersectionObserver } from '@/utils/intersectionObserver';
 import { useTranslation } from 'react-i18next';
 
 const WhereToFindUsSection = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const sectionRef = useRef<HTMLDivElement>(null);
   useIntersectionObserver(sectionRef, { animationClass: 'animate-zoomFadeIn' });
+  
+  // Determine if current language is Chinese
+  const isChinese = i18n.language === 'cn';
   
   return (
     <section id="whereToFindUs" ref={sectionRef} className="py-20 opacity-0 relative h-screen min-h-[600px]">
@@ -23,7 +26,9 @@ const WhereToFindUsSection = () => {
           
           <div className="flex flex-col md:flex-row justify-center items-center gap-16 mx-auto max-w-2xl mt-12">
             <div className="flex flex-col items-center opacity-0 animate-slideInLeft" style={{ animationDelay: '0.4s' }}>
-              <h3 className="font-poppins font-medium mb-2 text-white text-lg">Red Note (小红书)</h3>
+              <h3 className="font-poppins font-medium mb-2 text-white text-lg">
+                {isChinese ? "小红书" : "Red Note (小红书)"}
+              </h3>
               <div className="w-32 h-32 flex items-center justify-center">
                 <img src="/lovable-uploads/171db970-3a20-4178-bf65-09e4e36e3a1f.png" alt="Xiaohongshu (Red Note) Logo" className="w-24 h-24 object-contain" />
               </div>
@@ -38,7 +43,9 @@ const WhereToFindUsSection = () => {
             </div>
             
             <div className="flex flex-col items-center opacity-0 animate-slideInRight" style={{ animationDelay: '0.4s' }}>
-              <h3 className="font-poppins font-medium mb-2 text-white text-lg text-center">WeChat (微信)</h3>
+              <h3 className="font-poppins font-medium mb-2 text-white text-lg text-center">
+                {isChinese ? "微信" : "WeChat (微信)"}
+              </h3>
               <div className="w-32 h-32 flex items-center justify-center">
                 <img src="/lovable-uploads/efd9fd8c-759f-4bac-b403-ebee03fe86b8.png" alt="WeChat Logo" className="w-24 h-24 object-contain" />
               </div>
