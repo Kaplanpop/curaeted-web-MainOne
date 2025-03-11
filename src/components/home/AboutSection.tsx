@@ -9,7 +9,7 @@ const AboutSection = () => {
   useIntersectionObserver(sectionRef, { animationClass: 'animate-fadeIn' });
 
   return (
-    <section id="about" ref={sectionRef} className="relative opacity-0 overflow-hidden">
+    <section id="about" ref={sectionRef} className="relative opacity-0 overflow-hidden pb-20">
       {/* Hero image with wave overlay */}
       <div className="relative w-full">
         <div className="w-full h-[400px] md:h-[500px] overflow-hidden">
@@ -46,14 +46,14 @@ const AboutSection = () => {
       </div>
       
       {/* Content section */}
-      <div className="bg-white pt-8 pb-32 px-4 md:px-8 lg:px-16 text-center">
+      <div className="bg-white pt-8 pb-40 px-4 md:px-8 lg:px-16 text-center">
         <div className="max-w-6xl mx-auto">
           <p className="text-base md:text-lg text-gray-800 font-roboto font-light text-center mb-16 mx-auto max-w-5xl opacity-0 animate-slideUp"
              style={{ animationDelay: '0.8s' }}>
             {t('sections.about.content')}
           </p>
             
-          <div className="space-y-8 stagger-container">
+          <div className="space-y-8 stagger-container mb-10">
             <div className="opacity-0 animate-slideInLeft stagger-item">
               <h3 className="text-xl md:text-2xl font-medium mb-2 uppercase">FULLY TRACEABLE PRODUCTS</h3>
               <p className="text-base md:text-lg text-gray-700 font-light">From breeding, through farming and to table.</p>
