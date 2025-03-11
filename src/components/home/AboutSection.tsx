@@ -2,6 +2,7 @@
 import { useRef } from 'react';
 import { useIntersectionObserver } from '@/utils/intersectionObserver';
 import { useTranslation } from 'react-i18next';
+import { toast } from '@/components/ui/use-toast';
 
 const AboutSection = () => {
   const { t } = useTranslation();
@@ -9,7 +10,7 @@ const AboutSection = () => {
   useIntersectionObserver(sectionRef, { animationClass: 'animate-fadeIn' });
 
   return (
-    <section id="about" ref={sectionRef} className="relative opacity-0 overflow-hidden pb-64"> {/* Increased padding bottom */}
+    <section id="about" ref={sectionRef} className="relative opacity-0 min-h-screen">
       {/* Hero image with wave overlay */}
       <div className="relative w-full">
         <div className="w-full h-[400px] md:h-[500px] overflow-hidden">
@@ -45,32 +46,40 @@ const AboutSection = () => {
         </div>
       </div>
       
-      {/* Content section */}
-      <div className="bg-white pt-8 px-4 md:px-8 lg:px-16 text-center">
+      {/* Content section - made into a separate div with its own position context */}
+      <div className="bg-white pt-8 px-4 md:px-8 lg:px-16 text-center pb-40 mb-40"> {/* Added significant padding and margin */}
         <div className="max-w-6xl mx-auto">
           <p className="text-base md:text-lg text-gray-800 font-roboto font-light text-center mb-16 mx-auto max-w-5xl opacity-0 animate-slideUp"
              style={{ animationDelay: '0.8s' }}>
             {t('sections.about.content')}
           </p>
             
-          {/* Three advantages section with increased bottom margin */}
-          <div className="space-y-8 stagger-container mb-32"> {/* Increased margin bottom */}
+          {/* Three advantages section */}
+          <div className="space-y-12 mb-28"> {/* Increased vertical spacing between items and bottom margin */}
             <div className="opacity-0 animate-slideInLeft stagger-item">
-              <h3 className="text-xl md:text-2xl font-medium mb-2 uppercase">{t('sections.about.advantage1.title')}</h3>
+              <h3 className="text-xl md:text-2xl font-medium mb-4 uppercase">{t('sections.about.advantage1.title')}</h3>
               <p className="text-base md:text-lg text-gray-700 font-light">{t('sections.about.advantage1.content')}</p>
             </div>
             
             <div className="opacity-0 animate-slideUp stagger-item">
-              <h3 className="text-xl md:text-2xl font-medium mb-2 uppercase">{t('sections.about.advantage2.title')}</h3>
+              <h3 className="text-xl md:text-2xl font-medium mb-4 uppercase">{t('sections.about.advantage2.title')}</h3>
               <p className="text-base md:text-lg text-gray-700 font-light">{t('sections.about.advantage2.content')}</p>
             </div>
             
             <div className="opacity-0 animate-slideInRight stagger-item">
-              <h3 className="text-xl md:text-2xl font-medium mb-2 uppercase">{t('sections.about.advantage3.title')}</h3>
+              <h3 className="text-xl md:text-2xl font-medium mb-4 uppercase">{t('sections.about.advantage3.title')}</h3>
               <p className="text-base md:text-lg text-gray-700 font-light leading-relaxed">
                 {t('sections.about.advantage3.content')}
               </p>
             </div>
+          </div>
+          
+          {/* Adding a conclusion paragraph */}
+          <div className="mt-12">
+            <p className="text-base md:text-lg text-gray-800 font-roboto font-medium opacity-0 animate-slideUp"
+               style={{ animationDelay: '1s' }}>
+              {t('sections.about.conclusion')}
+            </p>
           </div>
         </div>
       </div>
