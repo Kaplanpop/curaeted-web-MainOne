@@ -22,11 +22,11 @@ const HomePage = () => {
         <WhereToFindUsSection />
         <OnlyTheFinestSection />
         <WhyIbericoSection />
-        <AboutSection />
       </div>
       
-      {/* These sections are outside the scroll effect */}
-      <div className="mt-24">
+      {/* These sections are outside the sticky context */}
+      <div>
+        <AboutSection />
         <ContactSection />
         <CompanyInfoSection />
       </div>
