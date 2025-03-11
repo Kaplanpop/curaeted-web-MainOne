@@ -10,16 +10,19 @@ const AboutSection = () => {
   useIntersectionObserver(sectionRef, { animationClass: 'animate-fadeIn' });
 
   return (
-    <section id="about" ref={sectionRef} className="relative opacity-0 bg-white pt-16 pb-32">
+    <section id="about" ref={sectionRef} className="relative opacity-0 h-screen">
       {/* Hero image with wave overlay */}
-      <div className="relative w-full">
-        <div className="w-full h-[400px] md:h-[500px] overflow-hidden">
+      <div className="absolute inset-0 w-full h-full">
+        <div className="w-full h-full overflow-hidden">
           <img 
             src="/lovable-uploads/5f4ac115-5846-45e0-8c2f-712e1948718b.png" 
             alt="Iberico pigs in cork oak forest" 
             className="w-full h-full object-cover opacity-0 animate-zoomFadeIn"
             style={{ animationDelay: '0.2s' }}
           />
+          
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-black/40"></div>
           
           {/* Title overlay */}
           <div className="absolute inset-0 flex flex-col items-center justify-center">
@@ -33,53 +36,45 @@ const AboutSection = () => {
             </p>
           </div>
         </div>
-        
-        {/* White wave overlay */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" className="w-full">
-            <path 
-              fill="#ffffff" 
-              fillOpacity="1" 
-              d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
-            ></path>
-          </svg>
-        </div>
       </div>
       
-      {/* Content section - completely static, no position context issues */}
-      <div className="px-4 md:px-8 lg:px-16 py-16 text-center">
-        <div className="max-w-6xl mx-auto">
-          <p className="text-base md:text-lg text-gray-800 font-roboto font-light text-center mb-20 mx-auto max-w-5xl opacity-0 animate-slideUp"
-             style={{ animationDelay: '0.8s' }}>
-            {t('sections.about.content')}
-          </p>
-            
-          {/* Three advantages section */}
-          <div className="grid gap-16 mb-20">
-            <div className="opacity-0 animate-slideInLeft stagger-item">
-              <h3 className="text-xl md:text-2xl font-medium mb-4 uppercase">{t('sections.about.advantage1.title')}</h3>
-              <p className="text-base md:text-lg text-gray-700 font-light">{t('sections.about.advantage1.content')}</p>
+      {/* Content overlay - positioned absolutely over the image */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center px-4 md:px-8 lg:px-16 overflow-y-auto">
+        <div className="w-full max-w-6xl mx-auto mt-[40vh]">
+          {/* Advantages section with dark semi-transparent background */}
+          <div className="bg-black/70 text-white p-8 md:p-12 rounded-lg backdrop-blur-sm">
+            <p className="text-base md:text-lg font-roboto font-light text-center mb-16 mx-auto max-w-5xl opacity-0 animate-slideUp"
+               style={{ animationDelay: '0.8s' }}>
+              {t('sections.about.content')}
+            </p>
+              
+            {/* Three advantages section */}
+            <div className="grid gap-16 mb-12">
+              <div className="opacity-0 animate-slideInLeft stagger-item">
+                <h3 className="text-xl md:text-2xl font-medium mb-4 uppercase">{t('sections.about.advantage1.title')}</h3>
+                <p className="text-base md:text-lg font-light">{t('sections.about.advantage1.content')}</p>
+              </div>
+              
+              <div className="opacity-0 animate-slideUp stagger-item">
+                <h3 className="text-xl md:text-2xl font-medium mb-4 uppercase">{t('sections.about.advantage2.title')}</h3>
+                <p className="text-base md:text-lg font-light">{t('sections.about.advantage2.content')}</p>
+              </div>
+              
+              <div className="opacity-0 animate-slideInRight stagger-item">
+                <h3 className="text-xl md:text-2xl font-medium mb-4 uppercase">{t('sections.about.advantage3.title')}</h3>
+                <p className="text-base md:text-lg font-light leading-relaxed">
+                  {t('sections.about.advantage3.content')}
+                </p>
+              </div>
             </div>
             
-            <div className="opacity-0 animate-slideUp stagger-item">
-              <h3 className="text-xl md:text-2xl font-medium mb-4 uppercase">{t('sections.about.advantage2.title')}</h3>
-              <p className="text-base md:text-lg text-gray-700 font-light">{t('sections.about.advantage2.content')}</p>
-            </div>
-            
-            <div className="opacity-0 animate-slideInRight stagger-item">
-              <h3 className="text-xl md:text-2xl font-medium mb-4 uppercase">{t('sections.about.advantage3.title')}</h3>
-              <p className="text-base md:text-lg text-gray-700 font-light leading-relaxed">
-                {t('sections.about.advantage3.content')}
+            {/* Conclusion paragraph */}
+            <div className="mt-8">
+              <p className="text-base md:text-lg font-roboto font-medium opacity-0 animate-slideUp"
+                 style={{ animationDelay: '1s' }}>
+                {t('sections.about.conclusion')}
               </p>
             </div>
-          </div>
-          
-          {/* Conclusion paragraph */}
-          <div className="mt-12">
-            <p className="text-base md:text-lg text-gray-800 font-roboto font-medium opacity-0 animate-slideUp"
-               style={{ animationDelay: '1s' }}>
-              {t('sections.about.conclusion')}
-            </p>
           </div>
         </div>
       </div>
