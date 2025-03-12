@@ -1,4 +1,3 @@
-
 {
   "menu": {
     "home": "Home",
@@ -73,7 +72,7 @@
   },
   "cookie": {
     "title": "We value your privacy",
-    "message": "We value your privacy. We use cookies to improve your browsing experience, show you personalized content and analyze our traffic. By clicking \"Accept All\" you consent to our use of cookies.",
+    "message": "We use cookies to improve your browsing experience, show you personalized content and analyze our traffic. By clicking \"Accept All\" you consent to our use of cookies.",
     "accept": "Accept All",
     "reject": "Reject All",
     "learnMore": "Learn More"
