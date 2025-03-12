@@ -1,4 +1,3 @@
-
 {
   "menu": {
     "home": "Inicio",
@@ -40,7 +39,7 @@
     },
     "about": {
       "title": "Sobre Nosotros",
-      "subtitle": "Curæted pretende reconectar a las personas con la mejor agricultura y ayudar a los agricultores artesanales a prosperar",
+      "subtitle": "Curæted pretende reconectarnos con la mejor agricultura y ayudar a los agricultores artesanales a prosperar",
       "content": "Con raíces en Extremadura, una región agrícola tradicional de España, con algunos de los mejores productos agrícolas españoles, desde cerdos ibéricos, aceite de oliva virgen extra, cerezas o miel, Curæted pensó que estos agricultores realmente podrían prosperar si solo fuera más fácil para ellos acceder a los mercados y difundir la palabra de su excelencia. Esta fue la combinación perfecta para el creciente anhelo de alimentos más seguros, mejores, más saludables, orgánicos y premium para los consumidores chinos cada vez más sofisticados, que quieren y no se conformarán si no es con lo mejor.",
       "advantage1": {
         "title": "PRODUCTOS TOTALMENTE TRAZABLES",
