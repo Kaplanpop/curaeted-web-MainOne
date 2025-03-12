@@ -2,88 +2,87 @@
 import { useTranslation } from 'react-i18next';
 
 const CookiePolicy = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   
   return (
     <div className="container mx-auto py-16 px-4 max-w-4xl">
-      <h1 className="text-3xl font-poppins font-bold mb-8">{t('cookie.title')}</h1>
+      <h1 className="text-3xl font-poppins font-bold mb-8">{t('cookie.policyTitle')}</h1>
       
       <div className="space-y-6">
         <section>
-          <h2 className="text-xl font-semibold mb-3">What Are Cookies</h2>
+          <h2 className="text-xl font-semibold mb-3">{t('cookie.whatAreCookies.title')}</h2>
           <p className="text-gray-700">
-            Cookies are small text files that are placed on your computer or mobile device when you visit a website. 
-            They are widely used to make websites work more efficiently and provide information to the website owners.
+            {t('cookie.whatAreCookies.content')}
           </p>
         </section>
         
         <section>
-          <h2 className="text-xl font-semibold mb-3">How We Use Cookies</h2>
+          <h2 className="text-xl font-semibold mb-3">{t('cookie.howWeUse.title')}</h2>
           <p className="text-gray-700 mb-4">
-            We use cookies for various purposes including:
+            {t('cookie.howWeUse.intro')}
           </p>
           <ul className="list-disc pl-6 space-y-2 text-gray-700">
-            <li><span className="font-medium">Essential cookies:</span> These are necessary for the website to function properly.</li>
-            <li><span className="font-medium">Preference cookies:</span> These allow us to remember choices you make and provide enhanced features.</li>
-            <li><span className="font-medium">Analytics cookies:</span> These help us understand how visitors interact with our website.</li>
-            <li><span className="font-medium">Marketing cookies:</span> These are used to track visitors across websites to display relevant advertisements.</li>
+            <li><span className="font-medium">{t('cookie.howWeUse.essential')}:</span> {t('cookie.howWeUse.essentialDesc')}</li>
+            <li><span className="font-medium">{t('cookie.howWeUse.preference')}:</span> {t('cookie.howWeUse.preferenceDesc')}</li>
+            <li><span className="font-medium">{t('cookie.howWeUse.analytics')}:</span> {t('cookie.howWeUse.analyticsDesc')}</li>
+            <li><span className="font-medium">{t('cookie.howWeUse.marketing')}:</span> {t('cookie.howWeUse.marketingDesc')}</li>
           </ul>
         </section>
         
         <section>
-          <h2 className="text-xl font-semibold mb-3">Types of Cookies We Use</h2>
+          <h2 className="text-xl font-semibold mb-3">{t('cookie.typesOfCookies.title')}</h2>
           <div className="space-y-4">
             <div>
-              <h3 className="font-medium text-lg">Strictly Necessary Cookies</h3>
+              <h3 className="font-medium text-lg">{t('cookie.typesOfCookies.necessary.title')}</h3>
               <p className="text-gray-700">
-                These cookies are essential for you to browse the website and use its features, such as accessing secure areas of the site.
+                {t('cookie.typesOfCookies.necessary.content')}
               </p>
             </div>
             
             <div>
-              <h3 className="font-medium text-lg">Performance Cookies</h3>
+              <h3 className="font-medium text-lg">{t('cookie.typesOfCookies.performance.title')}</h3>
               <p className="text-gray-700">
-                These cookies collect information about how you use our website, for instance which pages you go to most often.
+                {t('cookie.typesOfCookies.performance.content')}
               </p>
             </div>
             
             <div>
-              <h3 className="font-medium text-lg">Functionality Cookies</h3>
+              <h3 className="font-medium text-lg">{t('cookie.typesOfCookies.functionality.title')}</h3>
               <p className="text-gray-700">
-                These cookies allow the website to remember choices you make and provide enhanced features.
+                {t('cookie.typesOfCookies.functionality.content')}
               </p>
             </div>
             
             <div>
-              <h3 className="font-medium text-lg">Targeting/Advertising Cookies</h3>
+              <h3 className="font-medium text-lg">{t('cookie.typesOfCookies.targeting.title')}</h3>
               <p className="text-gray-700">
-                These cookies are used to deliver advertisements more relevant to you and your interests.
+                {t('cookie.typesOfCookies.targeting.content')}
               </p>
             </div>
           </div>
         </section>
         
         <section>
-          <h2 className="text-xl font-semibold mb-3">Managing Cookies</h2>
+          <h2 className="text-xl font-semibold mb-3">{t('cookie.managing.title')}</h2>
           <p className="text-gray-700">
-            Most web browsers allow some control of most cookies through the browser settings. To find out more about cookies, including how to see what cookies have been set and how to manage and delete them, visit <a href="https://www.allaboutcookies.org" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">www.allaboutcookies.org</a>.
+            {t('cookie.managing.content')} <a href="https://www.allaboutcookies.org" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">www.allaboutcookies.org</a>.
           </p>
         </section>
         
         <section>
-          <h2 className="text-xl font-semibold mb-3">Your Choices</h2>
+          <h2 className="text-xl font-semibold mb-3">{t('cookie.yourChoices.title')}</h2>
           <p className="text-gray-700">
-            If you prefer, you can choose to have your computer warn you each time a cookie is being sent, or you can choose to turn off all cookies. You do this through your browser settings. As each browser is different, look at your browser's Help Menu to learn the correct way to modify your cookies.
+            {t('cookie.yourChoices.content1')}
           </p>
           <p className="text-gray-700 mt-2">
-            If you disable cookies, some features that make your site experience more efficient may not function properly.
+            {t('cookie.yourChoices.content2')}
           </p>
         </section>
         
         <section>
-          <h2 className="text-xl font-semibold mb-3">Contact Us</h2>
+          <h2 className="text-xl font-semibold mb-3">{t('cookie.contactUs.title')}</h2>
           <p className="text-gray-700">
-            If you have any questions or suggestions about our Cookie Policy, do not hesitate to contact us through our contact page.
+            {t('cookie.contactUs.content')}
           </p>
         </section>
       </div>

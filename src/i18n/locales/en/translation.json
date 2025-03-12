@@ -1,3 +1,4 @@
+
 {
   "menu": {
     "home": "Home",
@@ -75,6 +76,55 @@
     "message": "We use cookies to improve your browsing experience, show you personalized content and analyze our traffic. By clicking \"Accept All\" you consent to our use of cookies.",
     "accept": "Accept All",
     "reject": "Reject All",
-    "learnMore": "Learn More"
+    "learnMore": "Learn More",
+    "policyTitle": "Cookie Policy",
+    "whatAreCookies": {
+      "title": "What Are Cookies",
+      "content": "Cookies are small text files that are placed on your computer or mobile device when you visit a website. They are widely used to make websites work more efficiently and provide information to the website owners."
+    },
+    "howWeUse": {
+      "title": "How We Use Cookies",
+      "intro": "We use cookies for various purposes including:",
+      "essential": "Essential cookies",
+      "essentialDesc": "These are necessary for the website to function properly.",
+      "preference": "Preference cookies",
+      "preferenceDesc": "These allow us to remember choices you make and provide enhanced features.",
+      "analytics": "Analytics cookies",
+      "analyticsDesc": "These help us understand how visitors interact with our website.",
+      "marketing": "Marketing cookies",
+      "marketingDesc": "These are used to track visitors across websites to display relevant advertisements."
+    },
+    "typesOfCookies": {
+      "title": "Types of Cookies We Use",
+      "necessary": {
+        "title": "Strictly Necessary Cookies",
+        "content": "These cookies are essential for you to browse the website and use its features, such as accessing secure areas of the site."
+      },
+      "performance": {
+        "title": "Performance Cookies",
+        "content": "These cookies collect information about how you use our website, for instance which pages you go to most often."
+      },
+      "functionality": {
+        "title": "Functionality Cookies",
+        "content": "These cookies allow the website to remember choices you make and provide enhanced features."
+      },
+      "targeting": {
+        "title": "Targeting/Advertising Cookies",
+        "content": "These cookies are used to deliver advertisements more relevant to you and your interests."
+      }
+    },
+    "managing": {
+      "title": "Managing Cookies",
+      "content": "Most web browsers allow some control of most cookies through the browser settings. To find out more about cookies, including how to see what cookies have been set and how to manage and delete them, visit"
+    },
+    "yourChoices": {
+      "title": "Your Choices",
+      "content1": "If you prefer, you can choose to have your computer warn you each time a cookie is being sent, or you can choose to turn off all cookies. You do this through your browser settings. As each browser is different, look at your browser's Help Menu to learn the correct way to modify your cookies.",
+      "content2": "If you disable cookies, some features that make your site experience more efficient may not function properly."
+    },
+    "contactUs": {
+      "title": "Contact Us",
+      "content": "If you have any questions or suggestions about our Cookie Policy, do not hesitate to contact us through our contact page."
+    }
   }
 }

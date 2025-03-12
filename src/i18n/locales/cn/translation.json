@@ -1,3 +1,4 @@
+
 {
   "menu": {
     "home": "首页",
@@ -75,6 +76,55 @@
     "message": "我们使用cookies来改善您的浏览体验，向您展示个性化内容并分析我们的流量。通过点击\"全部接受\"，您同意我们使用cookies。",
     "accept": "全部接受",
     "reject": "全部拒绝",
-    "learnMore": "了解更多"
+    "learnMore": "了解更多",
+    "policyTitle": "Cookie 政策",
+    "whatAreCookies": {
+      "title": "什么是 Cookies",
+      "content": "Cookies 是当您访问网站时放置在您的计算机或移动设备上的小型文本文件。它们被广泛用于使网站更高效地运行并向网站所有者提供信息。"
+    },
+    "howWeUse": {
+      "title": "我们如何使用 Cookies",
+      "intro": "我们将 cookies 用于各种目的，包括：",
+      "essential": "必要 cookies",
+      "essentialDesc": "这些对于网站正常运行是必需的。",
+      "preference": "偏好 cookies",
+      "preferenceDesc": "这些使我们能够记住您做出的选择并提供增强的功能。",
+      "analytics": "分析 cookies",
+      "analyticsDesc": "这些帮助我们了解访问者如何与我们的网站互动。",
+      "marketing": "营销 cookies",
+      "marketingDesc": "这些用于跟踪访问者跨网站以显示相关广告。"
+    },
+    "typesOfCookies": {
+      "title": "我们使用的 Cookies 类型",
+      "necessary": {
+        "title": "绝对必要的 Cookies",
+        "content": "这些 cookies 对于您浏览网站和使用其功能至关重要，例如访问网站的安全区域。"
+      },
+      "performance": {
+        "title": "性能 Cookies",
+        "content": "这些 cookies 收集有关您如何使用我们的网站的信息，例如您最常访问哪些页面。"
+      },
+      "functionality": {
+        "title": "功能性 Cookies",
+        "content": "这些 cookies 允许网站记住您做出的选择并提供增强的功能。"
+      },
+      "targeting": {
+        "title": "定向/广告 Cookies",
+        "content": "这些 cookies 用于提供与您和您的兴趣更相关的广告。"
+      }
+    },
+    "managing": {
+      "title": "管理 Cookies",
+      "content": "大多数网络浏览器允许通过浏览器设置对大多数 cookies 进行一定程度的控制。要了解更多关于 cookies 的信息，包括如何查看已设置的 cookies 以及如何管理和删除它们，请访问"
+    },
+    "yourChoices": {
+      "title": "您的选择",
+      "content1": "如果您愿意，您可以选择让您的计算机在每次发送 cookie 时警告您，或者您可以选择关闭所有 cookies。您可以通过浏览器设置来执行此操作。由于每个浏览器都不同，请查看浏览器的帮助菜单，了解修改 cookies 的正确方法。",
+      "content2": "如果您禁用 cookies，某些使您的网站体验更高效的功能可能无法正常工作。"
+    },
+    "contactUs": {
+      "title": "联系我们",
+      "content": "如果您对我们的 Cookie 政策有任何问题或建议，请通过我们的联系页面与我们联系。"
+    }
   }
 }

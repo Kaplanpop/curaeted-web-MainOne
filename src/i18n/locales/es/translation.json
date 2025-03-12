@@ -76,6 +76,55 @@
     "message": "Usamos cookies para mejorar su experiencia de navegación, mostrarle contenidos personalizados y analizar nuestro tráfico. Al hacer clic en \"Aceptar todo\" usted da su consentimiento a nuestro uso de las cookies.",
     "accept": "Aceptar todas",
     "reject": "Rechazar todas",
-    "learnMore": "Más información"
+    "learnMore": "Más información",
+    "policyTitle": "Política de Cookies",
+    "whatAreCookies": {
+      "title": "¿Qué Son las Cookies?",
+      "content": "Las cookies son pequeños archivos de texto que se colocan en su ordenador o dispositivo móvil cuando visita un sitio web. Se utilizan ampliamente para hacer que los sitios web funcionen de manera más eficiente y proporcionar información a los propietarios del sitio web."
+    },
+    "howWeUse": {
+      "title": "Cómo Utilizamos las Cookies",
+      "intro": "Utilizamos cookies para diversos fines, incluyendo:",
+      "essential": "Cookies esenciales",
+      "essentialDesc": "Estas son necesarias para que el sitio web funcione correctamente.",
+      "preference": "Cookies de preferencias",
+      "preferenceDesc": "Estas nos permiten recordar las elecciones que hace y proporcionar características mejoradas.",
+      "analytics": "Cookies analíticas",
+      "analyticsDesc": "Estas nos ayudan a entender cómo los visitantes interactúan con nuestro sitio web.",
+      "marketing": "Cookies de marketing",
+      "marketingDesc": "Estas se utilizan para rastrear visitantes a través de sitios web y mostrar anuncios relevantes."
+    },
+    "typesOfCookies": {
+      "title": "Tipos de Cookies que Utilizamos",
+      "necessary": {
+        "title": "Cookies Estrictamente Necesarias",
+        "content": "Estas cookies son esenciales para que pueda navegar por el sitio web y utilizar sus funciones, como acceder a áreas seguras del sitio."
+      },
+      "performance": {
+        "title": "Cookies de Rendimiento",
+        "content": "Estas cookies recopilan información sobre cómo utiliza nuestro sitio web, por ejemplo, qué páginas visita con más frecuencia."
+      },
+      "functionality": {
+        "title": "Cookies de Funcionalidad",
+        "content": "Estas cookies permiten que el sitio web recuerde las elecciones que hace y proporcione características mejoradas."
+      },
+      "targeting": {
+        "title": "Cookies de Segmentación/Publicidad",
+        "content": "Estas cookies se utilizan para entregar anuncios más relevantes para usted y sus intereses."
+      }
+    },
+    "managing": {
+      "title": "Gestión de Cookies",
+      "content": "La mayoría de los navegadores web permiten cierto control de la mayoría de las cookies a través de la configuración del navegador. Para obtener más información sobre las cookies, incluyendo cómo ver qué cookies se han establecido y cómo gestionarlas y eliminarlas, visite"
+    },
+    "yourChoices": {
+      "title": "Sus Opciones",
+      "content1": "Si lo prefiere, puede optar por que su ordenador le avise cada vez que se envía una cookie, o puede optar por desactivar todas las cookies. Esto se hace a través de la configuración de su navegador. Como cada navegador es diferente, consulte el Menú de Ayuda de su navegador para aprender la forma correcta de modificar sus cookies.",
+      "content2": "Si deshabilita las cookies, es posible que algunas funciones que hacen que su experiencia en el sitio sea más eficiente no funcionen correctamente."
+    },
+    "contactUs": {
+      "title": "Contáctenos",
+      "content": "Si tiene alguna pregunta o sugerencia sobre nuestra Política de Cookies, no dude en contactarnos a través de nuestra página de contacto."
+    }
   }
 }
