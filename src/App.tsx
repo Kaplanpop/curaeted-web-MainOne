@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import XiaohongshuPage from "./pages/XiaohongshuPage";
 import NotFound from "./pages/NotFound";
+import CookieDisclaimer from "./components/CookieDisclaimer";
 import "./i18n";
 import { useTranslation } from "react-i18next";
 
@@ -42,6 +43,7 @@ const App = () => {
             <Route path="/xiaohongshu" element={<XiaohongshuPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <CookieDisclaimer />
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>

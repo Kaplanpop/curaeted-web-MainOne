@@ -1,4 +1,3 @@
-
 {
   "menu": {
     "home": "Home",
@@ -70,5 +69,10 @@
   },
   "company": {
     "name": "Curæted"
+  },
+  "cookie": {
+    "message": "This website uses cookies to ensure you get the best experience.",
+    "accept": "Accept",
+    "learnMore": "Learn More"
   }
 }
