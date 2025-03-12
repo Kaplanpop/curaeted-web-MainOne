@@ -9,19 +9,22 @@ const CookieDisclaimer = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const cookiePreference = localStorage.getItem('cookiesPreference');
-    if (!cookiePreference) {
+    // Check for a session identifier instead of a permanent cookie preference
+    const sessionCookieAcknowledged = sessionStorage.getItem('cookiesAcknowledged');
+    if (!sessionCookieAcknowledged) {
       setIsVisible(true);
     }
   }, []);
 
   const handleAccept = () => {
-    localStorage.setItem('cookiesPreference', 'accepted');
+    // Store acknowledgment in sessionStorage instead of localStorage
+    sessionStorage.setItem('cookiesAcknowledged', 'accepted');
     setIsVisible(false);
   };
 
   const handleReject = () => {
-    localStorage.setItem('cookiesPreference', 'rejected');
+    // Store acknowledgment in sessionStorage instead of localStorage
+    sessionStorage.setItem('cookiesAcknowledged', 'rejected');
     setIsVisible(false);
   };
 

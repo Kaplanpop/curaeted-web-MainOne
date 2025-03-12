@@ -5,7 +5,7 @@ const CookiePolicy = () => {
   const { t, i18n } = useTranslation();
   
   return (
-    <div className="container mx-auto py-16 px-4 max-w-4xl">
+    <div className="container mx-auto pt-24 pb-16 px-4 max-w-4xl">
       <h1 className="text-3xl font-poppins font-bold mb-8">{t('cookie.policyTitle')}</h1>
       
       <div className="space-y-6">
