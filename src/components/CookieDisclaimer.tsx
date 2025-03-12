@@ -36,21 +36,21 @@ const CookieDisclaimer = () => {
         <div className="flex gap-2">
           <Button
             variant="outline"
-            className="text-white border-white hover:bg-white hover:text-gray-900"
+            className="text-blue-500 border-white hover:bg-white hover:text-gray-900"
             onClick={handleReject}
           >
             {t('cookie.reject')}
           </Button>
           <Button
             variant="outline"
-            className="text-white border-white hover:bg-white hover:text-gray-900"
+            className="text-blue-500 border-white hover:bg-white hover:text-gray-900"
             onClick={handleAccept}
           >
             {t('cookie.accept')}
           </Button>
           <Button
             variant="link"
-            className="text-white hover:text-gray-200"
+            className="text-blue-500 hover:text-gray-200"
             onClick={() => window.open('/privacy-policy', '_blank')}
           >
             {t('cookie.learnMore')}
