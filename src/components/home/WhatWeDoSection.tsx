@@ -63,9 +63,11 @@ const WhatWeDoSection = () => {
             </div>
           </div>
           
-          <p className="text-xl text-white font-roboto text-center font-light mt-16 opacity-0 animate-slideUp" style={{ animationDelay: '0.6s' }}
-             dangerouslySetInnerHTML={{ __html: t('sections.whatWeDo.traceability') }}>
-          </p>
+          <div className="mt-16 opacity-0 animate-slideUp" style={{ animationDelay: '0.6s' }}>
+            <p className="text-xl text-white font-roboto text-center font-light"
+               dangerouslySetInnerHTML={{ __html: t('sections.whatWeDo.traceability') }}>
+            </p>
+          </div>
         </div>
       </div>
     </section>
