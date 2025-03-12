@@ -33,7 +33,7 @@ const WhereToFindUsSection = () => {
                 <img src="/lovable-uploads/171db970-3a20-4178-bf65-09e4e36e3a1f.png" alt="Xiaohongshu (Red Note) Logo" className="w-24 h-24 object-contain" />
               </div>
               {/* QR Code */}
-              <div className="mt-4 w-32 h-32 bg-white rounded-lg p-1">
+              <div className="mt-4 w-24 h-24 bg-white rounded-lg p-1">
                 <img 
                   src="/lovable-uploads/5a010e6b-1221-4855-97bf-1ce040575ebd.png" 
                   alt="Xiaohongshu QR Code" 
@@ -50,7 +50,7 @@ const WhereToFindUsSection = () => {
                 <img src="/lovable-uploads/efd9fd8c-759f-4bac-b403-ebee03fe86b8.png" alt="WeChat Logo" className="w-24 h-24 object-contain" />
               </div>
               {/* Coming Soon label */}
-              <div className="mt-4 w-32 h-32 flex items-center justify-center">
+              <div className="mt-4 w-24 h-24 flex items-center justify-center">
                 <div className="bg-gray-800/80 text-white font-medium py-3 px-4 rounded-lg border border-gray-500">
                   {isChinese ? "快来了" : "Coming Soon"}
                 </div>
