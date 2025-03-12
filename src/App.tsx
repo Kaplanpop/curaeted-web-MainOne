@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import XiaohongshuPage from "./pages/XiaohongshuPage";
 import NotFound from "./pages/NotFound";
+import CookiePolicy from "./pages/CookiePolicy";
 import CookieDisclaimer from "./components/CookieDisclaimer";
 import "./i18n";
 import { useTranslation } from "react-i18next";
@@ -41,6 +42,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/xiaohongshu" element={<XiaohongshuPage />} />
+            <Route path="/cookie-policy" element={<CookiePolicy />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <CookieDisclaimer />

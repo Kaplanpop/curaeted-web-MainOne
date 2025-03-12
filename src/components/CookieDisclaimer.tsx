@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from './ui/button';
+import { Link } from 'react-router-dom';
 
 const CookieDisclaimer = () => {
   const { t } = useTranslation();
@@ -51,9 +52,11 @@ const CookieDisclaimer = () => {
           <Button
             variant="link"
             className="text-blue-500 hover:text-gray-200"
-            onClick={() => window.open('/privacy-policy', '_blank')}
+            asChild
           >
-            {t('cookie.learnMore')}
+            <Link to="/cookie-policy">
+              {t('cookie.learnMore')}
+            </Link>
           </Button>
         </div>
       </div>
