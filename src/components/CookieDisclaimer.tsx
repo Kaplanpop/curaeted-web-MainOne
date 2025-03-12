@@ -24,9 +24,10 @@ const CookieDisclaimer = () => {
   return (
     <div className="fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-4 z-50">
       <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p className="text-sm text-center sm:text-left">
-          {t('cookie.message')}
-        </p>
+        <div className="text-sm text-center sm:text-left">
+          <h4 className="font-bold mb-1">{t('cookie.title', 'We value your privacy')}</h4>
+          <p>{t('cookie.message')}</p>
+        </div>
         <div className="flex gap-2">
           <Button
             variant="outline"

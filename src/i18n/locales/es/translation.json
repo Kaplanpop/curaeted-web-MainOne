@@ -1,3 +1,4 @@
+
 {
   "menu": {
     "home": "Inicio",
@@ -71,8 +72,8 @@
     "name": "Curæted"
   },
   "cookie": {
-    "message": "Este sitio web utiliza cookies para garantizar la mejor experiencia.",
-    "accept": "Aceptar",
+    "message": "Valoramos tu privacidad. Usamos cookies para mejorar su experiencia de navegación, mostrarle contenidos personalizados y analizar nuestro tráfico. Al hacer clic en \"Aceptar todo\" usted da su consentimiento a nuestro uso de las cookies.",
+    "accept": "Aceptar todo",
     "learnMore": "Más información"
   }
 }
