@@ -21,7 +21,7 @@ const WhatWeDoSection = () => {
             {t('sections.whatWeDo.title')}
           </h2>
           
-          <p className="font-roboto text-lg md:text-xl text-white max-w-2xl text-center mx-auto mb-16 opacity-0 animate-slideUp" style={{ animationDelay: '0.4s' }}
+          <p className="font-roboto text-lg md:text-xl text-white max-w-4xl text-center mx-auto mb-16 opacity-0 animate-slideUp whitespace-nowrap md:whitespace-normal" style={{ animationDelay: '0.4s' }}
              dangerouslySetInnerHTML={{ __html: t('sections.whatWeDo.focusText') }}>
           </p>
           
