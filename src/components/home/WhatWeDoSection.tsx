@@ -2,11 +2,13 @@
 import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useIntersectionObserver } from '@/utils/intersectionObserver';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const WhatWeDoSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   useIntersectionObserver(sectionRef, { animationClass: 'animate-fadeIn' });
   const { t } = useTranslation();
+  const isMobile = useIsMobile();
 
   return (
     <section id="whatWeDo" ref={sectionRef} className="py-20 opacity-0 relative">
@@ -21,7 +23,7 @@ const WhatWeDoSection = () => {
             {t('sections.whatWeDo.title')}
           </h2>
           
-          <p className="font-roboto text-lg md:text-xl text-white max-w-4xl text-center mx-auto mb-16 opacity-0 animate-slideUp whitespace-nowrap md:whitespace-normal" style={{ animationDelay: '0.4s' }}
+          <p className={`font-roboto text-lg md:text-xl text-white max-w-4xl text-center mx-auto mb-16 opacity-0 animate-slideUp ${isMobile ? 'whitespace-normal' : 'whitespace-nowrap md:whitespace-normal'}`} style={{ animationDelay: '0.4s' }}
              dangerouslySetInnerHTML={{ __html: t('sections.whatWeDo.focusText') }}>
           </p>
           
