@@ -23,7 +23,7 @@ const WhatWeDoSection = () => {
             {t('sections.whatWeDo.title')}
           </h2>
           
-          <p className={`font-roboto text-lg md:text-xl text-white max-w-4xl text-center mx-auto mb-16 opacity-0 animate-slideUp ${isMobile ? 'whitespace-normal' : 'whitespace-nowrap md:whitespace-normal'}`} style={{ animationDelay: '0.4s' }}
+          <p className="font-roboto text-lg md:text-xl text-white max-w-4xl text-center mx-auto mb-16 opacity-0 animate-slideUp whitespace-normal" style={{ animationDelay: '0.4s' }}
              dangerouslySetInnerHTML={{ __html: t('sections.whatWeDo.focusText') }}>
           </p>
           
@@ -57,7 +57,7 @@ const WhatWeDoSection = () => {
             
             <div className="flex items-start opacity-0 animate-slideInRight stagger-item">
               <div className="flex-shrink-0 text-4xl font-bold mr-4 text-white">
-                4
+                3
               </div>
               <p className="text-lg text-white font-roboto leading-relaxed mt-1 font-light"
                  dangerouslySetInnerHTML={{ __html: t('sections.whatWeDo.point4') }}>
