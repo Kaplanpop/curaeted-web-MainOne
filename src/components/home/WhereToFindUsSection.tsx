@@ -49,11 +49,13 @@ const WhereToFindUsSection = () => {
               <div className="w-32 h-32 flex items-center justify-center">
                 <img src="/lovable-uploads/efd9fd8c-759f-4bac-b403-ebee03fe86b8.png" alt="WeChat Logo" className="w-24 h-24 object-contain" />
               </div>
-              {/* Coming Soon label */}
-              <div className="mt-4 w-24 h-24 flex items-center justify-center">
-                <div className="bg-gray-800/80 text-white font-medium py-3 px-4 rounded-lg border border-gray-500">
-                  {isChinese ? "快来了" : "Coming Soon"}
-                </div>
+              {/* WeChat QR Code */}
+              <div className="mt-4 w-24 h-24 bg-white rounded-lg p-1">
+                <img 
+                  src="/lovable-uploads/5fd831c3-1432-44b5-bac7-48e2ad963fae.png" 
+                  alt="WeChat QR Code" 
+                  className="w-full h-full object-contain"
+                />
               </div>
             </div>
           </div>
