@@ -54,11 +54,6 @@ const AboutSection = () => {
                 <p className="text-base md:text-lg font-light">{t('sections.about.advantage1.content')}</p>
               </div>
               
-              <div className="opacity-0 animate-slideUp stagger-item">
-                <h3 className="text-xl md:text-2xl font-medium mb-4 uppercase">{t('sections.about.advantage2.title')}</h3>
-                <p className="text-base md:text-lg font-light">{t('sections.about.advantage2.content')}</p>
-              </div>
-              
               <div className="opacity-0 animate-slideInRight stagger-item">
                 <h3 className="text-xl md:text-2xl font-medium mb-4 uppercase">{t('sections.about.advantage3.title')}</h3>
                 <p className="text-base md:text-lg font-light leading-relaxed">
