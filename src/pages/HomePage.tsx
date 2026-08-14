@@ -1,7 +1,9 @@
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
+import SectionIllustration from "@/components/SectionIllustration";
 import { content, Language } from "@/content/siteContent";
+import { buildMailtoHref } from "@/lib/mailto";
 
 const ensureMeta = (selector: string, attributes: Record<string, string>) => {
   let node = document.head.querySelector<HTMLMetaElement | HTMLLinkElement>(selector);
@@ -16,6 +18,12 @@ const HomePage = ({ language }: { language: Language }) => {
   const copy = content[language];
   const rootRef = useRef<HTMLDivElement>(null);
   const [form, setForm] = useState({ name: "", company: "", email: "", message: "", website: "" });
+  const approachHeadlineLines = language === "en"
+    ? ["Every market", "entry needs its", "own path."]
+    : ["每一次出海，", "都需要一条适合", "自己的路径。"];
+  const workHeadlineLines = language === "en"
+    ? ["Experience built", "where strategy", "meets execution."]
+    : ["连接中国需求", "与全球能力的", "实际经验。"];
 
   useEffect(() => {
     document.documentElement.lang = copy.lang;
@@ -30,27 +38,41 @@ const HomePage = ({ language }: { language: Language }) => {
     ensureMeta('link[hreflang="x-default"]', { rel: "alternate", hreflang: "x-default", href: "https://curaetedchina.com/" });
 
     const hash = window.location.hash.slice(1);
-    if (hash) requestAnimationFrame(() => document.getElementById(hash)?.scrollIntoView());
+    const hashTimer = hash
+      ? window.setTimeout(() => {
+        const target = document.getElementById(hash);
+        if (target) window.scrollTo(0, target.getBoundingClientRect().top + window.scrollY);
+      }, 100)
+      : undefined;
+
+    return () => {
+      if (hashTimer !== undefined) window.clearTimeout(hashTimer);
+    };
   }, [copy, language]);
 
   useEffect(() => {
     const nodes = rootRef.current?.querySelectorAll(".reveal") ?? [];
+    if (!("IntersectionObserver" in window)) {
+      nodes.forEach((node) => node.classList.add("is-visible"));
+      return;
+    }
+
+    document.documentElement.classList.add("has-reveal");
     const observer = new IntersectionObserver(
       (entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add("is-visible")),
       { threshold: 0.12, rootMargin: "0px 0px -8%" },
     );
     nodes.forEach((node) => observer.observe(node));
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      document.documentElement.classList.remove("has-reveal");
+    };
   }, [language]);
 
   const submit = (event: FormEvent) => {
     event.preventDefault();
     if (form.website) return;
-    const subject = language === "en" ? `China outbound conversation — ${form.company || form.name}` : `出海增长交流 — ${form.company || form.name}`;
-    const body = language === "en"
-      ? `Name: ${form.name}\nCompany: ${form.company}\nEmail: ${form.email}\n\n${form.message}`
-      : `姓名：${form.name}\n公司：${form.company}\n邮箱：${form.email}\n\n${form.message}`;
-    window.location.href = `mailto:info@curaetedchina.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = buildMailtoHref(language, form);
   };
 
   return (
@@ -60,8 +82,11 @@ const HomePage = ({ language }: { language: Language }) => {
         <section id="top" className="hero dark-section">
           <div className="route-canvas" aria-hidden="true"><span /><span /><span /></div>
           <div className="hero-inner">
-            <p className="eyebrow reveal">{copy.hero.eyebrow}</p>
-            <h1 className="reveal">{copy.hero.headline}</h1>
+            <div className="hero-upper-copy">
+              <p className="eyebrow reveal">{copy.hero.eyebrow}</p>
+              <h1 className="reveal">{copy.hero.headline}</h1>
+            </div>
+            <SectionIllustration type="hero" />
             <div className="hero-lower reveal">
               <p>{copy.hero.body}</p>
               <div className="hero-actions">
@@ -76,15 +101,21 @@ const HomePage = ({ language }: { language: Language }) => {
         <section id="opportunity" className="editorial-section opportunity-section">
           <div className="section-label reveal">{copy.opportunity.label}</div>
           <div className="opportunity-grid">
-            <h2 className="reveal">{copy.opportunity.headline}</h2>
+            <div className="opportunity-heading">
+              <h2 className="reveal">{copy.opportunity.headline}</h2>
+              <SectionIllustration type="opportunity" />
+            </div>
             <div className="body-column reveal"><p>{copy.opportunity.body}</p><strong>{copy.opportunity.close}</strong></div>
           </div>
-          <div className="crossing-line" aria-hidden="true"><img src="/curaeted-mark.svg" alt="" /></div>
+          <div className="crossing-line" aria-hidden="true"><img src="/curaeted-mark-black.png" alt="" /></div>
         </section>
 
         <section id="audiences" className="editorial-section warm-section">
           <div className="section-label reveal">{copy.audiences.label}</div>
-          <h2 className="section-heading reveal">{copy.audiences.headline}</h2>
+          <div className="audiences-intro">
+            <h2 className="section-heading reveal">{copy.audiences.headline}</h2>
+            <SectionIllustration type="audiences" />
+          </div>
           <div className="three-column-list">
             {copy.audiences.items.map((item, index) => (
               <article className="reveal" key={item.title}><span>0{index + 1}</span><h3>{item.title}</h3><p>{item.body}</p></article>
@@ -102,11 +133,20 @@ const HomePage = ({ language }: { language: Language }) => {
               </article>
             ))}
           </div>
+          <SectionIllustration type="services" />
         </section>
 
         <section id="approach" className="editorial-section approach-section">
           <div className="section-label reveal">{copy.approach.label}</div>
-          <div className="approach-intro"><h2 className="reveal">{copy.approach.headline}</h2><p className="reveal">{copy.approach.intro}</p></div>
+          <div className="approach-intro">
+            <h2 className="balanced-heading reveal" aria-label={copy.approach.headline}>
+              {approachHeadlineLines.map((line) => <span aria-hidden="true" key={line}>{line}{language === "en" ? " " : ""}</span>)}
+            </h2>
+            <div className="approach-side">
+              <p className="reveal">{copy.approach.intro}</p>
+              <SectionIllustration type="approach" />
+            </div>
+          </div>
           <div className="path-list">
             <div className="path-line" aria-hidden="true" />
             {copy.approach.items.map((item) => (
@@ -117,7 +157,12 @@ const HomePage = ({ language }: { language: Language }) => {
 
         <section id="work" className="editorial-section work-section warm-section">
           <div className="section-label reveal">{copy.work.label}</div>
-          <h2 className="section-heading reveal">{copy.work.headline}</h2>
+          <div className="work-intro">
+            <SectionIllustration type="work" />
+            <h2 className="section-heading balanced-heading reveal" aria-label={copy.work.headline}>
+              {workHeadlineLines.map((line) => <span aria-hidden="true" key={line}>{line}{language === "en" ? " " : ""}</span>)}
+            </h2>
+          </div>
           <div className="case-list">
             {copy.work.items.map((item, index) => (
               <article className="reveal" key={item.title}><span>CASE {String(index + 1).padStart(2, "0")}</span><h3>{item.title}</h3><p>{item.body}</p></article>
@@ -126,7 +171,7 @@ const HomePage = ({ language }: { language: Language }) => {
           <p className="proof-note reveal">{copy.work.note}</p>
         </section>
 
-        <section className="why-section dark-section">
+        <section id="why-us" className="why-section dark-section">
           <div className="section-label reveal">{copy.why.label}</div>
           <h2 className="section-heading reveal">{copy.why.headline}</h2>
           <div className="why-grid">
@@ -134,13 +179,23 @@ const HomePage = ({ language }: { language: Language }) => {
               <article className="reveal" key={item.title}><span>0{index + 1}</span><h3>{item.title}</h3><p>{item.body}</p></article>
             ))}
           </div>
+          <SectionIllustration type="why" />
         </section>
 
         <section id="about" className="editorial-section about-section">
           <div className="section-label reveal">{copy.about.label}</div>
           <div className="about-grid">
-            <div className="about-mark reveal"><img src="/curaeted-mark.svg" alt="" /></div>
-            <div><h2 className="reveal">{copy.about.headline}</h2><p className="about-copy reveal">{copy.about.body}</p><p className="values reveal">{copy.about.values}</p></div>
+            <div className="about-top">
+              <h2 className="reveal">{copy.about.headline}</h2>
+              <SectionIllustration type="about" />
+            </div>
+            <div className="about-details">
+              <p className="about-copy reveal">{copy.about.body}</p>
+              <div className="values-block reveal">
+                <span>{copy.about.valuesLabel}</span>
+                <strong>{copy.about.values}</strong>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -159,7 +214,7 @@ const HomePage = ({ language }: { language: Language }) => {
             </form>
           </div>
           <footer>
-            <a href="#top" className="footer-brand"><img src="/curaeted-mark.svg" alt="" /><span>{language === "en" ? "curæted paths" : "醇雅特路径"}</span></a>
+            <a href="#top" className="footer-brand"><img src="/curaeted-mark-white.png" alt="" /><span>{language === "en" ? "curæted paths" : "醇雅特路径"}</span></a>
             <p>{copy.footer}</p><p>{language === "en" ? "Beijing, China" : "中国 · 北京"}</p>
           </footer>
         </section>

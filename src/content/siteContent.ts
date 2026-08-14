@@ -15,7 +15,7 @@ export type SiteContent = {
   approach: { label: string; headline: string; intro: string; items: Stage[] };
   work: { label: string; headline: string; items: Item[]; note: string };
   why: { label: string; headline: string; items: Item[] };
-  about: { label: string; headline: string; body: string; values: string };
+  about: { label: string; headline: string; body: string; valuesLabel: string; values: string };
   contact: { label: string; headline: string; body: string; cta: string; privacy: string };
   footer: string;
 };
@@ -28,7 +28,8 @@ export const content: Record<Language, SiteContent> = {
     nav: [
       { id: "opportunity", label: "Opportunity" }, { id: "audiences", label: "Who we help" },
       { id: "services", label: "What we do" }, { id: "approach", label: "Our approach" },
-      { id: "work", label: "Experience" }, { id: "about", label: "About" }, { id: "contact", label: "Contact" },
+      { id: "work", label: "Experience" }, { id: "why-us", label: "Why us" },
+      { id: "about", label: "About" }, { id: "contact", label: "Contact" },
     ],
     hero: {
       eyebrow: "China outbound. Opened.",
@@ -59,7 +60,7 @@ export const content: Record<Language, SiteContent> = {
       ],
     },
     approach: {
-      label: "04 / How we work", headline: "Every market entry needs its own path.",
+      label: "04 / Our approach", headline: "Every market entry needs its own path.",
       intro: "We do not apply a standard playbook and hope it travels. We build backwards from the commercial objective, the local buyer and the realities of delivery.",
       items: [
         { number: "01", title: "Understand", body: "Clarify the ambition, offer, market context, decision-makers and barriers to growth." },
@@ -69,7 +70,7 @@ export const content: Record<Language, SiteContent> = {
       ],
     },
     work: {
-      label: "05 / Representative work", headline: "Experience built where strategy meets execution.",
+      label: "05 / Experience", headline: "Experience built where strategy meets execution.",
       items: [
         { title: "A global audio platform", body: "Defined its China outbound route to market, built senior agency relationships and opened priority advertiser opportunities through a locally relevant commercial proposition." },
         { title: "An international marketing technology company", body: "Designed the China go-to-market and partner operating model for global programmatic capabilities, connecting local business development with international delivery expertise." },
@@ -78,7 +79,7 @@ export const content: Record<Language, SiteContent> = {
       note: "Client and partner identities are intentionally withheld. Relevant examples can be discussed privately.",
     },
     why: {
-      label: "06 / Why curæted paths", headline: "Local context. Global fluency. Senior accountability.",
+      label: "06 / Why us", headline: "Local context. Global fluency. Senior accountability.",
       items: [
         { title: "Local depth", body: "Deep relationships across China’s leading outbound brands, agencies and technology ecosystem." },
         { title: "Global fluency", body: "Experience translating international capabilities into propositions, partnerships and delivery models that work locally." },
@@ -89,6 +90,7 @@ export const content: Record<Language, SiteContent> = {
     about: {
       label: "07 / About", headline: "A small team, deliberately senior.",
       body: "curæted paths brings together Chinese and international executives with leadership experience spanning more than two decades in China, global media and marketing technology. Our network reaches across the institutions shaping China outbound growth, while our boutique model keeps the work direct, flexible and accountable.",
+      valuesLabel: "Our Values",
       values: "Trust first. Customer-led. Accountable. Always adapting.",
     },
     contact: {
@@ -105,7 +107,8 @@ export const content: Record<Language, SiteContent> = {
     nav: [
       { id: "opportunity", label: "出海机遇" }, { id: "audiences", label: "服务对象" },
       { id: "services", label: "核心能力" }, { id: "approach", label: "合作方式" },
-      { id: "work", label: "项目经验" }, { id: "about", label: "关于我们" }, { id: "contact", label: "联系我们" },
+      { id: "work", label: "项目经验" }, { id: "why-us", label: "为何选择我们" },
+      { id: "about", label: "关于我们" }, { id: "contact", label: "联系我们" },
     ],
     hero: {
       eyebrow: "连接全球，增长有径", headline: "让全球优质资源，成为中国品牌出海的增长路径。",
@@ -146,7 +149,7 @@ export const content: Record<Language, SiteContent> = {
       ],
     },
     work: {
-      label: "05 / 代表性项目经验", headline: "连接中国需求与全球能力的实际经验。",
+      label: "05 / 项目经验", headline: "连接中国需求与全球能力的实际经验。",
       items: [
         { title: "全球头部音频平台", body: "建立面向中国出海市场的本地商业路径，与头部出海代理商建立高层合作关系，并推动重点广告主机会。" },
         { title: "国际营销科技公司", body: "围绕全球程序化能力设计中国市场进入策略、合作伙伴模式与跨境交付机制。" },
@@ -155,7 +158,7 @@ export const content: Record<Language, SiteContent> = {
       note: "基于保密原则，客户及合作伙伴名称暂不公开。相关经验可在沟通中进一步介绍。",
     },
     why: {
-      label: "06 / 为什么选择醇雅特路径", headline: "深耕本地，理解全球，对结果负责。",
+      label: "06 / 为何选择我们", headline: "深耕本地，理解全球，对结果负责。",
       items: [
         { title: "深耕中国出海生态", body: "长期连接中国领先的出海品牌、代理商、媒体与营销科技伙伴。" },
         { title: "真正理解全球市场", body: "能够把国际资源转化为适合中国客户沟通、采购与落地的解决方案。" },
@@ -166,6 +169,7 @@ export const content: Record<Language, SiteContent> = {
     about: {
       label: "07 / 关于我们", headline: "小而资深，专注而灵活。",
       body: "醇雅特路径由深耕中国市场二十余年的中外资深媒体、营销与技术管理者共同组成。我们与中国出海生态中的品牌、代理商及全球合作伙伴保持深度联系，并以精品团队模式，为每一个项目提供直接、灵活和负责任的支持。",
+      valuesLabel: "我们的价值观",
       values: "信任为先。以客户为中心。对结果负责。持续创新。",
     },
     contact: {

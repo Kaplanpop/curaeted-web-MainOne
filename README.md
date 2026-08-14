@@ -21,6 +21,7 @@ The contact form opens a pre-addressed message in the visitor's email client. Th
 ```sh
 npm run build
 npm run lint
+npm run typecheck
 ```
 
 Deployment is intentionally deferred until the redesign preview is approved.
