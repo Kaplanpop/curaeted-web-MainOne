@@ -92,7 +92,9 @@ a { color: inherit; }
 .hero-inner { position: relative; z-index: 2; max-width: 1580px; width: 100%; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(280px, .62fr); grid-template-areas: "copy art" "lower art"; column-gap: clamp(3rem, 6vw, 7rem); align-items: start; }
 .hero-upper-copy { grid-area: copy; }
 .eyebrow, .section-label { margin: 0 0 2.5rem; font-size: .7rem; line-height: 1.2; letter-spacing: .16em; text-transform: uppercase; font-weight: 500; }
-.hero h1 { margin: 0; font-size: clamp(3rem, 6.35vw, 7.4rem); line-height: .96; letter-spacing: -.062em; font-weight: 400; text-wrap: balance; }
+.hero h1 { margin: 0; font-size: clamp(2.6rem, 5.5vw, 6.4rem); line-height: .96; letter-spacing: -.062em; font-weight: 400; text-wrap: balance; }
+.site.is-zh .hero h1 { font-size: clamp(2.4rem, 5.15vw, 6rem); line-height: 1.14; letter-spacing: -.025em; }
+.site.is-zh .hero h1 span { display: block; }
 .hero-lower { grid-area: lower; width: 100%; margin: clamp(2.5rem, 5vw, 4.5rem) 0 0; padding-top: 1.8rem; display: grid; grid-template-columns: 1.25fr 1fr; gap: 4rem; border-top: 1px solid rgba(255,255,255,.27); }
 .hero-lower > p { max-width: 700px; margin: 0; font-size: clamp(1rem, 1.4vw, 1.3rem); line-height: 1.62; font-weight: 300; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 1.4rem; align-items: center; justify-content: flex-end; }
@@ -245,7 +247,8 @@ footer { margin-top: 8rem; min-height: 145px; display: grid; grid-template-colum
   .brand-mark { width: 19px; }
   .hero { min-height: 100svh; padding-top: 7rem; padding-bottom: 2.5rem; }
   .hero-inner { grid-template-columns: 1fr; grid-template-areas: "copy" "art" "lower"; column-gap: 0; }
-  .hero h1 { font-size: clamp(2.55rem, 11.5vw, 4.4rem); }
+  .hero h1 { font-size: clamp(2.25rem, 10.1vw, 3.9rem); }
+  .site.is-zh .hero h1 { font-size: clamp(2.05rem, 9.35vw, 3.55rem); }
   .hero-lower, .opportunity-grid, .approach-intro, .about-top, .about-details, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .hero-lower { margin-top: 2rem; padding-top: 1.3rem; gap: 1.75rem; }
   .hero-actions { justify-content: flex-start; }
