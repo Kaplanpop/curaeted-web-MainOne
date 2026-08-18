@@ -18,6 +18,9 @@ const HomePage = ({ language }: { language: Language }) => {
   const copy = content[language];
   const rootRef = useRef<HTMLDivElement>(null);
   const [form, setForm] = useState({ name: "", company: "", email: "", message: "", website: "" });
+  const heroHeadlineLines = language === "zh"
+    ? ["让全球优质资源，", "成为中国品牌出海", "的增长路径。"]
+    : null;
   const approachHeadlineLines = language === "en"
     ? ["Every market", "entry needs its", "own path."]
     : ["每一次出海，", "都需要一条适合", "自己的路径。"];
@@ -84,7 +87,11 @@ const HomePage = ({ language }: { language: Language }) => {
           <div className="hero-inner">
             <div className="hero-upper-copy">
               <p className="eyebrow reveal">{copy.hero.eyebrow}</p>
-              <h1 className="reveal">{copy.hero.headline}</h1>
+              <h1 className="reveal" aria-label={copy.hero.headline}>
+                {heroHeadlineLines
+                  ? heroHeadlineLines.map((line) => <span key={line}>{line}</span>)
+                  : copy.hero.headline}
+              </h1>
             </div>
             <SectionIllustration type="hero" />
             <div className="hero-lower reveal">
