@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useRef, useState } from "react";
+import { FormEvent, Fragment, useEffect, useRef, useState } from "react";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import SectionIllustration from "@/components/SectionIllustration";
@@ -27,6 +27,22 @@ const HomePage = ({ language }: { language: Language }) => {
   const workHeadlineLines = language === "en"
     ? ["Experience built", "where strategy", "meets execution."]
     : ["连接中国需求", "与全球能力的", "实际经验。"];
+  const zhHeadlinePhrases = {
+    opportunity: ["出海", "不只是购买流量，", "更是建立全球增长能力。"],
+    audiences: ["为正在走向全球的品牌", "与代理商而设。"],
+    services: ["从全球资源连接，", "到跨市场策略与执行。"],
+    why: ["深耕本地，", "理解全球，", "对结果负责。"],
+    about: ["小而资深，", "专注而灵活。"],
+    contact: ["一起找到更清晰的", "出海增长路径。"],
+  };
+  const renderPhraseSafeHeading = (headline: string, phrases: string[]) => language === "zh"
+    ? phrases.map((phrase, index) => (
+      <Fragment key={phrase}>
+        <span aria-hidden="true">{phrase}</span>
+        {index < phrases.length - 1 && <wbr />}
+      </Fragment>
+    ))
+    : headline;
 
   useEffect(() => {
     document.documentElement.lang = copy.lang;
@@ -109,7 +125,9 @@ const HomePage = ({ language }: { language: Language }) => {
           <div className="section-label reveal">{copy.opportunity.label}</div>
           <div className="opportunity-grid">
             <div className="opportunity-heading">
-              <h2 className="reveal">{copy.opportunity.headline}</h2>
+              <h2 className="phrase-safe-heading reveal" aria-label={copy.opportunity.headline}>
+                {renderPhraseSafeHeading(copy.opportunity.headline, zhHeadlinePhrases.opportunity)}
+              </h2>
               <SectionIllustration type="opportunity" />
             </div>
             <div className="body-column reveal"><p>{copy.opportunity.body}</p><strong>{copy.opportunity.close}</strong></div>
@@ -120,7 +138,9 @@ const HomePage = ({ language }: { language: Language }) => {
         <section id="audiences" className="editorial-section warm-section">
           <div className="section-label reveal">{copy.audiences.label}</div>
           <div className="audiences-intro">
-            <h2 className="section-heading reveal">{copy.audiences.headline}</h2>
+            <h2 className="section-heading phrase-safe-heading reveal" aria-label={copy.audiences.headline}>
+              {renderPhraseSafeHeading(copy.audiences.headline, zhHeadlinePhrases.audiences)}
+            </h2>
             <SectionIllustration type="audiences" />
           </div>
           <div className="three-column-list">
@@ -132,7 +152,9 @@ const HomePage = ({ language }: { language: Language }) => {
 
         <section id="services" className="services-section dark-section">
           <div className="section-label reveal">{copy.services.label}</div>
-          <h2 className="section-heading reveal">{copy.services.headline}</h2>
+          <h2 className="section-heading phrase-safe-heading reveal" aria-label={copy.services.headline}>
+            {renderPhraseSafeHeading(copy.services.headline, zhHeadlinePhrases.services)}
+          </h2>
           <div className="service-list">
             {copy.services.items.map((item, index) => (
               <article className="reveal" key={item.title}>
@@ -147,7 +169,12 @@ const HomePage = ({ language }: { language: Language }) => {
           <div className="section-label reveal">{copy.approach.label}</div>
           <div className="approach-intro">
             <h2 className="balanced-heading reveal" aria-label={copy.approach.headline}>
-              {approachHeadlineLines.map((line) => <span aria-hidden="true" key={line}>{line}{language === "en" ? " " : ""}</span>)}
+              {approachHeadlineLines.map((line, index) => (
+                <Fragment key={line}>
+                  <span aria-hidden="true">{line}{language === "en" ? " " : ""}</span>
+                  {language === "zh" && index < approachHeadlineLines.length - 1 && <wbr />}
+                </Fragment>
+              ))}
             </h2>
             <div className="approach-side">
               <p className="reveal">{copy.approach.intro}</p>
@@ -167,7 +194,12 @@ const HomePage = ({ language }: { language: Language }) => {
           <div className="work-intro">
             <SectionIllustration type="work" />
             <h2 className="section-heading balanced-heading reveal" aria-label={copy.work.headline}>
-              {workHeadlineLines.map((line) => <span aria-hidden="true" key={line}>{line}{language === "en" ? " " : ""}</span>)}
+              {workHeadlineLines.map((line, index) => (
+                <Fragment key={line}>
+                  <span aria-hidden="true">{line}{language === "en" ? " " : ""}</span>
+                  {language === "zh" && index < workHeadlineLines.length - 1 && <wbr />}
+                </Fragment>
+              ))}
             </h2>
           </div>
           <div className="case-list">
@@ -180,7 +212,9 @@ const HomePage = ({ language }: { language: Language }) => {
 
         <section id="why-us" className="why-section dark-section">
           <div className="section-label reveal">{copy.why.label}</div>
-          <h2 className="section-heading reveal">{copy.why.headline}</h2>
+          <h2 className="section-heading phrase-safe-heading reveal" aria-label={copy.why.headline}>
+            {renderPhraseSafeHeading(copy.why.headline, zhHeadlinePhrases.why)}
+          </h2>
           <div className="why-grid">
             {copy.why.items.map((item, index) => (
               <article className="reveal" key={item.title}><span>0{index + 1}</span><h3>{item.title}</h3><p>{item.body}</p></article>
@@ -193,7 +227,9 @@ const HomePage = ({ language }: { language: Language }) => {
           <div className="section-label reveal">{copy.about.label}</div>
           <div className="about-grid">
             <div className="about-top">
-              <h2 className="reveal">{copy.about.headline}</h2>
+              <h2 className="phrase-safe-heading reveal" aria-label={copy.about.headline}>
+                {renderPhraseSafeHeading(copy.about.headline, zhHeadlinePhrases.about)}
+              </h2>
               <SectionIllustration type="about" />
             </div>
             <div className="about-details">
@@ -209,7 +245,12 @@ const HomePage = ({ language }: { language: Language }) => {
         <section id="contact" className="contact-section dark-section">
           <div className="section-label reveal">{copy.contact.label}</div>
           <div className="contact-grid">
-            <div><h2 className="reveal">{copy.contact.headline}</h2><p className="reveal">{copy.contact.body}</p><a className="email-link reveal" href="mailto:info@curaetedchina.com">info@curaetedchina.com<ArrowUpRight /></a></div>
+            <div>
+              <h2 className="phrase-safe-heading reveal" aria-label={copy.contact.headline}>
+                {renderPhraseSafeHeading(copy.contact.headline, zhHeadlinePhrases.contact)}
+              </h2>
+              <p className="reveal">{copy.contact.body}</p><a className="email-link reveal" href="mailto:info@curaetedchina.com">info@curaetedchina.com<ArrowUpRight /></a>
+            </div>
             <form className="contact-form reveal" onSubmit={submit}>
               <label><span>{language === "en" ? "Name" : "姓名"}</span><input required autoComplete="name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} /></label>
               <label><span>{language === "en" ? "Company" : "公司"}</span><input autoComplete="organization" value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} /></label>
