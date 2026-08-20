@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://curaetedchina.com/sitemap.xml
